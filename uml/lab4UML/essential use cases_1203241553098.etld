@@ -42,10 +42,28 @@
                 </graph>
                 <graph id="5">
                     <name/>
+                    <margins>
+                        <proportional bottom="0.0" left="0.0" right="0.0" top="0.0"/>
+                        <constant bottom="20.0" left="20.0" right="20.0" top="20.0"/>
+                    </margins>
+                    <url/>
+                    <graphics type="basicGraph">
+                        <backgroundColor value="255 255 255"/>
+                        <imageUsed/>
+                        <imageTiled value="false"/>
+                        <imageStyle value="WORLD_OFFSET"/>
+                        <imageMinTileStep value="25"/>
+                        <imageX value="0.0"/>
+                        <imageY value="0.0"/>
+                        <drawNodesBeforeEdges value="true"/>
+                    </graphics>
+                </graph>
+                <graph id="6">
+                    <name/>
                     <nodes>
-                        <node id="6">
+                        <node id="7">
                             <name/>
-                            <center x="3.8818418376683894" y="-44.24513180194302"/>
+                            <center x="2.833261529236694" y="-22.801158980508873"/>
                             <size height="94.0" width="72.0"/>
                             <originalSize height="94.0" width="72.0"/>
                             <shape resource="0"/>
@@ -64,9 +82,9 @@
                                 <PEID value="DCE.D6481C7E-E633-536B-1D60-D461D2A1FDD9"/>
                             </graphics>
                         </node>
-                        <node id="7">
+                        <node id="8">
                             <name/>
-                            <center x="211.50118452272005" y="-55.74513180194302"/>
+                            <center x="236.62452821589056" y="-23.23836923538166"/>
                             <size height="53.0" width="128.0"/>
                             <originalSize height="53.0" width="128.0"/>
                             <shape resource="0"/>
@@ -85,11 +103,11 @@
                                 <PEID value="DCE.9148DC4E-EBD3-3DC3-0752-5235BC8288DC"/>
                             </graphics>
                         </node>
-                        <node id="8">
+                        <node id="9">
                             <name value="játék indítása"/>
-                            <center x="-62.518158162331616" y="68.15486819805699"/>
+                            <center x="-63.56673847076331" y="89.59884101949113"/>
                             <size height="60.0" width="98.0"/>
-                            <originalSize height="59.22851637764933" width="97.2408477842004"/>
+                            <originalSize height="59.092586734632334" width="97.30283078860509"/>
                             <shape resource="0"/>
                             <url/>
                             <visible value="true"/>
@@ -106,11 +124,11 @@
                                 <PEID value="DCE.C23D9C9E-F993-ED2E-0B6F-6B8FAD491F9C"/>
                             </graphics>
                         </node>
-                        <node id="9">
+                        <node id="10">
                             <name value="kígyó vezérlése"/>
-                            <center x="70.28184183766842" y="68.15486819805699"/>
+                            <center x="69.23326152923673" y="89.59884101949113"/>
                             <size height="60.0" width="90.0"/>
-                            <originalSize height="59.22851637764933" width="88.84277456647399"/>
+                            <originalSize height="59.092586734632334" width="88.86103268365761"/>
                             <shape resource="0"/>
                             <url/>
                             <visible value="true"/>
@@ -127,11 +145,11 @@
                                 <PEID value="DCE.3A1B9EB9-25AF-EAB5-AB3A-73E6AB784CBD"/>
                             </graphics>
                         </node>
-                        <node id="10">
+                        <node id="11">
                             <name value="idő léptetése"/>
-                            <center x="214.50118452272005" y="68.15486819805699"/>
+                            <center x="236.62452821589056" y="64.56163076461834"/>
                             <size height="60.0" width="89.99999999999966"/>
-                            <originalSize height="59.22851637764933" width="89.2847784200386"/>
+                            <originalSize height="59.09258673463233" width="88.86103268365758"/>
                             <shape resource="0"/>
                             <url/>
                             <visible value="true"/>
@@ -150,7 +168,7 @@
                         </node>
                     </nodes>
                     <edges>
-                        <edge id="11" source="6" target="8">
+                        <edge id="12" source="7" target="9">
                             <sourceClipping/>
                             <targetClipping/>
                             <url/>
@@ -166,7 +184,7 @@
                                 <PEID value="DCE.F7672828-038E-9DFD-E353-9C137932B28E"/>
                             </graphics>
                         </edge>
-                        <edge id="12" source="6" target="9">
+                        <edge id="13" source="7" target="10">
                             <sourceClipping/>
                             <targetClipping/>
                             <url/>
@@ -182,7 +200,7 @@
                                 <PEID value="DCE.D59F4A5B-EA18-E59E-BF63-22E02F072331"/>
                             </graphics>
                         </edge>
-                        <edge id="13" source="10" target="7">
+                        <edge id="14" source="11" target="8">
                             <sourceClipping/>
                             <targetClipping/>
                             <url/>
@@ -216,7 +234,7 @@
                     </graphics>
                 </graph>
             </graphs>
-            <rootGraph value="5"/>
+            <rootGraph value="6"/>
         </instances>
     </graphManager>
     <serviceInput type="jlayout">
@@ -304,7 +322,7 @@
         </defaults>
         <option context="none" name="all:all:none:graphManager" value="3"/>
         <option context="3" name="layout:all:graphManager:incrementalLayout" value="true"/>
-        <option context="5" name="layout:hierarchical:graph:levelDirection" value="DIRECTION_BOTTOM_TO_TOP"/>
+        <option context="6" name="layout:hierarchical:graph:levelDirection" value="DIRECTION_BOTTOM_TO_TOP"/>
     </serviceInput>
     <preferences>
         <preference name="maximumZoomLevel" value="50.0"/>
