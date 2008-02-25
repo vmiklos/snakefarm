@@ -137,9 +137,9 @@
                         </node>
                         <node id="12">
                             <name/>
-                            <center x="119.90000000000003" y="-166.75000000000006"/>
-                            <size height="500.5000000000001" width="118.80000000000007"/>
-                            <originalSize height="500.5000000000001" width="118.80000000000004"/>
+                            <center x="101.75000000000001" y="-166.7500000000001"/>
+                            <size height="500.5000000000002" width="82.50000000000003"/>
+                            <originalSize height="500.5000000000002" width="82.50000000000003"/>
                             <shape resource="0"/>
                             <connectors>
                                 <connector id="13">

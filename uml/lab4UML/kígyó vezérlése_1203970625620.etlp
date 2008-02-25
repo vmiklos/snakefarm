@@ -1637,18 +1637,18 @@
         <resource type="color" resourceStringID="82" colorID="126"/>
         <resource type="color" resourceStringID="81" colorID="125"/>
       </resources>
-      <compartment name="1" MEID="DCE.FB94EF64-3932-944A-76B7-E75AC1D271F1" value="SnakeUnit" textStyles="VCENTER|HCENTER|SINGLELINE" nameCompartmentBorderKind="0" ShowStereotypesAsIcons="true">
+      <compartment name="1" MEID="DCE.39663969-8122-E48B-E623-C3AD9A82704E" value="Snake" textStyles="VCENTER|HCENTER|SINGLELINE" nameCompartmentBorderKind="0" ShowStereotypesAsIcons="true">
         <resources>
           <resource type="font" resourceStringID="7" fontID="74"/>
         </resources>
       </compartment>
-      <compartment name="2" MEID="DCE.2334D8D1-F24B-6DC6-54A8-B351EE4072F5" value=" : SnakeUnit" textStyles="VCENTER|HCENTER|SINGLELINE" nameCompartmentBorderKind="0">
+      <compartment name="2" MEID="DCE.2334D8D1-F24B-6DC6-54A8-B351EE4072F5" value=" : Snake" textStyles="VCENTER|HCENTER|SINGLELINE" nameCompartmentBorderKind="0">
         <resources>
           <resource type="font" resourceStringID="6" fontID="73"/>
           <resource type="color" resourceStringID="6" colorID="130"/>
         </resources>
       </compartment>
-      <compartment name="3" MEID="DCE.2334D8D1-F24B-6DC6-54A8-B351EE4072F5" value=" : " textStyles="VCENTER|HCENTER|SINGLELINE">
+      <compartment name="3" MEID="DCE.2334D8D1-F24B-6DC6-54A8-B351EE4072F5" value=" : SnakeUnit" textStyles="VCENTER|HCENTER|SINGLELINE">
         <resources/>
         <Lifeline left="0" dy="10" height="470" isDestroyed="false">
           <ActivationBar left="-4" dy="83" height="40" isMessageToSelf="false">
