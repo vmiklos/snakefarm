@@ -28,9 +28,9 @@
                     <nodes>
                         <node id="6">
                             <name/>
-                            <center x="-338.0" y="-79.5"/>
-                            <size height="500.0" width="228.0"/>
-                            <originalSize height="500.0" width="228.0"/>
+                            <center x="-338.15" y="-79.75000000000006"/>
+                            <size height="500.5000000000001" width="227.70000000000007"/>
+                            <originalSize height="500.5000000000001" width="227.70000000000007"/>
                             <shape resource="0"/>
                             <connectors>
                                 <connector id="7">
@@ -66,9 +66,9 @@
                         </node>
                         <node id="8">
                             <name/>
-                            <center x="-83.5" y="-115.0"/>
-                            <size height="500.0" width="254.0"/>
-                            <originalSize height="500.0" width="254.0"/>
+                            <center x="-83.44999999999996" y="-115.25000000000006"/>
+                            <size height="500.5000000000001" width="254.10000000000008"/>
+                            <originalSize height="500.5000000000001" width="254.10000000000008"/>
                             <shape resource="0"/>
                             <connectors>
                                 <connector id="9">
@@ -119,9 +119,9 @@
                         </node>
                         <node id="11">
                             <name/>
-                            <center x="102.0" y="-166.5"/>
-                            <size height="500.0" width="83.0"/>
-                            <originalSize height="500.0" width="83.0"/>
+                            <center x="119.90000000000002" y="-166.75000000000006"/>
+                            <size height="500.5000000000001" width="118.80000000000004"/>
+                            <originalSize height="500.5000000000001" width="118.80000000000004"/>
                             <shape resource="0"/>
                             <connectors>
                                 <connector id="12">
