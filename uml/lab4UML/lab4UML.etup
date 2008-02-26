@@ -13,6 +13,7 @@
    </XMI.header>
 
    <XMI.content>
-   <UML:Profile xmi.id="DCE.C2C3D143-BADA-96E4-6730-F1A2DB646509" name="Unnamed" isCloned="true" href="./lab4UML.etup#//*[@xmi.id=&apos;DCE.C2C3D143-BADA-96E4-6730-F1A2DB646509&apos;]" isDirty="false"><UML:Element.ownedElement>
-<UML:Stereotype xmi.id="DCE.7B6FB1C9-3A3D-E064-A002-E2EBFF7988C0" name="actor" owner="__uri_./lab4UML.etup#//*[@xmi.id=&apos;DCE.C2C3D143-BADA-96E4-6730-F1A2DB646509&apos;]"/></UML:Element.ownedElement></UML:Profile></XMI.content>
+   <UML:Profile xmi.id="DCE.C2C3D143-BADA-96E4-6730-F1A2DB646509" name="Unnamed" isCloned="true" href=".\lab4UML.etup#//*[@xmi.id=&apos;DCE.C2C3D143-BADA-96E4-6730-F1A2DB646509&apos;]" isDirty="false"><UML:Element.ownedElement>
+<UML:Stereotype xmi.id="DCE.7B6FB1C9-3A3D-E064-A002-E2EBFF7988C0" name="actor" owner="__uri_./lab4UML.etup#//*[@xmi.id=&apos;DCE.C2C3D143-BADA-96E4-6730-F1A2DB646509&apos;]"/>
+<UML:Stereotype xmi.id="DCE.FB6CFF6E-6311-8AE1-532B-C5BBD6A004DB" name="interface" owner="__uri_.\lab4UML.etup#//*[@xmi.id=&apos;DCE.C2C3D143-BADA-96E4-6730-F1A2DB646509&apos;]"/></UML:Element.ownedElement></UML:Profile></XMI.content>
 </XMI>
