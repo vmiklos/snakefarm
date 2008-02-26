@@ -1224,7 +1224,7 @@
       <entry fontholderid="1" name="SansSerif" CharSet="0" Height="12" Italic="false" Strikeout="false" Underline="false" Weight="400"/>
     </FontHolderTable>
   </resources>
-  <diagramInfo zoom="1.0" xPos="14.0" yPos="-539.0" name="StaticStructure" alias="" docs="" diagramKind="Class Diagram" lastShowAliasState="false" namespaceToplevelID="DCE.BA66E1E9-2497-D2BC-5587-0113C2359125" namespaceMEID="DCE.BA66E1E9-2497-D2BC-5587-0113C2359125" diagramXMIID="DCE.72523E07-A6B4-B2D4-45E0-B2AA5DA83431"/>
+  <diagramInfo zoom="1.0" xPos="-160.0" yPos="90.0" name="StaticStructure" alias="" docs="" diagramKind="Class Diagram" lastShowAliasState="false" namespaceToplevelID="DCE.BA66E1E9-2497-D2BC-5587-0113C2359125" namespaceMEID="DCE.BA66E1E9-2497-D2BC-5587-0113C2359125" diagramXMIID="DCE.72523E07-A6B4-B2D4-45E0-B2AA5DA83431"/>
   <DCE.416CC681-D01E-9CAD-BCBE-049D3068A4BE PEID="DCE.416CC681-D01E-9CAD-BCBE-049D3068A4BE" MEID="DCE.F7F6CD62-6DFB-A0D0-3CD6-7B2D9D5E9C5E" toplevelMEID="DCE.BA66E1E9-2497-D2BC-5587-0113C2359125" initString="org.netbeans.modules.uml.ui.products.ad.viewfactory.ETGenericNodeUI Interface ClassNotation">
     <engine name="ClassDrawEngine" editLocked="false">
       <resources>
@@ -1303,6 +1303,12 @@
       </compartment>
       <compartment name="5" value="Operations" textStyles="VCENTER|HCENTER|SINGLELINE">
         <resources/>
+        <compartment name="6" MEID="DCE.F89D83C6-6D6B-0D2A-0090-F88E1736FE58" value="public void  newPlayer(  )" textStyles="VCENTER|SINGLELINE" nameCompartmentBorderKind="0">
+          <resources>
+            <resource type="font" resourceStringID="16" fontID="12"/>
+            <resource type="color" resourceStringID="16" colorID="15"/>
+          </resources>
+        </compartment>
       </compartment>
     </engine>
   </DCE.BED8C777-CB51-ECF3-1147-4ECB31170559>

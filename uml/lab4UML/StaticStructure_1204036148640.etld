@@ -48,9 +48,9 @@
                         </node>
                         <node id="6">
                             <name/>
-                            <center x="-489.31256196782283" y="188.4357444477656"/>
-                            <size height="111.99999999999983" width="127.99999999999955"/>
-                            <originalSize height="112.0" width="128.0"/>
+                            <center x="-470.3125619678226" y="188.4357444477655"/>
+                            <size height="112.0" width="166.0"/>
+                            <originalSize height="112.0" width="166.0"/>
                             <shape resource="0"/>
                             <url/>
                             <visible value="true"/>
@@ -481,12 +481,12 @@
                             <sourceClipping/>
                             <targetClipping/>
                             <bends>
-                                <point x="-489.9659572293062" y="48.411855061004566"/>
+                                <point x="-469.9659572293062" y="48.411855061004566"/>
                             </bends>
                             <edgeLabels>
                                 <edgeLabel id="29">
                                     <name value="1"/>
-                                    <size height="23.999999999999886" width="75.00000000000011"/>
+                                    <size height="23.99999999999983" width="75.0"/>
                                     <constantOffset x="-13.531301228049415" y="5.4348270623449935E-5"/>
                                     <distanceFromSource value="0.08265357845917655"/>
                                     <url/>
