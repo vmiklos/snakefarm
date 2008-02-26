@@ -1548,7 +1548,7 @@
       <entry fontholderid="1" name="SansSerif" CharSet="0" Height="12" Italic="false" Strikeout="false" Underline="false" Weight="400"/>
     </FontHolderTable>
   </resources>
-  <diagramInfo ShowAllReturnMessages="true" ShowMessageNumbers="false" zoom="1.0" xPos="-185.0" yPos="-56.0" name="idő léptetése" alias="" docs="" diagramKind="Sequence Diagram" lastShowAliasState="false" namespaceToplevelID="DCE.BA66E1E9-2497-D2BC-5587-0113C2359125" namespaceMEID="DCE.EF8E3E2A-CB6B-C39C-3E64-91CA4C6A92E3" diagramXMIID="DCE.55B61698-E351-21A5-C632-3C8737642753"/>
+  <diagramInfo ShowAllReturnMessages="true" ShowMessageNumbers="false" zoom="1.0" xPos="-185.0" yPos="-56.0" name="ido leptetese" alias="" docs="" diagramKind="Sequence Diagram" lastShowAliasState="false" namespaceToplevelID="DCE.BA66E1E9-2497-D2BC-5587-0113C2359125" namespaceMEID="DCE.EF8E3E2A-CB6B-C39C-3E64-91CA4C6A92E3" diagramXMIID="DCE.55B61698-E351-21A5-C632-3C8737642753"/>
   <DCE.18795414-6889-3EDD-5292-2953ABDB8434 PEID="DCE.18795414-6889-3EDD-5292-2953ABDB8434" MEID="DCE.52AA17B0-9E67-D672-0F89-982291F3F744" toplevelMEID="DCE.BA66E1E9-2497-D2BC-5587-0113C2359125" initString="org.netbeans.modules.uml.ui.products.ad.viewfactory.ETGenericNodeUI Class">
     <engine name="LifelineDrawEngine" editLocked="false">
       <resources>

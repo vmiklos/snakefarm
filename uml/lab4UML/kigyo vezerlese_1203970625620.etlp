@@ -1866,7 +1866,7 @@
       <entry fontholderid="1" name="SansSerif" CharSet="0" Height="12" Italic="false" Strikeout="false" Underline="false" Weight="400"/>
     </FontHolderTable>
   </resources>
-  <diagramInfo ShowAllReturnMessages="true" ShowMessageNumbers="false" zoom="0.9090909090909086" xPos="36.0" yPos="7.0" name="kígyó vezérlése" alias="" docs="" diagramKind="Sequence Diagram" lastShowAliasState="false" namespaceToplevelID="DCE.BA66E1E9-2497-D2BC-5587-0113C2359125" namespaceMEID="DCE.31E4A9A3-F431-8166-4B1B-6856381B8A49" diagramXMIID="DCE.1AE947AE-AA55-FB02-DAAC-33C369977DF5"/>
+  <diagramInfo ShowAllReturnMessages="true" ShowMessageNumbers="false" zoom="0.9090909090909086" xPos="36.0" yPos="7.0" name="kigyo vezerlese" alias="" docs="" diagramKind="Sequence Diagram" lastShowAliasState="false" namespaceToplevelID="DCE.BA66E1E9-2497-D2BC-5587-0113C2359125" namespaceMEID="DCE.31E4A9A3-F431-8166-4B1B-6856381B8A49" diagramXMIID="DCE.1AE947AE-AA55-FB02-DAAC-33C369977DF5"/>
   <DCE.1F7FFFFC-B188-F8CC-3419-3173870B08A9 PEID="DCE.1F7FFFFC-B188-F8CC-3419-3173870B08A9" MEID="DCE.7132FE36-411A-257E-E59A-008F05A2933C" toplevelMEID="DCE.BA66E1E9-2497-D2BC-5587-0113C2359125" initString="org.netbeans.modules.uml.ui.products.ad.viewfactory.ETGenericNodeUI Class">
     <engine name="LifelineDrawEngine" editLocked="false">
       <resources>

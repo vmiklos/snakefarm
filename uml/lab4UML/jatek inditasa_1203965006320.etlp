@@ -2192,7 +2192,7 @@
       <entry fontholderid="1" name="SansSerif" CharSet="0" Height="12" Italic="false" Strikeout="false" Underline="false" Weight="400"/>
     </FontHolderTable>
   </resources>
-  <diagramInfo ShowAllReturnMessages="true" ShowMessageNumbers="false" zoom="0.6830134553650704" xPos="-115.0" yPos="-185.0" name="játék indítása" alias="" docs="" diagramKind="Sequence Diagram" lastShowAliasState="false" namespaceToplevelID="DCE.BA66E1E9-2497-D2BC-5587-0113C2359125" namespaceMEID="DCE.7891FC3B-7B81-D623-9E37-E6DEC41FB54B" diagramXMIID="DCE.7FCC802D-41CC-1323-3B91-859EAC900731"/>
+  <diagramInfo ShowAllReturnMessages="true" ShowMessageNumbers="false" zoom="0.6830134553650704" xPos="-115.0" yPos="-185.0" name="jatek inditasa" alias="" docs="" diagramKind="Sequence Diagram" lastShowAliasState="false" namespaceToplevelID="DCE.BA66E1E9-2497-D2BC-5587-0113C2359125" namespaceMEID="DCE.7891FC3B-7B81-D623-9E37-E6DEC41FB54B" diagramXMIID="DCE.7FCC802D-41CC-1323-3B91-859EAC900731"/>
   <DCE.B4585305-24A6-B44E-03AD-CBCA44E0F7BD PEID="DCE.B4585305-24A6-B44E-03AD-CBCA44E0F7BD" MEID="DCE.4B1020C0-2222-7196-87D4-4F234395015A" toplevelMEID="DCE.BA66E1E9-2497-D2BC-5587-0113C2359125" initString="org.netbeans.modules.uml.ui.products.ad.viewfactory.ETGenericNodeUI Class">
     <engine name="LifelineDrawEngine" editLocked="false">
       <resources>
