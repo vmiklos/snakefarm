@@ -1226,7 +1226,7 @@
       <entry fontholderid="1" name="SansSerif" CharSet="0" Height="12" Italic="false" Strikeout="false" Underline="false" Weight="400"/>
     </FontHolderTable>
   </resources>
-  <diagramInfo ShowAllReturnMessages="true" ShowMessageNumbers="false" zoom="1.0" xPos="-39.0" yPos="44.0" name="utkozes Wallal" alias="" docs="" diagramKind="Sequence Diagram" lastShowAliasState="false" namespaceToplevelID="DCE.BA66E1E9-2497-D2BC-5587-0113C2359125" namespaceMEID="DCE.31BEA255-5591-71F3-E7F5-ED438866C379" diagramXMIID="DCE.A5EB6D72-7A48-5EE0-E59B-E0F6D31C3222"/>
+  <diagramInfo ShowAllReturnMessages="true" ShowMessageNumbers="false" zoom="1.0" xPos="15.0" yPos="44.0" name="utkozes Wallal" alias="" docs="" diagramKind="Sequence Diagram" lastShowAliasState="false" namespaceToplevelID="DCE.BA66E1E9-2497-D2BC-5587-0113C2359125" namespaceMEID="DCE.31BEA255-5591-71F3-E7F5-ED438866C379" diagramXMIID="DCE.A5EB6D72-7A48-5EE0-E59B-E0F6D31C3222"/>
   <DCE.D1398C94-ABD9-267F-3927-CA9611D9E0B8 PEID="DCE.D1398C94-ABD9-267F-3927-CA9611D9E0B8" MEID="DCE.09610A27-8ABF-2D32-EBAE-F435B38D4BFC" toplevelMEID="DCE.BA66E1E9-2497-D2BC-5587-0113C2359125" initString="org.netbeans.modules.uml.ui.products.ad.viewfactory.ETGenericNodeUI Class">
     <engine name="LifelineDrawEngine" editLocked="false">
       <resources>
