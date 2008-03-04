@@ -74,15 +74,33 @@
                 </graph>
                 <graph id="8">
                     <name/>
+                    <margins>
+                        <proportional bottom="0.0" left="0.0" right="0.0" top="0.0"/>
+                        <constant bottom="20.0" left="20.0" right="20.0" top="20.0"/>
+                    </margins>
+                    <url/>
+                    <graphics type="basicGraph">
+                        <backgroundColor value="255 255 255"/>
+                        <imageUsed/>
+                        <imageTiled value="false"/>
+                        <imageStyle value="WORLD_OFFSET"/>
+                        <imageMinTileStep value="25"/>
+                        <imageX value="0.0"/>
+                        <imageY value="0.0"/>
+                        <drawNodesBeforeEdges value="true"/>
+                    </graphics>
+                </graph>
+                <graph id="9">
+                    <name/>
                     <nodes>
-                        <node id="9">
+                        <node id="10">
                             <name/>
                             <center x="-254.5" y="18.5"/>
                             <size height="500.0" width="195.0"/>
                             <originalSize height="500.0" width="195.0"/>
                             <shape resource="0"/>
                             <connectors>
-                                <connector id="10">
+                                <connector id="11">
                                     <name/>
                                     <size height="0.0" width="0.0"/>
                                     <proportionalOffset x="0.0" y="0.5"/>
@@ -97,7 +115,7 @@
                                         <drawBorder value="true"/>
                                     </graphics>
                                 </connector>
-                                <connector id="11">
+                                <connector id="12">
                                     <name/>
                                     <size height="0.0" width="0.0"/>
                                     <proportionalOffset x="0.0" y="0.5"/>
@@ -112,7 +130,7 @@
                                         <drawBorder value="true"/>
                                     </graphics>
                                 </connector>
-                                <connector id="12">
+                                <connector id="13">
                                     <name/>
                                     <size height="0.0" width="0.0"/>
                                     <proportionalOffset x="0.0" y="0.5"/>
@@ -127,7 +145,7 @@
                                         <drawBorder value="true"/>
                                     </graphics>
                                 </connector>
-                                <connector id="13">
+                                <connector id="14">
                                     <name/>
                                     <size height="0.0" width="0.0"/>
                                     <proportionalOffset x="0.0" y="0.5"/>
@@ -142,7 +160,7 @@
                                         <drawBorder value="true"/>
                                     </graphics>
                                 </connector>
-                                <connector id="14">
+                                <connector id="15">
                                     <name/>
                                     <size height="0.0" width="0.0"/>
                                     <proportionalOffset x="0.0" y="0.5"/>
@@ -157,7 +175,7 @@
                                         <drawBorder value="true"/>
                                     </graphics>
                                 </connector>
-                                <connector id="15">
+                                <connector id="16">
                                     <name/>
                                     <size height="0.0" width="0.0"/>
                                     <proportionalOffset x="0.0" y="0.5"/>
@@ -188,14 +206,14 @@
                                 <PEID value="DCE.46C13520-285D-8BC0-A1EE-CF24C71B0752"/>
                             </graphics>
                         </node>
-                        <node id="16">
+                        <node id="17">
                             <name/>
                             <center x="139.5" y="18.0"/>
                             <size height="500.0" width="186.0"/>
                             <originalSize height="500.0" width="186.0"/>
                             <shape resource="0"/>
                             <connectors>
-                                <connector id="17">
+                                <connector id="18">
                                     <name/>
                                     <size height="0.0" width="0.0"/>
                                     <proportionalOffset x="0.0" y="0.5"/>
@@ -210,7 +228,7 @@
                                         <drawBorder value="true"/>
                                     </graphics>
                                 </connector>
-                                <connector id="18">
+                                <connector id="19">
                                     <name/>
                                     <size height="0.0" width="0.0"/>
                                     <proportionalOffset x="0.0" y="0.5"/>
@@ -225,7 +243,7 @@
                                         <drawBorder value="true"/>
                                     </graphics>
                                 </connector>
-                                <connector id="19">
+                                <connector id="20">
                                     <name/>
                                     <size height="0.0" width="0.0"/>
                                     <proportionalOffset x="0.0" y="0.5"/>
@@ -240,7 +258,7 @@
                                         <drawBorder value="true"/>
                                     </graphics>
                                 </connector>
-                                <connector id="20">
+                                <connector id="21">
                                     <name/>
                                     <size height="0.0" width="0.0"/>
                                     <proportionalOffset x="0.0" y="0.5"/>
@@ -255,7 +273,7 @@
                                         <drawBorder value="true"/>
                                     </graphics>
                                 </connector>
-                                <connector id="21">
+                                <connector id="22">
                                     <name/>
                                     <size height="0.0" width="0.0"/>
                                     <proportionalOffset x="0.0" y="0.5"/>
@@ -270,7 +288,7 @@
                                         <drawBorder value="true"/>
                                     </graphics>
                                 </connector>
-                                <connector id="22">
+                                <connector id="23">
                                     <name/>
                                     <size height="0.0" width="0.0"/>
                                     <proportionalOffset x="0.0" y="0.5"/>
@@ -285,7 +303,7 @@
                                         <drawBorder value="true"/>
                                     </graphics>
                                 </connector>
-                                <connector id="23">
+                                <connector id="24">
                                     <name/>
                                     <size height="0.0" width="0.0"/>
                                     <proportionalOffset x="0.0" y="0.5"/>
@@ -300,7 +318,7 @@
                                         <drawBorder value="true"/>
                                     </graphics>
                                 </connector>
-                                <connector id="24">
+                                <connector id="25">
                                     <name/>
                                     <size height="0.0" width="0.0"/>
                                     <proportionalOffset x="0.0" y="0.5"/>
@@ -315,7 +333,7 @@
                                         <drawBorder value="true"/>
                                     </graphics>
                                 </connector>
-                                <connector id="25">
+                                <connector id="26">
                                     <name/>
                                     <size height="0.0" width="0.0"/>
                                     <proportionalOffset x="0.0" y="0.5"/>
@@ -330,7 +348,7 @@
                                         <drawBorder value="true"/>
                                     </graphics>
                                 </connector>
-                                <connector id="26">
+                                <connector id="27">
                                     <name/>
                                     <size height="0.0" width="0.0"/>
                                     <proportionalOffset x="0.0" y="0.5"/>
@@ -345,7 +363,7 @@
                                         <drawBorder value="true"/>
                                     </graphics>
                                 </connector>
-                                <connector id="27">
+                                <connector id="28">
                                     <name/>
                                     <size height="0.0" width="0.0"/>
                                     <proportionalOffset x="0.0" y="0.5"/>
@@ -360,7 +378,7 @@
                                         <drawBorder value="true"/>
                                     </graphics>
                                 </connector>
-                                <connector id="28">
+                                <connector id="29">
                                     <name/>
                                     <size height="0.0" width="0.0"/>
                                     <proportionalOffset x="0.0" y="0.5"/>
@@ -375,7 +393,7 @@
                                         <drawBorder value="true"/>
                                     </graphics>
                                 </connector>
-                                <connector id="29">
+                                <connector id="30">
                                     <name/>
                                     <size height="0.0" width="0.0"/>
                                     <proportionalOffset x="0.0" y="0.5"/>
@@ -390,7 +408,7 @@
                                         <drawBorder value="true"/>
                                     </graphics>
                                 </connector>
-                                <connector id="30">
+                                <connector id="31">
                                     <name/>
                                     <size height="0.0" width="0.0"/>
                                     <proportionalOffset x="0.0" y="0.5"/>
@@ -421,14 +439,14 @@
                                 <PEID value="DCE.13F91EEA-E912-5584-A2C0-9BDE225B554B"/>
                             </graphics>
                         </node>
-                        <node id="31">
+                        <node id="32">
                             <name/>
                             <center x="281.5" y="17.0"/>
                             <size height="500.0" width="83.0"/>
                             <originalSize height="500.0" width="83.0"/>
                             <shape resource="0"/>
                             <connectors>
-                                <connector id="32">
+                                <connector id="33">
                                     <name/>
                                     <size height="0.0" width="0.0"/>
                                     <proportionalOffset x="0.0" y="0.5"/>
@@ -443,7 +461,7 @@
                                         <drawBorder value="true"/>
                                     </graphics>
                                 </connector>
-                                <connector id="33">
+                                <connector id="34">
                                     <name/>
                                     <size height="0.0" width="0.0"/>
                                     <proportionalOffset x="0.0" y="0.5"/>
@@ -458,7 +476,7 @@
                                         <drawBorder value="true"/>
                                     </graphics>
                                 </connector>
-                                <connector id="34">
+                                <connector id="35">
                                     <name/>
                                     <size height="0.0" width="0.0"/>
                                     <proportionalOffset x="0.0" y="0.5"/>
@@ -473,7 +491,7 @@
                                         <drawBorder value="true"/>
                                     </graphics>
                                 </connector>
-                                <connector id="35">
+                                <connector id="36">
                                     <name/>
                                     <size height="0.0" width="0.0"/>
                                     <proportionalOffset x="0.0" y="0.5"/>
@@ -504,14 +522,14 @@
                                 <PEID value="DCE.7BCBC00B-85D6-732C-2F83-208F3AC35448"/>
                             </graphics>
                         </node>
-                        <node id="36">
+                        <node id="37">
                             <name/>
                             <center x="380.0" y="17.0"/>
                             <size height="500.0" width="85.0"/>
                             <originalSize height="500.0" width="85.0"/>
                             <shape resource="0"/>
                             <connectors>
-                                <connector id="37">
+                                <connector id="38">
                                     <name/>
                                     <size height="0.0" width="0.0"/>
                                     <proportionalOffset x="0.0" y="0.5"/>
@@ -526,7 +544,7 @@
                                         <drawBorder value="true"/>
                                     </graphics>
                                 </connector>
-                                <connector id="38">
+                                <connector id="39">
                                     <name/>
                                     <size height="0.0" width="0.0"/>
                                     <proportionalOffset x="0.0" y="0.5"/>
@@ -557,17 +575,17 @@
                                 <PEID value="DCE.4DC3D96A-9B8E-0F52-B398-9D57C3A7A5D2"/>
                             </graphics>
                         </node>
-                        <node id="39">
+                        <node id="40">
                             <name/>
                             <center x="75.0" y="126.5"/>
                             <size height="225.0" width="743.0"/>
                             <originalSize height="225.0" width="743.0"/>
                             <shape resource="2"/>
                             <nodeLabels>
-                                <nodeLabel id="40">
-                                    <name value="[not collider.isSaw()]"/>
-                                    <size height="23.0" width="154.0"/>
-                                    <proportionalOffset x="-0.6729475100942126" y="0.9466666666666667"/>
+                                <nodeLabel id="41">
+                                    <name value="[not collider.isSaw() or standing.hasStone()]"/>
+                                    <size height="23.0" width="321.0"/>
+                                    <proportionalOffset x="-0.44952893674293404" y="0.9022222222222223"/>
                                     <constantOffset x="0.0" y="0.0"/>
                                     <url/>
                                     <visible value="true"/>
@@ -599,14 +617,14 @@
                                 <PEID value="DCE.F79C16BD-26EE-D74B-03A8-75879BC6FC1F"/>
                             </graphics>
                         </node>
-                        <node id="41">
+                        <node id="42">
                             <name/>
                             <center x="544.5" y="18.0"/>
                             <size height="500.0" width="157.0"/>
                             <originalSize height="500.0" width="157.0"/>
                             <shape resource="0"/>
                             <connectors>
-                                <connector id="42">
+                                <connector id="43">
                                     <name/>
                                     <size height="0.0" width="0.0"/>
                                     <proportionalOffset x="0.0" y="0.5"/>
@@ -621,7 +639,7 @@
                                         <drawBorder value="true"/>
                                     </graphics>
                                 </connector>
-                                <connector id="43">
+                                <connector id="44">
                                     <name/>
                                     <size height="0.0" width="0.0"/>
                                     <proportionalOffset x="0.0" y="0.5"/>
@@ -652,7 +670,7 @@
                                 <PEID value="DCE.3301E724-58B3-815B-71CD-FA05F3B9734D"/>
                             </graphics>
                         </node>
-                        <node id="44">
+                        <node id="45">
                             <name/>
                             <center x="133.0" y="-112.5"/>
                             <size height="243.0" width="853.0"/>
@@ -675,15 +693,15 @@
                         </node>
                     </nodes>
                     <edges>
-                        <edge id="45" source="9" target="16">
-                            <sourceConnector value="10"/>
-                            <targetConnector value="17"/>
+                        <edge id="46" source="10" target="17">
+                            <sourceConnector value="11"/>
+                            <targetConnector value="18"/>
                             <sourceClipping/>
                             <targetClipping/>
                             <edgeLabels>
-                                <edgeLabel id="46">
+                                <edgeLabel id="47">
                                     <name value="public Collidable  collideWith( SnakeUnit snakeUnit )"/>
-                                    <size height="20.0" width="75.0"/>
+                                    <size height="23.0" width="380.0"/>
                                     <constantOffset x="0.0" y="10.0"/>
                                     <distanceFromSource value="0.5"/>
                                     <url/>
@@ -714,15 +732,15 @@
                                 <PEID value="DCE.6519654B-279F-5795-7B9A-7B66F57BB845"/>
                             </graphics>
                         </edge>
-                        <edge id="47" source="16" target="9">
-                            <sourceConnector value="18"/>
-                            <targetConnector value="11"/>
+                        <edge id="48" source="17" target="10">
+                            <sourceConnector value="19"/>
+                            <targetConnector value="12"/>
                             <sourceClipping/>
                             <targetClipping/>
                             <edgeLabels>
-                                <edgeLabel id="48">
+                                <edgeLabel id="49">
                                     <name value="standing"/>
-                                    <size height="20.0" width="75.0"/>
+                                    <size height="23.0" width="75.0"/>
                                     <constantOffset x="0.0" y="10.0"/>
                                     <distanceFromSource value="0.5"/>
                                     <url/>
@@ -753,9 +771,9 @@
                                 <PEID value="DCE.F3652597-00FB-8C9B-9BB0-C4CA7FE2E314"/>
                             </graphics>
                         </edge>
-                        <edge id="49" source="16" target="16">
-                            <sourceConnector value="19"/>
-                            <targetConnector value="20"/>
+                        <edge id="50" source="17" target="17">
+                            <sourceConnector value="20"/>
+                            <targetConnector value="21"/>
                             <sourceClipping/>
                             <targetClipping/>
                             <bends>
@@ -764,9 +782,9 @@
                                 <point x="165.5" y="163.0"/>
                             </bends>
                             <edgeLabels>
-                                <edgeLabel id="50">
+                                <edgeLabel id="51">
                                     <name value="public Snake  getSnake(  )"/>
-                                    <size height="20.0" width="75.0"/>
+                                    <size height="23.0" width="193.0"/>
                                     <constantOffset x="0.0" y="10.0"/>
                                     <distanceFromSource value="0.5"/>
                                     <url/>
@@ -797,9 +815,9 @@
                                 <PEID value="DCE.96E2DD8F-A556-39B1-A08C-6BF2111B11A2"/>
                             </graphics>
                         </edge>
-                        <edge id="51" source="16" target="16">
-                            <sourceConnector value="21"/>
-                            <targetConnector value="22"/>
+                        <edge id="52" source="17" target="17">
+                            <sourceConnector value="22"/>
+                            <targetConnector value="23"/>
                             <sourceClipping/>
                             <targetClipping/>
                             <bends>
@@ -820,15 +838,15 @@
                                 <PEID value="DCE.0FAEAD88-8308-8964-BA2A-7AE0BA17B62F"/>
                             </graphics>
                         </edge>
-                        <edge id="52" source="16" target="31">
-                            <sourceConnector value="23"/>
-                            <targetConnector value="32"/>
+                        <edge id="53" source="17" target="32">
+                            <sourceConnector value="24"/>
+                            <targetConnector value="33"/>
                             <sourceClipping/>
                             <targetClipping/>
                             <edgeLabels>
-                                <edgeLabel id="53">
+                                <edgeLabel id="54">
                                     <name value="public void  die(  )"/>
-                                    <size height="20.0" width="75.0"/>
+                                    <size height="23.0" width="137.0"/>
                                     <constantOffset x="0.0" y="10.0"/>
                                     <distanceFromSource value="0.5"/>
                                     <url/>
@@ -859,9 +877,9 @@
                                 <PEID value="DCE.901A43E8-662D-3F69-DD6B-7AA70804AC33"/>
                             </graphics>
                         </edge>
-                        <edge id="54" source="31" target="16">
-                            <sourceConnector value="33"/>
-                            <targetConnector value="24"/>
+                        <edge id="55" source="32" target="17">
+                            <sourceConnector value="34"/>
+                            <targetConnector value="25"/>
                             <sourceClipping/>
                             <targetClipping/>
                             <url/>
@@ -877,15 +895,15 @@
                                 <PEID value="DCE.BEF88BAC-D3FA-A82A-1E6A-1317858151F2"/>
                             </graphics>
                         </edge>
-                        <edge id="55" source="31" target="36">
-                            <sourceConnector value="34"/>
-                            <targetConnector value="37"/>
+                        <edge id="56" source="32" target="37">
+                            <sourceConnector value="35"/>
+                            <targetConnector value="38"/>
                             <sourceClipping/>
                             <targetClipping/>
                             <edgeLabels>
-                                <edgeLabel id="56">
+                                <edgeLabel id="57">
                                     <name value="public void  removeSnake(  )"/>
-                                    <size height="20.0" width="75.0"/>
+                                    <size height="23.0" width="211.0"/>
                                     <constantOffset x="0.0" y="10.0"/>
                                     <distanceFromSource value="0.5"/>
                                     <url/>
@@ -916,9 +934,9 @@
                                 <PEID value="DCE.B8793719-ACFE-E140-594E-F84D8796AB76"/>
                             </graphics>
                         </edge>
-                        <edge id="57" source="36" target="31">
-                            <sourceConnector value="38"/>
-                            <targetConnector value="35"/>
+                        <edge id="58" source="37" target="32">
+                            <sourceConnector value="39"/>
+                            <targetConnector value="36"/>
                             <sourceClipping/>
                             <targetClipping/>
                             <url/>
@@ -934,13 +952,13 @@
                                 <PEID value="DCE.7782848F-A82F-4EE9-0106-E0E99A672684"/>
                             </graphics>
                         </edge>
-                        <edge id="58" source="9" target="16">
-                            <sourceConnector value="12"/>
-                            <targetConnector value="25"/>
+                        <edge id="59" source="10" target="17">
+                            <sourceConnector value="13"/>
+                            <targetConnector value="26"/>
                             <sourceClipping/>
                             <targetClipping/>
                             <edgeLabels>
-                                <edgeLabel id="59">
+                                <edgeLabel id="60">
                                     <name value="public Collidable  collideWith( SnakeUnit snakeUnit )"/>
                                     <size height="23.0" width="380.0"/>
                                     <constantOffset x="0.0" y="10.0"/>
@@ -973,13 +991,13 @@
                                 <PEID value="DCE.50CC7B7F-02DD-375C-B5C7-0C4AF7AF493E"/>
                             </graphics>
                         </edge>
-                        <edge id="60" source="16" target="9">
-                            <sourceConnector value="26"/>
-                            <targetConnector value="13"/>
+                        <edge id="61" source="17" target="10">
+                            <sourceConnector value="27"/>
+                            <targetConnector value="14"/>
                             <sourceClipping/>
                             <targetClipping/>
                             <edgeLabels>
-                                <edgeLabel id="61">
+                                <edgeLabel id="62">
                                     <name value="collider"/>
                                     <size height="23.0" width="75.0"/>
                                     <constantOffset x="0.0" y="10.0"/>
@@ -1012,13 +1030,13 @@
                                 <PEID value="DCE.87CF3697-497E-6035-578F-A8CAD98F60CD"/>
                             </graphics>
                         </edge>
-                        <edge id="62" source="16" target="9">
-                            <sourceConnector value="27"/>
-                            <targetConnector value="14"/>
+                        <edge id="63" source="17" target="10">
+                            <sourceConnector value="28"/>
+                            <targetConnector value="15"/>
                             <sourceClipping/>
                             <targetClipping/>
                             <edgeLabels>
-                                <edgeLabel id="63">
+                                <edgeLabel id="64">
                                     <name value="public SnakeUnit  getPrev(  )"/>
                                     <size height="23.0" width="210.0"/>
                                     <constantOffset x="0.0" y="10.0"/>
@@ -1051,13 +1069,13 @@
                                 <PEID value="DCE.7B0616D1-5B55-8889-652C-6BD0D26D4F39"/>
                             </graphics>
                         </edge>
-                        <edge id="64" source="9" target="16">
-                            <sourceConnector value="15"/>
-                            <targetConnector value="28"/>
+                        <edge id="65" source="10" target="17">
+                            <sourceConnector value="16"/>
+                            <targetConnector value="29"/>
                             <sourceClipping/>
                             <targetClipping/>
                             <edgeLabels>
-                                <edgeLabel id="65">
+                                <edgeLabel id="66">
                                     <name value="prev"/>
                                     <size height="23.0" width="75.0"/>
                                     <constantOffset x="0.0" y="10.0"/>
@@ -1090,13 +1108,13 @@
                                 <PEID value="DCE.1926DC56-9A71-8748-C623-4D093D1C321E"/>
                             </graphics>
                         </edge>
-                        <edge id="66" source="16" target="41">
-                            <sourceConnector value="29"/>
-                            <targetConnector value="42"/>
+                        <edge id="67" source="17" target="42">
+                            <sourceConnector value="30"/>
+                            <targetConnector value="43"/>
                             <sourceClipping/>
                             <targetClipping/>
                             <edgeLabels>
-                                <edgeLabel id="67">
+                                <edgeLabel id="68">
                                     <name value="public void setNext(null)"/>
                                     <size height="23.0" width="183.0"/>
                                     <constantOffset x="0.0" y="10.0"/>
@@ -1129,9 +1147,9 @@
                                 <PEID value="DCE.5ED78FD9-B05C-5575-D151-8A2837770B94"/>
                             </graphics>
                         </edge>
-                        <edge id="68" source="41" target="16">
-                            <sourceConnector value="43"/>
-                            <targetConnector value="30"/>
+                        <edge id="69" source="42" target="17">
+                            <sourceConnector value="44"/>
+                            <targetConnector value="31"/>
                             <sourceClipping/>
                             <targetClipping/>
                             <url/>
@@ -1165,7 +1183,7 @@
                     </graphics>
                 </graph>
             </graphs>
-            <rootGraph value="8"/>
+            <rootGraph value="9"/>
         </instances>
     </graphManager>
     <serviceInput type="jlayout">
