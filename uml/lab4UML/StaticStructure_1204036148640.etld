@@ -228,9 +228,9 @@
                         </node>
                         <node id="15">
                             <name/>
-                            <center x="340.64479342890604" y="-174.68115711821702"/>
-                            <size height="366.0" width="358.0"/>
-                            <originalSize height="366.0" width="358.0"/>
+                            <center x="340.64479342890604" y="-192.68115711821702"/>
+                            <size height="402.0" width="358.0"/>
+                            <originalSize height="402.0" width="358.0"/>
                             <shape resource="0"/>
                             <url/>
                             <visible value="true"/>

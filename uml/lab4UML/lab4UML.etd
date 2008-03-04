@@ -2335,7 +2335,15 @@
 <UML:Parameter xmi.id="DCE.D9233A97-834F-0D0D-862D-BFF60DE924D3" type="DCE.AB22CDF5-64B5-BE60-0C13-D4653BA102A9" direction="result" owner="DCE.50B31FB1-C337-8F85-CC5A-C6A0C1F31171"><UML:TypedElement.multiplicity>
 <UML:Multiplicity xmi.id="DCE.3750CB35-D9A1-06F6-C894-5BEABDE9591E"/></UML:TypedElement.multiplicity></UML:Parameter>
 <UML:Parameter xmi.id="DCE.3A6DC4C8-6648-F5A8-A4A6-17CEBECED35D" type="DCE.FB94EF64-3932-944A-76B7-E75AC1D271F1" name="snakeUnit" owner="DCE.50B31FB1-C337-8F85-CC5A-C6A0C1F31171"><UML:TypedElement.multiplicity>
-<UML:Multiplicity xmi.id="DCE.FBC6451E-CB24-51E2-72B4-2A27EAE0E17D"/></UML:TypedElement.multiplicity></UML:Parameter></UML:Element.ownedElement></UML:Operation></UML:Element.ownedElement><UML:Element.presentation>
+<UML:Multiplicity xmi.id="DCE.FBC6451E-CB24-51E2-72B4-2A27EAE0E17D"/></UML:TypedElement.multiplicity></UML:Parameter></UML:Element.ownedElement></UML:Operation>
+<UML:Operation xmi.id="DCE.EB6C05EC-32FF-2EE8-41CF-99DC5165BE25" name="hasStone" owner="DCE.FB94EF64-3932-944A-76B7-E75AC1D271F1"><UML:Element.ownedElement>
+<UML:Parameter xmi.id="DCE.3B4513B3-749F-1ED1-9A2D-2C66C9522997" type="DCE.F4814D94-1EC2-1161-7DA7-A64A34A12E71" direction="result" owner="DCE.EB6C05EC-32FF-2EE8-41CF-99DC5165BE25"><UML:TypedElement.multiplicity>
+<UML:Multiplicity xmi.id="DCE.EAF8D369-F900-354B-6CB4-BE23EC6E1501"/></UML:TypedElement.multiplicity></UML:Parameter></UML:Element.ownedElement></UML:Operation>
+<UML:Operation xmi.id="DCE.B2DDE7A5-22D4-B97D-5CBB-F9AF0F5A4D44" name="setStone" owner="DCE.FB94EF64-3932-944A-76B7-E75AC1D271F1"><UML:Element.ownedElement>
+<UML:Parameter xmi.id="DCE.011871FB-C36A-8945-D343-038070094A7F" type="DCE.AB22CDF5-64B5-BE60-0C13-D4653BA102A9" direction="result" owner="DCE.B2DDE7A5-22D4-B97D-5CBB-F9AF0F5A4D44"><UML:TypedElement.multiplicity>
+<UML:Multiplicity xmi.id="DCE.5D118E08-9278-B06F-D14C-8B82B9FB3D02"/></UML:TypedElement.multiplicity></UML:Parameter>
+<UML:Parameter xmi.id="DCE.9F7C19B3-4D1F-770D-6D28-AE4308CE4FCE" type="DCE.F4814D94-1EC2-1161-7DA7-A64A34A12E71" name="has" owner="DCE.B2DDE7A5-22D4-B97D-5CBB-F9AF0F5A4D44"><UML:TypedElement.multiplicity>
+<UML:Multiplicity xmi.id="DCE.2EE5B6A1-40F7-EF08-A3EA-49C36A07DA89"/></UML:TypedElement.multiplicity></UML:Parameter></UML:Element.ownedElement></UML:Operation></UML:Element.ownedElement><UML:Element.presentation>
 
 
 
@@ -4016,7 +4024,8 @@
 </UML:Element.presentation></UML:Message><UML:Message xmi.id="DCE.4B9F59C2-B003-1125-EECD-5E3C16213BD6" sendEvent="DCE.7AE0B368-7BB5-22D2-C323-E960D14AE04E" receiveEvent="DCE.2D280E80-E9A4-E885-330F-D4E987E51179" initiatingAction="DCE.A04FAAC8-5159-2397-BD3F-AF6436790E16" interaction="DCE.9B85169F-8008-ADE8-FB8F-0E22B2402A4D" kind="result" sendingMessage="DCE.5D519B3F-6752-54D7-49E2-AA73E5CAEAD2"><UML:Element.presentation>
 </UML:Element.presentation></UML:Message><UML:Message xmi.id="DCE.AD4A10BA-D827-5146-A53D-C5D208C9D3A7" sendEvent="DCE.BA8EEC7E-F93A-ABFB-55E8-45B0C2E9283D" receiveEvent="DCE.470E7571-9E21-6F36-1DAC-C67D270596F5" initiatingAction="DCE.05B95F98-F8FF-F107-67B3-09371465E8CD" interaction="DCE.9B85169F-8008-ADE8-FB8F-0E22B2402A4D" kind="result" sendingMessage="DCE.8CFF0932-7F04-2370-F719-5B85BFD672E7" name="snakeUnit"><UML:Element.presentation>
 
-</UML:Element.presentation></UML:Message></UML:Interaction.message></UML:Interaction></UML:Element.ownedElement><UML:Package.packageImport>
+</UML:Element.presentation></UML:Message></UML:Interaction.message></UML:Interaction>
+<UML:DataType xmi.id="DCE.3E441578-12A7-044A-3B6E-A3EBBE4F8EEE" name="bllean" owner="DCE.BA66E1E9-2497-D2BC-5587-0113C2359125"/></UML:Element.ownedElement><UML:Package.packageImport>
 <UML:PackageImport xmi.id="DCE.D1078829-B203-9A5B-9B97-0A9652567B76" importingPackage="DCE.BA66E1E9-2497-D2BC-5587-0113C2359125"><UML:PackageImport.importedPackage>
 <UML:Profile xmi.id="DCE.C2C3D143-BADA-96E4-6730-F1A2DB646509" name="Unnamed" isCloned="true" href="./.\lab4UML.etup#//*[@xmi.id=&apos;DCE.C2C3D143-BADA-96E4-6730-F1A2DB646509&apos;]" isDirty="false"/></UML:PackageImport.importedPackage><UML:Element.ownedElement>
 <UML:TaggedValue xmi.id="DCE.448044C9-860B-4C27-A44A-2EBDD7F376B4" owner="DCE.D1078829-B203-9A5B-9B97-0A9652567B76" name="autoCreated">

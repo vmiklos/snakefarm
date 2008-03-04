@@ -2563,6 +2563,18 @@
             <resource type="color" resourceStringID="16" colorID="15"/>
           </resources>
         </compartment>
+        <compartment name="6" MEID="DCE.EB6C05EC-32FF-2EE8-41CF-99DC5165BE25" value="public boolean  hasStone(  )" textStyles="VCENTER|SINGLELINE" nameCompartmentBorderKind="0">
+          <resources>
+            <resource type="font" resourceStringID="16" fontID="12"/>
+            <resource type="color" resourceStringID="16" colorID="15"/>
+          </resources>
+        </compartment>
+        <compartment name="6" MEID="DCE.B2DDE7A5-22D4-B97D-5CBB-F9AF0F5A4D44" value="public void  setStone( boolean has )" textStyles="VCENTER|SINGLELINE" nameCompartmentBorderKind="0">
+          <resources>
+            <resource type="font" resourceStringID="16" fontID="12"/>
+            <resource type="color" resourceStringID="16" colorID="15"/>
+          </resources>
+        </compartment>
       </compartment>
       <compartment name="7" MEID="DCE.F7F6CD62-6DFB-A0D0-3CD6-7B2D9D5E9C5E" value="Operations Redefined From Collidable" textStyles="VCENTER|HCENTER|SINGLELINE">
         <resources/>
