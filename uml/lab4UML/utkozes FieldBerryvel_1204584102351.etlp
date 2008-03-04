@@ -2515,7 +2515,7 @@
       <entry fontholderid="1" name="SansSerif" CharSet="0" Height="12" Italic="false" Strikeout="false" Underline="false" Weight="400"/>
     </FontHolderTable>
   </resources>
-  <diagramInfo ShowAllReturnMessages="true" ShowMessageNumbers="false" zoom="1.0" xPos="214.0" yPos="36.0" name="utkozes FieldBerryvel" alias="" docs="" diagramKind="Sequence Diagram" lastShowAliasState="false" namespaceToplevelID="DCE.BA66E1E9-2497-D2BC-5587-0113C2359125" namespaceMEID="DCE.242A451C-DC1F-2490-FDD5-84065F4073BB" diagramXMIID="DCE.1B0CA62E-F960-4F52-B469-02D58210EC75"/>
+  <diagramInfo ShowAllReturnMessages="true" ShowMessageNumbers="false" zoom="1.0" xPos="144.0" yPos="36.0" name="utkozes FieldBerryvel" alias="" docs="" diagramKind="Sequence Diagram" lastShowAliasState="false" namespaceToplevelID="DCE.BA66E1E9-2497-D2BC-5587-0113C2359125" namespaceMEID="DCE.242A451C-DC1F-2490-FDD5-84065F4073BB" diagramXMIID="DCE.1B0CA62E-F960-4F52-B469-02D58210EC75"/>
   <DCE.E7C24EA4-11B9-A3C1-6DED-350DB8CE54A6 PEID="DCE.E7C24EA4-11B9-A3C1-6DED-350DB8CE54A6" MEID="DCE.64709637-7B29-7A2E-78F9-790C147D33D4" toplevelMEID="DCE.BA66E1E9-2497-D2BC-5587-0113C2359125" initString="org.netbeans.modules.uml.ui.products.ad.viewfactory.ETGenericNodeUI Class">
     <engine name="LifelineDrawEngine" editLocked="false">
       <resources>
@@ -2846,12 +2846,12 @@
     </engine>
   </DCE.F4098190-D767-29A0-C3EF-43982B8E9D18>
   <DCE.5276C441-E51C-91A1-C6D4-8C6C382F3B52 TSLabelKind="7" TSLabelPlacementKind="2" PEID="DCE.5276C441-E51C-91A1-C6D4-8C6C382F3B52" MEID="DCE.BF498243-5519-8549-4D97-4A8BC3B7C90D" toplevelMEID="DCE.BA66E1E9-2497-D2BC-5587-0113C2359125" initString="org.netbeans.modules.uml.ui.products.ad.viewfactory.ETGenericEdgeLabelUI EdgeLabel">
-    <engine name="ADLabelDrawEngine" labelText="public void  collideWith( FieldBerry fieldBerry )">
+    <engine name="ADLabelDrawEngine" labelText="public Collidable  collideWith( FieldBerry fieldBerry )">
       <resources>
         <resource type="font" resourceStringID="138" fontID="102"/>
         <resource type="color" resourceStringID="138" colorID="198"/>
       </resources>
-      <compartment name="11" MEID="DCE.BF498243-5519-8549-4D97-4A8BC3B7C90D" value="public void  collideWith( FieldBerry fieldBerry )" textStyles="VCENTER|HCENTER|SINGLELINE" nameCompartmentBorderKind="0">
+      <compartment name="11" MEID="DCE.BF498243-5519-8549-4D97-4A8BC3B7C90D" value="public Collidable  collideWith( FieldBerry fieldBerry )" textStyles="VCENTER|HCENTER|SINGLELINE" nameCompartmentBorderKind="0">
         <resources>
           <resource type="font" resourceStringID="138" fontID="102"/>
           <resource type="color" resourceStringID="138" colorID="198"/>
