@@ -1225,7 +1225,7 @@
       <entry fontholderid="1" name="SansSerif" CharSet="0" Height="12" Italic="false" Strikeout="false" Underline="false" Weight="400"/>
     </FontHolderTable>
   </resources>
-  <diagramInfo ShowAllReturnMessages="true" ShowMessageNumbers="false" zoom="1.0" xPos="8.0" yPos="45.0" name="utkozes SawBerryvel" alias="" docs="" diagramKind="Sequence Diagram" lastShowAliasState="false" namespaceToplevelID="DCE.BA66E1E9-2497-D2BC-5587-0113C2359125" namespaceMEID="DCE.9B85169F-8008-ADE8-FB8F-0E22B2402A4D" diagramXMIID="DCE.3C290AAF-EB28-F9BD-CB3E-EC224B0102EC"/>
+  <diagramInfo ShowAllReturnMessages="true" ShowMessageNumbers="false" zoom="1.0" xPos="-85.0" yPos="45.0" name="utkozes SawBerryvel" alias="" docs="" diagramKind="Sequence Diagram" lastShowAliasState="false" namespaceToplevelID="DCE.BA66E1E9-2497-D2BC-5587-0113C2359125" namespaceMEID="DCE.9B85169F-8008-ADE8-FB8F-0E22B2402A4D" diagramXMIID="DCE.3C290AAF-EB28-F9BD-CB3E-EC224B0102EC"/>
   <DCE.90A09F28-35D9-D271-EC3F-9F8E04A0FF5D PEID="DCE.90A09F28-35D9-D271-EC3F-9F8E04A0FF5D" MEID="DCE.EA727A43-83EC-72B3-05E1-C395917D2691" toplevelMEID="DCE.BA66E1E9-2497-D2BC-5587-0113C2359125" initString="org.netbeans.modules.uml.ui.products.ad.viewfactory.ETGenericNodeUI Class">
     <engine name="LifelineDrawEngine" editLocked="false">
       <resources>

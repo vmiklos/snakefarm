@@ -2184,7 +2184,7 @@
       <entry fontholderid="1" name="SansSerif" CharSet="0" Height="12" Italic="false" Strikeout="false" Underline="false" Weight="400"/>
     </FontHolderTable>
   </resources>
-  <diagramInfo zoom="1.0" xPos="-102.0" yPos="-12.0" name="StaticStructure" alias="" docs="" diagramKind="Class Diagram" lastShowAliasState="false" namespaceToplevelID="DCE.BA66E1E9-2497-D2BC-5587-0113C2359125" namespaceMEID="DCE.BA66E1E9-2497-D2BC-5587-0113C2359125" diagramXMIID="DCE.72523E07-A6B4-B2D4-45E0-B2AA5DA83431"/>
+  <diagramInfo zoom="1.0" xPos="230.0" yPos="-180.0" name="StaticStructure" alias="" docs="" diagramKind="Class Diagram" lastShowAliasState="false" namespaceToplevelID="DCE.BA66E1E9-2497-D2BC-5587-0113C2359125" namespaceMEID="DCE.BA66E1E9-2497-D2BC-5587-0113C2359125" diagramXMIID="DCE.72523E07-A6B4-B2D4-45E0-B2AA5DA83431"/>
   <DCE.416CC681-D01E-9CAD-BCBE-049D3068A4BE PEID="DCE.416CC681-D01E-9CAD-BCBE-049D3068A4BE" MEID="DCE.F7F6CD62-6DFB-A0D0-3CD6-7B2D9D5E9C5E" toplevelMEID="DCE.BA66E1E9-2497-D2BC-5587-0113C2359125" initString="org.netbeans.modules.uml.ui.products.ad.viewfactory.ETGenericNodeUI Interface ClassNotation">
     <engine name="ClassDrawEngine" editLocked="false">
       <resources>
@@ -2546,6 +2546,18 @@
           </resources>
         </compartment>
         <compartment name="6" MEID="DCE.BF498243-5519-8549-4D97-4A8BC3B7C90D" value="public Collidable  collideWith( FieldBerry fieldBerry )" textStyles="VCENTER|SINGLELINE" nameCompartmentBorderKind="0">
+          <resources>
+            <resource type="font" resourceStringID="16" fontID="12"/>
+            <resource type="color" resourceStringID="16" colorID="15"/>
+          </resources>
+        </compartment>
+        <compartment name="6" MEID="DCE.30625267-41DB-C1E2-5B65-C9E23C5CC2E1" value="public void  setNext( SnakeUnit snakeUnit )" textStyles="VCENTER|SINGLELINE" nameCompartmentBorderKind="0">
+          <resources>
+            <resource type="font" resourceStringID="16" fontID="12"/>
+            <resource type="color" resourceStringID="16" colorID="15"/>
+          </resources>
+        </compartment>
+        <compartment name="6" MEID="DCE.50B31FB1-C337-8F85-CC5A-C6A0C1F31171" value="public void  setPrev( SnakeUnit snakeUnit )" textStyles="VCENTER|SINGLELINE" nameCompartmentBorderKind="0">
           <resources>
             <resource type="font" resourceStringID="16" fontID="12"/>
             <resource type="color" resourceStringID="16" colorID="15"/>
