@@ -8,34 +8,35 @@ public class Player {
 	private int id=lastid;
 	private UserInterface ui;
 	private static final String type="Player";
-	private Player unnamed_Player_;
-	private Player unnamed_Player_33;
-	private Game unnamed_Game_;
-	private List<Snake> unnamed_Snake_ = new LinkedList<Snake>();
+	/*private Player unnamed_Player_;
+	private Player unnamed_Player_33;*/
+	private Game game;
+	private List<Snake> snakes=new LinkedList<Snake>();
 	
 	public Player(UserInterface ui, Game game) {
 		this.ui=ui;
 		lastid++;
 		ui.enterMethod(type, id, "Player(Game)");
-		unnamed_Game_=game;
+		this.game=game;
 		ui.exitMethod(type, id, "Player(Game)");
 	}
 
-	public void addSnake() {
+	public void addSnake(Field field) {
 		ui.enterMethod(type, id, "addSnake()");
-		unnamed_Snake_.add(new Snake(ui, this));
+		snakes.add(new Snake(ui, this, field));
 		ui.exitMethod(type, id, "addSnake()");
 	}
 
 	public void step() {
 		ui.enterMethod(type, id, "step()");
-		for (java.util.Iterator i=unnamed_Snake_.iterator(); i.hasNext(); ) {
+		for (java.util.Iterator i=snakes.iterator(); i.hasNext(); ) {
 			((Snake)i.next()).step();
 		}
 		ui.exitMethod(type, id, "step()");
 	}
 
 	public void removeSnake(Snake snake) {
+		snakes.remove(snake);
 		throw new UnsupportedOperationException();
 	}
 }

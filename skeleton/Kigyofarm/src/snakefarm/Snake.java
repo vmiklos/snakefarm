@@ -8,17 +8,17 @@ public class Snake {
 	private int id=lastid;
 	private UserInterface ui;
 	private static final String type="Snake";
-	private Player unnamed_Player_;
-	private Direction unnamed_Direction_;
+	private Player player;
+	private Direction direction;
 	private List<SnakeUnit> stone = new LinkedList<SnakeUnit>();
 	
-	public Snake(UserInterface ui, Player player) {
+	public Snake(UserInterface ui, Player player, Field field) {
 		this.ui=ui;
 		lastid++;
 		ui.enterMethod(type, id, "Snake(Player)");
-		unnamed_Player_=player;
-		stone.add(new SnakeUnit(ui, this));
-		stone.add(new SnakeUnit(ui, this));
+		this.player=player;
+		direction=new Direction(ui);
+		stone.add(new SnakeUnit(ui, this, field));
 		ui.exitMethod(type, id, "Snake(Player)");
 	}
 
@@ -44,8 +44,8 @@ public class Snake {
 
 	public void step() {
 		ui.enterMethod(type, id, "step()");
-		SnakeUnit head=stone.listIterator(0).next();
-		Field next=head.getNextField(unnamed_Direction_);
+		SnakeUnit head=stone.get(0);
+		Field next=head.getNextField(direction);
 		head.step(next, false, false);
 		ui.exitMethod(type, id, "step()");
 	}

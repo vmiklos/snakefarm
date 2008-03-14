@@ -6,14 +6,14 @@ public class SnakeUnit extends Collidable {
 	private UserInterface ui;
 	private static final String type="SnakeUnit";
 	private boolean stone;
-	private Snake unnamed_Snake_;
-	Field current;
+	private Snake snake;
 	
-	public SnakeUnit(UserInterface ui, Snake snake) {
+	public SnakeUnit(UserInterface ui, Snake snake, Field field) {
 		this.ui=ui;
 		lastid++;
 		ui.enterMethod(type, id, "SnakeUnit(Snake)");
-		unnamed_Snake_=snake;
+		this.snake=snake;
+		this.field=field;
 		ui.exitMethod(type, id, "SnakeUnit(Snake)");
 	}
 
@@ -81,7 +81,7 @@ public class SnakeUnit extends Collidable {
 
 	public Field getNextField(Direction dir) {
 		ui.enterMethod(type, id, "getNextField(Direction)");
-		Field next=current.getNext(dir);
+		Field next=field.getNext(dir);
 		ui.exitMethod(type, id, "getNextField(Direction)");
 		return next;
 	}

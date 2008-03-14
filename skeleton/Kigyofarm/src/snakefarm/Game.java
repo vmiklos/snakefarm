@@ -8,26 +8,27 @@ public class Game {
 	private int id=lastid;
 	private UserInterface ui;
 	private static final String type="Game";
-	private GameField unnamed_GameField_;
-	private List<Player> unnamed_Player_ = new LinkedList<Player>();
+	private GameField gameField;
+	private List<Player> players=new LinkedList<Player>();
 	
 	public Game(UserInterface ui) {
 		this.ui=ui;
 		lastid++;
 		ui.enterMethod(type, id, "Game()");
+		gameField=new GameField(ui, this);
 		ui.exitMethod(type, id, "Game()");
 	}
 	public void newPlayer() {
 		ui.enterMethod(type, id, "newPlayer()");
 		Player temp=new Player(ui, this);
-		unnamed_Player_.add(temp);
-		temp.addSnake();
+		players.add(temp);
+		temp.addSnake(gameField.GetRandomFreeField());
 		ui.exitMethod(type, id, "newPlayer()");
 	}
 
 	public void step() {
 		ui.enterMethod(type, id, "step()");
-		for (java.util.Iterator i=unnamed_Player_.iterator(); i.hasNext(); ) {
+		for (java.util.Iterator i=players.iterator(); i.hasNext(); ) {
 			((Player)i.next()).step();
 		}
 		ui.exitMethod(type, id, "step()");

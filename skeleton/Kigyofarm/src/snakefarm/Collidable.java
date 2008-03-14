@@ -1,8 +1,7 @@
 package snakefarm;
 
 public class Collidable {
-	private Field field;
-	private Field unnamed_Field_;
+	protected Field field;
 
 	public void collideWith(SnakeUnit snakeUnit) {
 		throw new UnsupportedOperationException();
