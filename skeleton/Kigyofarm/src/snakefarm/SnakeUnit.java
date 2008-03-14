@@ -1,8 +1,21 @@
 package snakefarm;
 
 public class SnakeUnit extends Collidable {
+	private static int lastid=0; 
+	private int id=lastid;
+	private UserInterface ui;
+	private static final String type="SnakeUnit";
 	private boolean stone;
 	private Snake unnamed_Snake_;
+	Field current;
+	
+	public SnakeUnit(UserInterface ui, Snake snake) {
+		this.ui=ui;
+		lastid++;
+		ui.enterMethod(type, id, "SnakeUnit(Snake)");
+		unnamed_Snake_=snake;
+		ui.exitMethod(type, id, "SnakeUnit(Snake)");
+	}
 
 	public void collideWith2(Wall wall) {
 		throw new UnsupportedOperationException();
@@ -53,7 +66,9 @@ public class SnakeUnit extends Collidable {
 	}
 
 	public boolean step(Field next, boolean inc, boolean stone) {
-		throw new UnsupportedOperationException();
+		ui.enterMethod(type, id, "step(Field, boolean, boolean)");
+		ui.exitMethod(type, id, "step(Field, boolean, boolean)");
+		return false;
 	}
 
 	public void setStone(boolean has) {
@@ -65,6 +80,9 @@ public class SnakeUnit extends Collidable {
 	}
 
 	public Field getNextField(Direction dir) {
-		throw new UnsupportedOperationException();
+		ui.enterMethod(type, id, "getNextField(Direction)");
+		Field next=current.getNext(dir);
+		ui.exitMethod(type, id, "getNextField(Direction)");
+		return next;
 	}
 }
