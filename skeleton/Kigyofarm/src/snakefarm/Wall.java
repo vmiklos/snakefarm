@@ -9,5 +9,21 @@ public class Wall extends Collidable {
 	public Wall(UserInterface ui) {
 		this.ui=ui;
 		lastid++;
+		ui.enterMethod(type, id, "Wall()");
+		ui.exitMethod(type, id, "Wall()");
+	}
+	
+	@Override
+	public void collideWith(SnakeUnit snakeUnit) {
+		ui.enterMethod(type, id, "collideWith(SnakeUnit)");
+		snakeUnit.collideWith2(this);
+		ui.exitMethod(type, id, "collideWith(SnakeUnit)");
+	}
+	
+	@Override
+	public void collideWithSaw(SnakeUnit snakeUnit) {
+		ui.enterMethod(type, id, "collideWith(SnakeUnit)");
+		snakeUnit.collideWith2(this);
+		ui.exitMethod(type, id, "collideWith(SnakeUnit)");
 	}
 }

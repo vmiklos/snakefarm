@@ -2,16 +2,17 @@ package snakefarm;
 
 import java.util.List;
 import java.util.LinkedList;
+import java.util.Iterator;
 
 public class Player {
 	private static int lastid=0; 
 	private int id=lastid;
 	private UserInterface ui;
 	private static final String type="Player";
-	/*private Player unnamed_Player_;
-	private Player unnamed_Player_33;*/
+	
 	private Game game;
 	private List<Snake> snakes=new LinkedList<Snake>();
+	private List<Snake> temp=new LinkedList<Snake>();
 	
 	public Player(UserInterface ui, Game game) {
 		this.ui=ui;
@@ -29,14 +30,17 @@ public class Player {
 
 	public void step() {
 		ui.enterMethod(type, id, "step()");
-		for (java.util.Iterator i=snakes.iterator(); i.hasNext(); ) {
+		temp.addAll(snakes);
+		for (Iterator i=temp.iterator(); i.hasNext(); ) {
 			((Snake)i.next()).step();
 		}
+		temp.clear();
 		ui.exitMethod(type, id, "step()");
 	}
 
 	public void removeSnake(Snake snake) {
+		ui.enterMethod(type, id, "removeSnake(Snake)");
 		snakes.remove(snake);
-		throw new UnsupportedOperationException();
+		ui.exitMethod(type, id, "removeSnake(Snake)");
 	}
 }

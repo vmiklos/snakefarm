@@ -8,6 +8,7 @@ public class GameField {
 	private int id=lastid;
 	private UserInterface ui;
 	private static final String type="GameField";
+	
 	private Game game;
 	private List<Field> fields=new LinkedList<Field>();
 	
@@ -16,9 +17,14 @@ public class GameField {
 		lastid++;
 		ui.enterMethod(type, id, "GameField(Game)");
 		this.game=game;
-		fields.add(new Field(ui, this));
-		fields.add(new Field(ui, this));
-		fields.add(new Field(ui, this));
+		Direction d=new Direction(ui, 0);
+		Field f1=new Field(ui, this);
+		Field f2=new Field(ui, this);
+		f1.setNeighbour(new Direction(ui, 0), f2);
+		f2.setNeighbour(new Direction(ui, 0), f1);
+		f2.setObject(new Wall(ui));
+		fields.add(f1);
+		fields.add(f2);
 		ui.exitMethod(type, id, "GameField(Game)");
 	}
 	public Field GetRandomFreeField() {
@@ -31,6 +37,7 @@ public class GameField {
 		}
 		index=(int)((double)(freeFields.size())*Math.random());
 		ui.exitMethod(type, id, "GetRandomFreeField()");
-		return freeFields.get(index);
+		if (freeFields.size()!=0) return freeFields.get(index);
+		else return null;
 	}
 }

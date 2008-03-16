@@ -31,6 +31,10 @@ public class UserInterface {
 		printTabs();
 		System.out.println("<-" + objectType + "[" + objectId + "]." + method);
 	}
+	public void error(String s) {
+		printTabs();
+		System.out.println(s);
+	}
 	private void printTabs() {
 		for (int i=0; i<indentation; i++) {
 			System.out.print(" ");
