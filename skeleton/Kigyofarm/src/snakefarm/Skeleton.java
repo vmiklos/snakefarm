@@ -12,6 +12,11 @@ public class Skeleton {
 	private static LevelBase currentLevel = null;
 	private static boolean outputEnabled = false;
 
+	/**
+	 * Ez a skeleton main fuggvenye. Bekeri, hogy hanyas szamu
+	 * palyat teszteljuk, betolti az adott palyat, majd lefuttatja.
+	 * @param args Commandline argumentumok, nem hasznaljuk.
+	 */
 	public static void main(String args[]) {
 		reader = new BufferedReader(new InputStreamReader(System.in));
 		mainMenu();
