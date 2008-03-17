@@ -142,7 +142,7 @@ public class Skeleton {
 		while (!success) {
 			try {
 				printTabs();
-				System.out.print("?? Control snake [Left/Forward/Right]: ");
+				System.out.print("?? Control snake [l/f/r, which stands for Left/Forward/Right]: ");
 				String s = reader.readLine();
 				if (s.equals("l")) {
 					control = 1;
