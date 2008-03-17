@@ -8,12 +8,11 @@ import snakefarm.*;
  *
  * @author Gergo
  */
-public class Level1 extends LevelBase {
+public class Level7 extends LevelBase {
 
 	Game game;
 	Field f1 = new Field();
 	Field f2 = new Field();
-	Field f3 = new Field();
 	Direction dir = new Direction(0);
 
 	public void initialize() {
@@ -28,17 +27,14 @@ public class Level1 extends LevelBase {
 	public List<Field> createGameField(GameField gameField) {
 		List<Field> fields = new LinkedList<Field>();
 		f1.setNeighbour(dir, f2);
-		f2.setNeighbour(dir, f3);
-		f3.setObject(new Wall(f3));
 		fields.add(f1);
 		fields.add(f2);
-		fields.add(f3);
+		f2.setObject(new StoneBerry(f2));
 		return fields;
 	}
 
 	public List<SnakeUnit> createSnake(Snake snake, int id) {
 		List<SnakeUnit> units = new LinkedList<SnakeUnit>();
-		units.add(new SnakeUnit(snake, f2));
 		units.add(new SnakeUnit(snake, f1));
 		return units;
 	}

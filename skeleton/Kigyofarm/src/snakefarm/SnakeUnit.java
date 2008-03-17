@@ -123,10 +123,10 @@ public class SnakeUnit extends Collidable {
 			} else {
 				field = nextField;
 			}
-				
+
 
 		}
-		
+
 		/* novekedes es kovetkezo egyseg hivasa */
 		if (isAlive) {
 			/* ha nincs kovetkezo */

@@ -15,7 +15,7 @@ public class GameField {
 		lastid++;
 		Skeleton.enterMethod(type, id, "GameField(Game)");
 		this.game = game;
-		fields=Skeleton.getCurrentLevel().createGameField(this);
+		fields = Skeleton.getCurrentLevel().createGameField(this);
 		Skeleton.exitMethod(type, id, "GameField(Game)");
 	}
 

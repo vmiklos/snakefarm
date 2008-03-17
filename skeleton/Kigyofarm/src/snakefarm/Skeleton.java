@@ -43,24 +43,24 @@ public class Skeleton {
 			case 4:
 				currentLevel = new Level4();
 				break;
-			/*case 5:
-			currentLevel = new Level5();
-			break;
+			case 5:
+				currentLevel = new Level5();
+				break;
 			case 6:
-			currentLevel = new Level6();
-			break;
+				currentLevel = new Level6();
+				break;
 			case 7:
-			currentLevel = new Level7();
-			break;
+				currentLevel = new Level7();
+				break;
 			case 8:
-			currentLevel = new Level8();
-			break;
+				currentLevel = new Level8();
+				break;
 			case 9:
-			currentLevel = new Level9();
-			break;
+				currentLevel = new Level9();
+				break;
 			case 10:
-			currentLevel = new Level10();
-			break;*/
+				currentLevel = new Level10();
+				break;
 		}
 	}
 
