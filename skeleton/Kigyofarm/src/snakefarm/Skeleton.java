@@ -28,11 +28,6 @@ public class Skeleton {
 		}
 	}
 
-	public Skeleton() {
-		InputStreamReader stream = new InputStreamReader(System.in);
-		reader = new BufferedReader(stream);
-	}
-
 	private static void mainMenu() {
 		int i = askForInt("Which level to run (0 to exit)? ", 0, 10);
 		switch (i) {
