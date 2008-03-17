@@ -4,8 +4,7 @@ public abstract class Collidable {
 
 	protected Field field;
 
-	public void collideWith(SnakeUnit snakeUnit) {
-	}
+	public abstract void collideWith(SnakeUnit snakeUnit);
 
 	/* Ezt leirtam az uml diagramban is, de ide is leirom
 	 * Alapertelmezetten a collideWithSaw fv. ugyanaz mint a collideWith, csak a SnakeUnitnal kell mas

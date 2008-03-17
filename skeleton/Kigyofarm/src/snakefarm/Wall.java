@@ -4,27 +4,26 @@ public class Wall extends Collidable {
 
 	private static int lastid = 0;
 	private int id = lastid;
-	private SkeletonInterface si;
 	private static final String type = "Wall";
 
-	public Wall(SkeletonInterface si) {
-		this.si = si;
+	public Wall(Field field) {
 		lastid++;
-		si.enterMethod(type, id, "Wall()");
-		si.exitMethod(type, id, "Wall()");
+		Skeleton.enterMethod(type, id, "Wall()");
+		this.field = field;
+		field.setObject(this);
+		Skeleton.exitMethod(type, id, "Wall()");
 	}
 
-	@Override
 	public void collideWith(SnakeUnit snakeUnit) {
-		si.enterMethod(type, id, "collideWith(SnakeUnit)");
+		Skeleton.enterMethod(type, id, "collideWith(SnakeUnit)");
 		snakeUnit.collideWith2(this);
-		si.exitMethod(type, id, "collideWith(SnakeUnit)");
+		Skeleton.exitMethod(type, id, "collideWith(SnakeUnit)");
 	}
 
 	@Override
 	public void collideWithSaw(SnakeUnit snakeUnit) {
-		si.enterMethod(type, id, "collideWith(SnakeUnit)");
+		Skeleton.enterMethod(type, id, "collideWith(SnakeUnit)");
 		snakeUnit.collideWith2(this);
-		si.exitMethod(type, id, "collideWith(SnakeUnit)");
+		Skeleton.exitMethod(type, id, "collideWith(SnakeUnit)");
 	}
 }
