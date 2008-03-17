@@ -1,8 +1,3 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
-
 package snakefarm;
 
 /**
@@ -10,9 +5,10 @@ package snakefarm;
  * @author Gergo
  */
 public class SkeletonMain {
+
 	public static void main(String args[]) {
-		UserInterface ui=new UserInterface();
-		Game game=new Game(ui);
+		SkeletonInterface si = new SkeletonInterface();
+		Game game = new Game(si);
 		game.newPlayer();
 		game.step();
 	}
