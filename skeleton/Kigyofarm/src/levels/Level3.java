@@ -4,10 +4,6 @@ import java.util.List;
 import java.util.LinkedList;
 import snakefarm.*;
 
-/**
- *
- * @author Gergo
- */
 public class Level3 extends LevelBase {
 
 	Game game;

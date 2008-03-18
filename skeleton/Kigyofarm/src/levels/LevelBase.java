@@ -3,10 +3,6 @@ package levels;
 import java.util.List;
 import snakefarm.*;
 
-/**
- *
- * @author Gergo
- */
 public abstract class LevelBase {
 
 	public abstract List<Field> createGameField(GameField gameField);
