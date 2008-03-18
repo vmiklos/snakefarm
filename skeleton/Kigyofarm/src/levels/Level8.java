@@ -4,6 +4,13 @@ import java.util.List;
 import java.util.LinkedList;
 import snakefarm.*;
 
+/**
+ * A nyolcadik pálya is két mezõbõl áll, az egyiken egy kígyó található,
+ * a másikon pedig semmi. Az idõ lép, a kígyó pedig az üres mezõre lép.
+ * <p>
+ * Ez a pálya a "Kígyó szabadon lép" funkció tesztelésére szolgál, a
+ * kígyó nem hal meg és a hossza sem változik.
+ */
 public class Level8 extends LevelBase {
 
 	Game game;
