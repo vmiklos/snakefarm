@@ -4,6 +4,14 @@ import java.util.List;
 import java.util.LinkedList;
 import snakefarm.*;
 
+/**
+ * Az ötödik pálya hasonló a harmadik pályához, de a másik kígyó meg a
+ * két kígyó ütközése elõtt eszik egy kõbogyót.
+ * <p>
+ * Ez a pálya a "Kõbogyót evett kígyó ütközése fûrészbogyót evett
+ * kígyóval" funkció tesztelésére szolgál, az elsõ kígyónak meg kell
+ * halnia.
+ */
 public class Level5 extends LevelBase {
 
 	Game game;
