@@ -51,6 +51,8 @@ public class Snake {
 	 */
 	public void removeSnakeUnit(SnakeUnit unit) {
 		Skeleton.enterMethod(type, id, "removeSnakeUnit(SnakeUnit)");
+		/* TODO: itt sztem fixelni kene meg az szomszedoes
+		 * elemek referenciait (vmiklos). */
 		units.remove(unit);
 		Skeleton.exitMethod(type, id, "removeSnakeUnit(SnakeUnit)");
 	}
