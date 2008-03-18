@@ -5,13 +5,13 @@ import java.util.LinkedList;
 import snakefarm.*;
 
 /**
- * A hatodik pálya két mezõbõl áll, az egyiken egy fûrészbogyó
- * található, a másikon pedig egy kígyó. Ahogy az idõ lép, a kígyó a
- * fûrészbogyót tartalmazó mezõre lép.
+ * A hatodik palya ket mezobol all, az egyiken egy fureszbogyo
+ * talalhato, a masikon pedig egy kigyo. Ahogy az ido lep, a kigyo a
+ * fureszbogyot tartalmazo mezore lep.
  * <p>
- * Ez a pálya a "Kígyó ütközése fûrészbogyóval" funkció tesztelésére
- * szolgál, a fûrészbogyónak meg kell semmisülnie, a kígyó hosszának
- * pedig nem szabad megváltoznia.
+ * Ez a palya a "Kigyo utkozese fureszbogyoval" funkcio tesztelesere
+ * szolgal, a fureszbogyonak meg kell semmisulnie, a kigyo hosszanak
+ * pedig nem szabad megvaltoznia.
  */
 public class Level6 extends LevelBase {
 

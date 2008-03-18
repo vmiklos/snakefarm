@@ -5,11 +5,11 @@ import java.util.LinkedList;
 import snakefarm.*;
 
 /**
- * Az ötödik pálya hasonló a harmadik pályához, de a másik kígyó meg a
- * két kígyó ütközése elõtt eszik egy kõbogyót.
+ * Az otodik palya hasonlo a harmadik palyahoz, de a masik kigyo meg a
+ * ket kigyo utkozese elott eszik egy kobogyot.
  * <p>
- * Ez a pálya a "Kõbogyót evett kígyó ütközése fûrészbogyót evett
- * kígyóval" funkció tesztelésére szolgál, az elsõ kígyónak meg kell
+ * Ez a palya a "Kobogyot evett kigyo utkozese fureszbogyot evett
+ * kigyoval" funkcio tesztelesere szolgal, az elso kigyonak meg kell
  * halnia.
  */
 public class Level5 extends LevelBase {

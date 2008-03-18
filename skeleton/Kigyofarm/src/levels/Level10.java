@@ -5,12 +5,12 @@ import java.util.LinkedList;
 import snakefarm.*;
 
 /**
- * A tizedik pálya hasonló a kilencedikhez, de mindkét kígyó eszik egy
- * fûrészbogyót.
+ * A tizedik palya hasonlo a kilencedikhez, de mindket kigyo eszik egy
+ * fureszbogyot.
  * <p>
- * Ez a pálya a "Fûrészbogyót evett kígyó ütközése fûrészbogyót evett
- * kígyó fejével" funkció tesztelésére szolgál, és az egyik az egyik
- * kígyónak meg kell halnia.
+ * Ez a palya a "Fureszbogyot evett kigyo utkozese fureszbogyot evett
+ * kigyo fejevel" funkcio tesztelesere szolgal, es az egyik az egyik
+ * kigyonak meg kell halnia.
  */
 public class Level10 extends LevelBase {
 

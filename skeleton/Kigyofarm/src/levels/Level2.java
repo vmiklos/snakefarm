@@ -5,13 +5,13 @@ import java.util.LinkedList;
 import snakefarm.*;
 
 /**
- * A második pálya szintén két mezõbõl áll: az egyiken egy mezei bogyó
- * van, a másikon pedig egy egy hosszúságú kígyó feje. A kígyó iránya a
- * másik mezõ felé mutat.
+ * A masodik palya szinten ket mezobol all: az egyiken egy mezei bogyo
+ * van, a masikon pedig egy egy hosszusagu kigyo feje. A kigyo iranya a
+ * masik mezo fele mutat.
  * <p>
- * Ez a pálya a "Kígyó ütközése mezei bogyóval" funkció tesztelésére
- * szolgál, a mezei bogyónak meg kell semmisülnie, a kígyó hosszának
- * pedig eggyel növekednie kell.
+ * Ez a palya a "Kigyo utkozese mezei bogyoval" funkcio tesztelesere
+ * szolgal, a mezei bogyonak meg kell semmisulnie, a kigyo hosszanak
+ * pedig eggyel novekednie kell.
  */
 public class Level2 extends LevelBase {
 

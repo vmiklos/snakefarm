@@ -5,12 +5,12 @@ import java.util.LinkedList;
 import snakefarm.*;
 
 /**
- * Az elsõ pálya 3 mezõbõl áll: az egyiken egy fal található, a másik
- * kettõn pedig egy két hosszúságú kígyó. A kígyó iránya a másik mezõ
- * felé mutat.
+ * Az elso palya 3 mezobol all: az egyiken egy fal talalhato, a masik
+ * ketton pedig egy ket hosszusagu kigyo. A kigyo iranya a masik mezo
+ * fele mutat.
  * <p>
- * Ez a pálya a "Kígyó ütközése fallal" funkció tesztelésére szolgál, a
- * kígyónak (és mindkét elemének) meg kell semmisülnie.
+ * Ez a palya a "Kigyo utkozese fallal" funkcio tesztelesere szolgal, a
+ * kigyonak (es mindket elemenek) meg kell semmisulnie.
  */
 public class Level1 extends LevelBase {
 

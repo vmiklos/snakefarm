@@ -5,13 +5,13 @@ import java.util.LinkedList;
 import snakefarm.*;
 
 /**
- * A hetedik pálya is két mezõbõl áll, az egyiken egy kõbogyó található,
- * a másikon pedig egy kígyó. Ahogy az idõ lép, a kígyó a kõbogyót
- * tartalmazó mezõre lép.
+ * A hetedik palya is ket mezobol all, az egyiken egy kobogyo talalhato,
+ * a masikon pedig egy kigyo. Ahogy az ido lep, a kigyo a kobogyot
+ * tartalmazo mezore lep.
  * <p>
- * Ez a pálya a "Kígyó ütközése kõbogyóval" funkció tesztelésére
- * szolgál, a kõbogyónak meg kell semmisülnie, a kígyó hosszának pedig
- * nem szabad megváltoznia.
+ * Ez a palya a "Kigyo utkozese kobogyoval" funkcio tesztelesere
+ * szolgal, a kobogyonak meg kell semmisulnie, a kigyo hosszanak pedig
+ * nem szabad megvaltoznia.
  */
 public class Level7 extends LevelBase {
 

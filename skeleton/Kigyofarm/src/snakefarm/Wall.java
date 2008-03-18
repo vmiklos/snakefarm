@@ -3,7 +3,7 @@ package snakefarm;
 /**
  * Fal objektum.
  * <p>
- * Ez veszi körül a pályát. Ha belemegy a kígyó, meghal.
+ * Ez veszi korul a palyat. Ha belemegy a kigyo, meghal.
  */
 public class Wall extends Collidable {
 

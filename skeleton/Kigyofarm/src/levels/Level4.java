@@ -5,11 +5,11 @@ import java.util.LinkedList;
 import snakefarm.*;
 
 /**
- * A negyedik pálya is két kígyót tartalmaz, összesen három mezõvel. A
- * középsõ mezõ üres, majd miután az idõ egyet lép, a kígyók ütköznek.
+ * A negyedik palya is ket kigyot tartalmaz, osszesen harom mezovel. A
+ * kozepso mezo ures, majd miutan az ido egyet lep, a kigyok utkoznek.
  * <p>
- * Ez a pálya a "Kígyó ütközik kígyóval" funkció tesztelésére szolgál,
- * az egyik kígyónak meg kell halnia.
+ * Ez a palya a "Kigyo utkozik kigyoval" funkcio tesztelesere szolgal,
+ * az egyik kigyonak meg kell halnia.
  */
 public class Level4 extends LevelBase {
 
