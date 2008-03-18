@@ -4,6 +4,14 @@ import java.util.List;
 import java.util.LinkedList;
 import snakefarm.*;
 
+/**
+ * A kilencedik pálya négy mezõbõl áll. Az idõ elteltével az egyik kígyó
+ * eszik egy fûrészbogyót majd a másik kígyó fejének ütközik.
+ * <p>
+ * Ez a pálya a "Fûrészbogyót evett kígyó ütközik normál kígyó fejével"
+ * funkció tesztelésére szolgál, mivel a fejével ütközött ezért itt
+ * kivételesen mégis meg kell halni a másik kígyónak.
+ */
 public class Level9 extends LevelBase {
 
 	Game game;
