@@ -3,6 +3,9 @@ package levels;
 import java.util.List;
 import snakefarm.*;
 
+/**
+ * Palyak ososztalya, minden kesobbi palya ebbol szarmazik.
+ */
 public abstract class LevelBase {
 
 	public abstract List<Field> createGameField(GameField gameField);
