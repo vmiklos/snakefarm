@@ -21,7 +21,7 @@ public class SnakeUnit extends Collidable {
 	 * A kigyoelem konstruktora.
 	 *
 	 * @param snake melyik kigyo eleme lesz
-	 * @param filed melyik mezon lesz
+	 * @param field melyik mezon lesz
 	 */
 	public SnakeUnit(Snake snake, Field field) {
 		lastid++;

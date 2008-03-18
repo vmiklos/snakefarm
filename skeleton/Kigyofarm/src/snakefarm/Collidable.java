@@ -15,7 +15,7 @@ public abstract class Collidable {
 	 * Utkozik a SnakeUnit kigyo egyseggel es visszater az utkozes
 	 * utan maradt vilagobjektummal.
 	 *
-	 * @param utkozo kigyoelem
+	 * @param snakeUnit utkozo kigyoelem
 	 */
 	public abstract void collideWith(SnakeUnit snakeUnit);
 

@@ -163,7 +163,7 @@ public class Skeleton {
 	/**
 	 * Beker egy igaz/hamis erteket.
 	 *
-	 * @param a kerdes szovege
+	 * @param question a kerdes szovege
 	 * @return a kapott logikai ertek
 	 */
 	public static boolean askForBool(String question) {
