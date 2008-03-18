@@ -3,6 +3,11 @@ package snakefarm;
 import java.util.List;
 import java.util.LinkedList;
 
+/**
+ * Jatekter osztaly, amely a mezoket tartalmazza. Jatek inditaskor
+ * felepiti a jatekteret (letrehozza a mezoket es beallitja a
+ * szomszedokat).
+ */
 public class GameField {
 
 	private static int lastid = 0;
@@ -11,6 +16,11 @@ public class GameField {
 	private Game game;
 	private List<Field> fields;
 
+	/**
+	 * A jatekter konstruktora.
+	 *
+	 * @param game A jatek amelyben a jatekter letrejon.
+	 */
 	public GameField(Game game) {
 		lastid++;
 		Skeleton.enterMethod(type, id, "GameField(Game)");
@@ -19,6 +29,11 @@ public class GameField {
 		Skeleton.exitMethod(type, id, "GameField(Game)");
 	}
 
+	/**
+	 * Visszaad veletlenszeruen egy mezot a jatekterbol.
+	 * 
+	 * @return a veletlenszeru mezo
+	 */
 	public Field GetRandomFreeField() {
 		Skeleton.enterMethod(type, id, "GetRandomFreeField()");
 		LinkedList<Field> freeFields = new LinkedList<Field>();
