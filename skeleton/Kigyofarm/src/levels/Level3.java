@@ -4,6 +4,14 @@ import java.util.List;
 import java.util.LinkedList;
 import snakefarm.*;
 
+/**
+ * A harmadik pálya már két kígyót tartalmaz, úgy, hogy az elsõ kígyó
+ * elõtt éppen egy fûrészbogyó legyen, valamint a fûrészbogyó
+ * elfogyasztása után pont ütközzön a másik kígyó farkával.
+ * <p>
+ * Ez a pálya a "Fûrészbogyót evett kígyó ütközése kígyóval" funkció
+ * tesztelésére szolgál, a másik kígyó hosszának csökkennie kell.
+ */
 public class Level3 extends LevelBase {
 
 	Game game;
