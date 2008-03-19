@@ -42,8 +42,12 @@ public class Level1 extends LevelBase {
 
 	public List<SnakeUnit> createSnake(Snake snake, int id) {
 		List<SnakeUnit> units = new LinkedList<SnakeUnit>();
-		units.add(new SnakeUnit(snake, f2));
-		units.add(new SnakeUnit(snake, f1));
+		SnakeUnit s0 = new SnakeUnit(snake, f2);
+		SnakeUnit s1 = new SnakeUnit(snake, f1);
+		s0.setNextUnit(s1);
+		s1.setPrevUnit(s0);
+		units.add(s0);
+		units.add(s1);
 		return units;
 	}
 

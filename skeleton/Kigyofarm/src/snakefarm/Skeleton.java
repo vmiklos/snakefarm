@@ -37,6 +37,17 @@ public class Skeleton {
 	 * majd elmenti a kapott erteket.
 	 */
 	private static void mainMenu() {
+		System.out.println("0 - Exit");
+		System.out.println("1 - Kigyo utkozese fallal");
+		System.out.println("2 - Kigyo utkozese mezei bogyoval");
+		System.out.println("3 - Fureszbogyot evett kigyo utkozese kigyoval");
+		System.out.println("4 - Kigyo utkozik kigyoval");
+		System.out.println("5 - Kobogyot evett kigyo utkozese fureszbogyot evett kigyoval");
+		System.out.println("6 - Kigyo utkozese fureszbogyoval");
+		System.out.println("7 - Kigyo utkozese kobogyoval");
+		System.out.println("8 - Kigyo szabadon lep");
+		System.out.println("9 - Fureszbogyot evett kigyo utkozik normal kigyo fejevel");
+		System.out.println("10 - Fureszbogyot evett kigyo utkozese fureszbogyot evett kigyo fejevel");
 		int i = askForInt("Which level to run (0 to exit)? ", 0, 10);
 		switch (i) {
 			case 1:
