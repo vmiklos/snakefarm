@@ -30,16 +30,14 @@ public class Player {
 	}
 
 	/**
-	 * Megmondja, hogy egy mezorol, hogy a rajta levo kigyo a
-	 * jatekoshoz tartozik.
+	 * Letrehoz egy uj kigyot, es a jatekoshoz, valamint a megadott
+	 * mezohoz rendeli.
 	 *
-	 * @param field a mezo
+	 * @param container mezo, ahonnan indul majd a kigyo
 	 */
-	public void addSnake(Field field) {
-		/* FIXME: ez baromsag, ha egyszer mezot adunk meg akkor
-		 * miert addSnake.. */
+	public void addSnake(Field container) {
 		Skeleton.enterMethod(type, id, "addSnake(Field)");
-		snakes.add(new Snake(this, field));
+		snakes.add(new Snake(this, container));
 		Skeleton.exitMethod(type, id, "addSnake(Field)");
 	}
 
