@@ -24,9 +24,7 @@ public class Player {
 	 */
 	public Player(Game game) {
 		lastid++;
-		Skeleton.enterMethod(type, id, "Player(Game)");
 		this.game = game;
-		Skeleton.exitMethod(type, id, "Player(Game)");
 	}
 
 	/**
@@ -36,9 +34,7 @@ public class Player {
 	 * @param container mezo, ahonnan indul majd a kigyo
 	 */
 	public void addSnake(Field container) {
-		Skeleton.enterMethod(type, id, "addSnake(Field)");
 		snakes.add(new Snake(this, container));
-		Skeleton.exitMethod(type, id, "addSnake(Field)");
 	}
 
 	/**
@@ -48,21 +44,17 @@ public class Player {
 	 * lepteti.
 	 */
 	public void step() {
-		Skeleton.enterMethod(type, id, "step()");
 		temp.addAll(snakes);
 		for (Iterator i = temp.iterator(); i.hasNext();) {
 			((Snake) i.next()).step();
 		}
 		temp.clear();
-		Skeleton.exitMethod(type, id, "step()");
 	}
 
 	/**
 	 * Eltavolit egy kigyot a jatekostol.
 	 */
 	public void removeSnake(Snake snake) {
-		Skeleton.enterMethod(type, id, "removeSnake(Snake)");
 		snakes.remove(snake);
-		Skeleton.exitMethod(type, id, "removeSnake(Snake)");
 	}
 }

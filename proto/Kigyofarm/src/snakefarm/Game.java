@@ -22,30 +22,24 @@ public class Game {
 	 */
 	public Game() {
 		lastid++;
-		Skeleton.enterMethod(type, id, "Game()");
 		gameField = new GameField(this);
-		Skeleton.exitMethod(type, id, "Game()");
 	}
 
 	/**
 	 * Letrehoz egy uj jatekost a jatekban.
 	 */
 	public void newPlayer() {
-		Skeleton.enterMethod(type, id, "newPlayer()");
 		Player player = new Player(this);
 		players.add(player);
 		player.addSnake(gameField.GetRandomFreeField());
-		Skeleton.exitMethod(type, id, "newPlayer()");
 	}
 
 	/**
 	 * Leptet egyet minden jatekoson.
 	 */
 	public void step() {
-		Skeleton.enterMethod(type, id, "step()");
 		for (java.util.Iterator i = players.iterator(); i.hasNext();) {
 			((Player) (i.next())).step();
 		}
-		Skeleton.exitMethod(type, id, "step()");
 	}
 }

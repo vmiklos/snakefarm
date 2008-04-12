@@ -10,7 +10,6 @@ public class Snake {
 
 	private static int lastid = 0;
 	private int id = lastid;
-	private static final String type = "Snake";
 	private static final int sawCounterMax = 20;
 	private Player player;
 	private Direction direction;
@@ -26,11 +25,8 @@ public class Snake {
 	 */
 	public Snake(Player player, Field field) {
 		lastid++;
-		Skeleton.enterMethod(type, id, "Snake(Player, Field)");
 		this.player = player;
-		units = Skeleton.getCurrentLevel().createSnake(this, id);
-		direction = Skeleton.getCurrentLevel().setDirection(this);
-		Skeleton.exitMethod(type, id, "Snake(Player, Field)");
+		// TODO: unites es direction inicializalasa
 	}
 
 	/**
@@ -39,9 +35,7 @@ public class Snake {
 	 * @param tail az uj farok, amely a regi farok utan lesz fuzve
 	 */
 	public void addSnakeUnit(SnakeUnit tail) {
-		Skeleton.enterMethod(type, id, "addSnakeUnit(SnakeUnit)");
 		units.add(tail);
-		Skeleton.exitMethod(type, id, "addSnakeUnit(SnakeUnit)");
 	}
 
 	/**
@@ -50,11 +44,9 @@ public class Snake {
 	 * @param unit melyik elem legyen torolve
 	 */
 	public void removeSnakeUnit(SnakeUnit unit) {
-		Skeleton.enterMethod(type, id, "removeSnakeUnit(SnakeUnit)");
 		/* TODO: itt sztem fixelni kene meg az szomszedoes
 		 * elemek referenciait (vmiklos). */
 		units.remove(unit);
-		Skeleton.exitMethod(type, id, "removeSnakeUnit(SnakeUnit)");
 	}
 
 	/**
@@ -63,8 +55,6 @@ public class Snake {
 	 * @return a jatekos
 	 */
 	public Player getPlayer() {
-		Skeleton.enterMethod(type, id, "getPlayer()");
-		Skeleton.exitMethod(type, id, "getPlayer()");
 		return player;
 	}
 
@@ -73,27 +63,21 @@ public class Snake {
 	 * lepesik van furesz modban a kigyo.
 	 */
 	public void setSawCounter() {
-		Skeleton.enterMethod(type, id, "setSawCounter()");
 		sawCounter = sawCounterMax;
-		Skeleton.exitMethod(type, id, "setSawCounter()");
 	}
 
 	/**
 	 * Balra forditja a kigyot.
 	 */
 	public void turnLeft() {
-		Skeleton.enterMethod(type, id, "turnLeft()");
 		direction.turnLeft();
-		Skeleton.exitMethod(type, id, "turnLeft()");
 	}
 
 	/**
 	 * Jobbra forditja a kigyot.
 	 */
 	public void turnRight() {
-		Skeleton.enterMethod(type, id, "turnRight()");
 		direction.turnRight();
-		Skeleton.exitMethod(type, id, "turnRight()");
 	}
 
 	/**
@@ -102,8 +86,6 @@ public class Snake {
 	 * @return logikai ertek a kerdes megvalaszolasara
 	 */
 	public boolean isSaw() {
-		Skeleton.enterMethod(type, id, "isSaw()");
-		Skeleton.exitMethod(type, id, "isSaw()");
 		return (sawCounter > 0);
 	}
 
@@ -111,15 +93,7 @@ public class Snake {
 	 * Leptet egyet a kigyon.
 	 */
 	public void step() {
-		Skeleton.enterMethod(type, id, "step()");
 		if (isAlive) {
-			int control = Skeleton.askForControl();
-			if (control == 1) {
-				turnLeft();
-			}
-			if (control == -1) {
-				turnRight();
-			}
 			if (sawCounter > 0) {
 				sawCounter--;
 			}
@@ -127,14 +101,12 @@ public class Snake {
 			Field next = head.getNextField(direction);
 			head.step(next, false, false);
 		}
-		Skeleton.exitMethod(type, id, "step()");
 	}
 
 	/**
 	 * Megoli a kigyot.
 	 */
 	public void die() {
-		Skeleton.enterMethod(type, id, "die()");
 		if (isAlive) {
 			isAlive = false;
 			/*for (Iterator i = units.iterator(); i.hasNext();) {
@@ -142,6 +114,5 @@ public class Snake {
 			}*/
 			player.removeSnake(this);
 		}
-		Skeleton.exitMethod(type, id, "die()");
 	}
 }

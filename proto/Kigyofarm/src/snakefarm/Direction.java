@@ -7,7 +7,6 @@ public class Direction {
 
 	private static int lastid = 0;
 	private int id = lastid;
-	private static final String type = "Direction";
 	/**
 	 * Megadja, hogy maximum hany iranyban allhat a kigyo.
 	 */
@@ -24,9 +23,7 @@ public class Direction {
 	 */
 	public Direction(int dir) {
 		lastid++;
-		Skeleton.enterMethod(type, id, "Direction(int)");
 		this.dir = dir;
-		Skeleton.exitMethod(type, id, "Direction(int)");
 	}
 
 	/**
@@ -34,9 +31,7 @@ public class Direction {
 	 */
 	public Direction() {
 		lastid++;
-		Skeleton.enterMethod(type, id, "Direction()");
 		this.dir = (int) (Math.random() * (double) numberOfDirections);
-		Skeleton.exitMethod(type, id, "Direction()");
 	}
 
 	/**
@@ -71,26 +66,20 @@ public class Direction {
 	 * Balra forditja az iranyt.
 	 */
 	public void turnLeft() {
-		Skeleton.enterMethod(type, id, "turnLeft()");
 		dir = (dir + 1) % numberOfDirections;
-		Skeleton.exitMethod(type, id, "turnLeft()");
 	}
 
 	/**
 	 * Jobbra forditja az iranyt.
 	 */
 	public void turnRight() {
-		Skeleton.enterMethod(type, id, "turnRight()");
 		dir = (dir + numberOfDirections - 1) % numberOfDirections;
-		Skeleton.exitMethod(type, id, "turnRight()");
 	}
 
 	/**
 	 * Az ellenkezojere forditja az iranyt.
 	 */
 	public Direction reverse() {
-		Skeleton.enterMethod(type, id, "reverse()");
-		Skeleton.exitMethod(type, id, "reverse()");
 		return new Direction((dir + (numberOfDirections / 2)) % numberOfDirections);
 	}
 }
