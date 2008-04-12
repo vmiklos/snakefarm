@@ -1,0 +1,42 @@
+Event MapLoad test3.map
+Snake 1
+Prop 0 1 1
+1 25 0
+2 24 0
+3 23 0
+endsnake
+Event Step 1
+End Step
+Snake 1
+Prop 0 1 1
+1 26 0
+2 25 0
+3 24 0
+endsnake
+Event Step 1
+StepEvent TurnLeft
+End Step
+Snake 1
+Prop 0 1 1
+1 19 0
+2 26 0
+3 25 0
+endsnake
+Event Step 1
+End Step
+Snake 1
+Prop 0 1 1
+1 12 0
+2 19 0
+3 26 0
+endsnake
+Event Step 1
+StepEvent TurnRight
+End Step
+Snake 1
+Prop 0 1 1
+1 13 0
+2 12 0
+3 19 0
+endsnake
+Event Exit

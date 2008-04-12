@@ -1,0 +1,8 @@
+Event MapLoad test1.map
+# itt a bemeneti fájlhoz hasonló, vele azonos helyzetet elõállító parancsoknak kell szerepelnie, és létre kell jönnie egy test1_output.map-nek, test1.map-pal azonos térképet generáló tartalommal
+load test1_output.map
+addplayer 1
+addsnake 1 1 0 1 1 0
+2 2
+endsnake
+Event Exit

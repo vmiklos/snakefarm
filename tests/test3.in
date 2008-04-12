@@ -1,0 +1,22 @@
+debug 1
+out 1
+time 100
+load test3.map
+addplayer 1
+addsnake 1 1 0 1 1 0
+25 0
+24 0
+23 0
+endsnake
+showsnake 1
+step
+showsnake 1
+turnleft 1
+step
+showsnake 1
+step
+showsnake 1
+turnright 1
+step
+showsnake 1
+exit

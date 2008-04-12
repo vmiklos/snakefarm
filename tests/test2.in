@@ -1,0 +1,15 @@
+debug 1
+out 1
+time 100
+load test2.map
+addplayer 1
+addsnake 1 1 0 1 1 0
+6 0
+endsnake
+addplayer 2
+addsnake 2 2 0 1 1 0
+11 0
+endsnake
+comment # a proto implementációjától függõen a nem falnak ütközõ kígyó lehet, hogy lép a játék vége elõtt, és lehet, hogy nem lép
+step
+exit

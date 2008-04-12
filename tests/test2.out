@@ -1,0 +1,8 @@
+Event MapLoad test2.map
+# a proto implementációjától függõen a nem falnak ütközõ kígyó lehet, hogy lép a játék vége elõtt, és lehet, hogy nem lép
+Event Step 1
+StepEvent Snake_Wall
+StepEvent SnakeDie
+End Step
+Event Win 2
+Event Exit
