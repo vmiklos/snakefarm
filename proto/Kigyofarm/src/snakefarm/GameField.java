@@ -60,6 +60,39 @@ public class GameField {
 		return null;
 	}
 
+	public void saveMap(String fileName) throws Exception {
+		File file = new File(fileName);
+		FileOutputStream fos = new FileOutputStream(file);
+		DataOutputStream dos = new DataOutputStream(fos);
+		//dos.writeBytes("foo");
+		Iterator i = fields.listIterator();
+		while (true)
+		{
+			Field field = (Field) i.next();
+			boolean last;
+			if(i.hasNext())
+				last = false;
+			else
+				last = true;
+			Field up = field.getNext(new Direction(1));
+			int upid = 0;
+			if(up != null)
+				upid = up.id;
+			Field left = field.getNext(new Direction(2));
+			int leftid = 0;
+			if(left != null)
+				leftid = left.id;
+			dos.writeBytes(field.id + ";" +
+					field.getObjectString()+ ";" +
+					upid+ ";" +
+					leftid);
+			if(last)
+				break;
+			else
+				dos.writeBytes("\r\n");
+		}
+	}
+
 	public void loadMap(String fileName) throws Exception {
 		Direction up = new Direction(1);
 		Direction left = new Direction(2);

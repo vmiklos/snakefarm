@@ -88,6 +88,22 @@ public class Field {
 		}
 	}
 
+	public String getObjectString()
+	{
+		if(objectOnField == null)
+			return "0";
+		String type = objectOnField.getClass().getName();
+		if(type.equals("snakefarm.Wall"))
+			return "W";
+		else if(type.equals("snakefarm.FieldBerry"))
+			return "F";
+		else if(type.equals("snakefarm.StoneBerry"))
+			return "T";
+		else if(type.equals("snakefarm.SawBerry"))
+			return "A";
+		return null;
+	}
+
 	/**
 	 * Megmondja, hogy a mezo ures-e.
 	 *

@@ -114,6 +114,14 @@ public class Proto {
 		}
 	}
 
+	private class Snapshot implements CommandParser {
+		public void parseCommand(String[] args) throws Exception {
+			if(args.length != 1)
+				throw new Exception("Proto.Snapshot.parseCommand: too few parameters");
+			game.gameField.saveMap(args[0]);
+		}
+	}
+
 	public Proto(String fileName) throws Exception {
 		game = new Game();
 		Parser parser = new Parser();
@@ -126,6 +134,7 @@ public class Proto {
 		parser.addCommand("addsnakeunit", new AddSnakeUnit());
 		parser.addCommand("endsnake", new EndSnake());
 		parser.addCommand("comment", new Comment());
+		parser.addCommand("snapshot", new Snapshot());
 		parser.parse(fileName);
 	}
 
