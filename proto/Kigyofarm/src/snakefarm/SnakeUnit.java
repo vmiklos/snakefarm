@@ -150,7 +150,6 @@ public class SnakeUnit extends Collidable {
 	 * @param isToGrow kell-e majd a faroknal novekedni
 	 */
 	public void step(Field nextField, boolean isToGrow) {
-		System.out.println("debug: SnakeUnit leptetese: " + id);
 		boolean rejectStone = false, nextRejectsStone;
 		Field prevField = field;
 
@@ -185,7 +184,6 @@ public class SnakeUnit extends Collidable {
 		if (isAlive) {
 			// ha nincs kovetkezo
 			if (nextUnit == null) {
-				System.out.println("utolso elem: " + id);
 				// megnezzuk, kell-e novekedni
 				if (isToGrow || eatenFieldBerry) {
 					SnakeUnit newTail = new SnakeUnit(snake, prevField);

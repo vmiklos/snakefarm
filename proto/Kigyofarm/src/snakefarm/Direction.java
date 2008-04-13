@@ -15,6 +15,7 @@ public class Direction {
 	 * Az iranyt tarolja: 0 - jobb, 1 - fel, 2 - balra, 3 - le.
 	 */
 	private int dir;
+	private boolean turnedLeft = false;
 
 	/**
 	 * Beallitja az iranyt.
@@ -49,6 +50,11 @@ public class Direction {
 	 */
 	@Override
 	public boolean equals(Object obj) {
+		if(turnedLeft)
+		{
+			Proto.out.println("StepEvent TurnLeft");
+			turnedLeft = false;
+		}
 		if (obj == null) {
 			return false;
 		}
@@ -66,6 +72,7 @@ public class Direction {
 	 * Balra forditja az iranyt.
 	 */
 	public void turnLeft() {
+		turnedLeft = true;
 		dir = (dir + 1) % numberOfDirections;
 	}
 

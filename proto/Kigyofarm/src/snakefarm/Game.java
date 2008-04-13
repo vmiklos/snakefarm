@@ -86,4 +86,13 @@ public class Game {
 			}
 		}
 	}
+	public void turnLeft(int snakeId) {
+		if (players != null)
+		{
+			for (Iterator i = players.listIterator(); i.hasNext();) {
+				Player player = (Player) i.next();
+				player.turnLeft(snakeId);
+			}
+		}
+	}
 }

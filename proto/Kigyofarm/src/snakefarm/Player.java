@@ -100,4 +100,15 @@ public class Player {
 		if(!Proto.debug)
 			Proto.out.println("Event Win " + id);
 	}
+	public void turnLeft(int snakeId) {
+		if (snakes != null)
+		{
+			for (Iterator i = snakes.listIterator(); i.hasNext();) {
+				Snake snake = (Snake) i.next();
+				if (snake.id == id) {
+					snake.turnLeft();
+				}
+			}
+		}
+	}
 }

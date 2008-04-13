@@ -150,6 +150,14 @@ public class Proto {
 		}
 	}
 
+	private class TurnLeft implements CommandParser {
+		public void parseCommand(String[] args) throws Exception {
+			if(args.length != 1)
+				throw new Exception("Proto.TurnLeft.parseCommand: too few parameters");
+			game.turnLeft(Integer.parseInt(args[0]));
+		}
+	}
+
 	public Proto(String fileName) throws Exception {
 		game = new Game();
 		Parser parser = new Parser();
@@ -166,6 +174,7 @@ public class Proto {
 		parser.addCommand("exit", new Exit());
 		parser.addCommand("step", new Step());
 		parser.addCommand("showsnake", new ShowSnake());
+		parser.addCommand("turnleft", new TurnLeft());
 		parser.parse(fileName);
 	}
 
