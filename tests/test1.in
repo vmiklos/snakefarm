@@ -4,7 +4,7 @@ time 100
 load test1.map
 addplayer 1
 addsnake 1 1 0 1 1 0
-2 2
+2 1
 endsnake
 comment # itt a bemeneti fájlhoz hasonló, vele azonos helyzetet elõállító parancsoknak kell szerepelnie, és létre kell jönnie egy test1_output.map-nek, test1.map-pal azonos térképet generáló tartalommal
 snapshot test1_output.map
