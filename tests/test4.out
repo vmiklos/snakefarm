@@ -1,0 +1,9 @@
+Event MapLoad test4.map
+Event Step 1
+End Step
+Event Step 2
+End Step
+# itt elvileg veget ert szabalyosan az elso palya, betoltjuk a masodikat (a testcase 1 palyajat)
+Event MapLoad test1.map
+# itt az elozo palyan mar hasznalt playerid es snakeid kerul kiosztasra, ennek nem szabad hibat okoznia
+Event Exit

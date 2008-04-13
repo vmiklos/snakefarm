@@ -1,0 +1,18 @@
+debug 1
+out 1
+time 100
+load test5.map
+addplayer 1
+addsnake 1 1 0 1 1 0
+16 0
+15 0
+14 0
+endsnake
+addplayer 2
+addsnake 2 2 1 1 1 1
+9 0
+endsnake
+step
+comment # az elozo lepesben az elso kigyo 3. egysege leszakadt, a 2. megevodott, a 3.-bol uj kigyo keletkezett 3 sorszammal
+showplayer 1
+exit

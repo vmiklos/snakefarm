@@ -1,0 +1,21 @@
+debug 1
+out 1
+time 100
+load test4.map
+addplayer 1
+addsnake 1 1 0 1 1 0
+7 0
+endsnake
+addplayer 2
+addsnake 2 2 0 1 1 0
+9 0
+endsnake
+step
+comment # itt elvileg veget ert szabalyosan az elso palya, betoltjuk a masodikat (a testcase 1 palyajat)
+load test1.map
+comment # itt az elozo palyan mar hasznalt playerid es snakeid kerul kiosztasra, ennek nem szabad hibat okoznia
+addplayer 1
+addsnake 1 1 0 1 1 0
+6 0
+endsnake
+exit

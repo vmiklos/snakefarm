@@ -4,7 +4,7 @@ time 100
 load test1.map
 addplayer 1
 addsnake 1 1 0 1 1 0
-2 1
+6 1
 endsnake
 comment # itt a bemeneti fajlhoz hasonlo, vele azonos helyzetet eloallito parancsoknak kell szerepelnie, es letre kell jonnie egy test1_output.map-nek, test1.map-pal azonos terkepet generalo tartalommal
 snapshot test1_output.map

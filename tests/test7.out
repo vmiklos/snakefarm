@@ -1,0 +1,5 @@
+Event MapLoad test6.map
+Event Step 1
+StepEvent Snake_FieldBerry
+End Step
+Event Exit
