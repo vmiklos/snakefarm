@@ -28,8 +28,8 @@ public class Game {
 	/**
 	 * Letrehoz egy uj jatekost a jatekban.
 	 */
-	public void newPlayer() {
-		Player player = new Player(this);
+	public void newPlayer(int id) {
+		Player player = new Player(this, id);
 		players.add(player);
 		player.addSnake(gameField.GetRandomFreeField());
 	}

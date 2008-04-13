@@ -52,6 +52,14 @@ public class Proto {
 		}
 	}
 
+	private class AddPlayer implements CommandParser {
+		public void parseCommand(String[] args) throws Exception {
+			if(args.length != 1)
+				throw new Exception("Proto.AddPlayer.parseCommand: too few parameters");
+			game.newPlayer(Integer.parseInt(args[0]));
+		}
+	}
+
 	public Proto(String fileName) throws Exception {
 		game = new Game();
 		Parser parser = new Parser();
@@ -59,6 +67,7 @@ public class Proto {
 		parser.addCommand("out", new Out());
 		parser.addCommand("time", new Time());
 		parser.addCommand("load", new Load());
+		parser.addCommand("addplayer", new AddPlayer());
 		parser.parse(fileName);
 	}
 
