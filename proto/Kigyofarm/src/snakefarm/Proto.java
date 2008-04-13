@@ -9,7 +9,7 @@ import java.util.*;
 public class Proto {
 	private Game game;
 	public static PrintStream out = null;
-	private static boolean debug = false;
+	public static boolean debug = false;
 	private static int time = 0;
 	// ez ide azert kell mert egy addsnake utani parancsnak tudnia
 	// kell, hogy hanyas snake-hez kerulnek be uj unitok
@@ -141,6 +141,15 @@ public class Proto {
 		}
 	}
 
+	private class ShowSnake implements CommandParser {
+		public void parseCommand(String[] args) throws Exception {
+			if(args.length != 1)
+				return;
+			int num = Integer.parseInt(args[0]);
+			game.showSnake(num);
+		}
+	}
+
 	public Proto(String fileName) throws Exception {
 		game = new Game();
 		Parser parser = new Parser();
@@ -156,6 +165,7 @@ public class Proto {
 		parser.addCommand("snapshot", new Snapshot());
 		parser.addCommand("exit", new Exit());
 		parser.addCommand("step", new Step());
+		parser.addCommand("showsnake", new ShowSnake());
 		parser.parse(fileName);
 	}
 

@@ -43,6 +43,17 @@ public class Player {
 		}
 	}
 
+	public void showSnake(int id)
+	{
+		if (snakes != null)
+		{
+			for (Iterator i = snakes.listIterator(); i.hasNext();) {
+				Snake snake = (Snake) i.next();
+				if(snake.id == id)
+					snake.show();
+			}
+		}
+	}
 	public Snake getSnakeById(int id) {
 		if (snakes != null)
 		{
@@ -86,6 +97,7 @@ public class Player {
 
 	public void win()
 	{
-		Proto.out.println("Event Win " + id);
+		if(!Proto.debug)
+			Proto.out.println("Event Win " + id);
 	}
 }

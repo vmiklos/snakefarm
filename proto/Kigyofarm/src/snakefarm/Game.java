@@ -76,4 +76,14 @@ public class Game {
 		return null;
 	}
 
+	public void showSnake(int id)
+	{
+		if (players != null)
+		{
+			for (Iterator i = players.listIterator(); i.hasNext();) {
+				Player player = (Player) i.next();
+				player.showSnake(id);
+			}
+		}
+	}
 }

@@ -6,6 +6,7 @@ package snakefarm;
  */
 public class SnakeUnit extends Collidable {
 
+	public int id;
 	private Snake snake;
 	private SnakeUnit prevUnit = null;
 	private SnakeUnit nextUnit = null;
@@ -238,6 +239,16 @@ public class SnakeUnit extends Collidable {
 				snake.die();
 			}
 		}
+	}
+
+	public void show()
+	{
+		String stone;
+		if(isStone)
+			stone = "1";
+		else
+			stone = "0";
+		Proto.out.println(id + " " + field.id + " " + stone);
 	}
 
 	/**

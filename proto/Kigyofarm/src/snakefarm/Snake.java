@@ -53,6 +53,7 @@ public class Snake {
 	 */
 	public void addSnakeUnit(SnakeUnit tail) {
 		units.add(tail);
+		tail.id = units.size();
 	}
 
 	/**
@@ -144,5 +145,21 @@ public class Snake {
 			}*/
 			player.removeSnake(this);
 		}
+	}
+
+	public void show()
+	{
+		int issaw;
+		if(isSaw())
+			issaw=1;
+		else
+			issaw=0;
+		Proto.out.println("Snake " + id);
+		Proto.out.println("Prop " + issaw + " " + controlSpeed + " " + stoneSpeed);
+		for (Iterator i = units.listIterator(); i.hasNext();) {
+			SnakeUnit su = (SnakeUnit) i.next();
+			su.show();
+		}
+		Proto.out.println("endsnake");
 	}
 }
