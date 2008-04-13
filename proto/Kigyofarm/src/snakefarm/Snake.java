@@ -31,6 +31,21 @@ public class Snake {
 		units = new LinkedList<SnakeUnit>();
 	}
 
+	public void save()
+	{
+		Proto.out.println("addsnake " + player.id + " " +
+				id + " " +
+				direction.hashCode() + " " +
+				controlSpeed + " " +
+				stoneSpeed + " " +
+				sawCounter);
+		for (Iterator i = units.listIterator(); i.hasNext();) {
+			SnakeUnit su = (SnakeUnit) i.next();
+			su.save();
+		}
+		Proto.out.println("endsnake");
+	}
+
 	/**
 	 * Uj farok hozzaadasa a kigyohoz.
 	 *

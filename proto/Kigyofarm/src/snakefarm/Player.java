@@ -35,6 +35,14 @@ public class Player {
 		snakes.add(new Snake(this, id));
 	}
 
+	public void saveSnakes()
+	{
+		for (Iterator i = snakes.listIterator(); i.hasNext();) {
+			Snake snake = (Snake) i.next();
+			snake.save();
+		}
+	}
+
 	public Snake getSnakeById(int id) {
 		if (snakes != null)
 		{

@@ -61,10 +61,10 @@ public class GameField {
 	}
 
 	public void saveMap(String fileName) throws Exception {
+		Proto.out.println("load " + fileName);
 		File file = new File(fileName);
 		FileOutputStream fos = new FileOutputStream(file);
 		DataOutputStream dos = new DataOutputStream(fos);
-		//dos.writeBytes("foo");
 		Iterator i = fields.listIterator();
 		while (true)
 		{
@@ -94,6 +94,7 @@ public class GameField {
 	}
 
 	public void loadMap(String fileName) throws Exception {
+		Proto.out.println("Event MapLoad " + fileName);
 		Direction up = new Direction(1);
 		Direction left = new Direction(2);
 		Vector lines = new Vector();

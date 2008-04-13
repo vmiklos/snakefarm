@@ -119,11 +119,13 @@ public class Proto {
 			if(args.length != 1)
 				throw new Exception("Proto.Snapshot.parseCommand: too few parameters");
 			game.gameField.saveMap(args[0]);
+			game.savePlayers();
 		}
 	}
 
 	private class Exit implements CommandParser {
 		public void parseCommand(String[] args) throws Exception {
+			out.println("Event Exit");
 			System.exit(0);
 		}
 	}

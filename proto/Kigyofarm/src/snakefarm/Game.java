@@ -32,6 +32,15 @@ public class Game {
 		players.add(player);
 	}
 
+	public void savePlayers()
+	{
+		for (Iterator i = players.listIterator(); i.hasNext();) {
+			Player player = (Player) i.next();
+			Proto.out.println("addplayer " + player.id);
+			player.saveSnakes();
+		}
+	}
+
 	/**
 	 * Leptet egyet minden jatekoson.
 	 */

@@ -6,9 +6,6 @@ package snakefarm;
  */
 public class SnakeUnit extends Collidable {
 
-	private static int lastid = 0;
-	private int id = lastid;
-	private static final String type = "SnakeUnit";
 	private Snake snake;
 	private SnakeUnit prevUnit = null;
 	private SnakeUnit nextUnit = null;
@@ -24,10 +21,19 @@ public class SnakeUnit extends Collidable {
 	 * @param field melyik mezon lesz
 	 */
 	public SnakeUnit(Snake snake, Field field) {
-		lastid++;
 		this.snake = snake;
 		this.field = field;
 		field.setObject(this);
+	}
+
+	public void save()
+	{
+		String stone;
+		if(isStone)
+			stone = "1";
+		else
+			stone = "0";
+		Proto.out.println(field.id + " " + stone);
 	}
 
 	/**
