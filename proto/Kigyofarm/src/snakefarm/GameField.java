@@ -1,7 +1,7 @@
 package snakefarm;
 
-import java.util.List;
-import java.util.LinkedList;
+import java.io.*;
+import java.util.*;
 
 /**
  * Jatekter osztaly, amely a mezoket tartalmazza. Jatek inditaskor
@@ -13,7 +13,7 @@ public class GameField {
 	private static int lastid = 0;
 	private int id = lastid;
 	private Game game;
-	private List<Field> fields;
+	private List<Field> fields = new LinkedList<Field>();
 
 	/**
 	 * A jatekter konstruktora.
@@ -23,7 +23,6 @@ public class GameField {
 	public GameField(Game game) {
 		lastid++;
 		this.game = game;
-		// TODO: fields feltoltese
 	}
 
 	/**
@@ -45,6 +44,44 @@ public class GameField {
 			return freeFields.get(index);
 		} else {
 			return null;
+		}
+	}
+
+	public Field getFieldById(int id) {
+		if (fields != null)
+		{
+			for (Iterator i = fields.listIterator(); i.hasNext();) {
+				Field field = (Field) i.next();
+				if (field.id == id) {
+					return field;
+				}
+			}
+		}
+		return null;
+	}
+
+	public void loadMap(String fileName) throws Exception {
+		Direction up = new Direction(1);
+		Direction left = new Direction(2);
+		Vector lines = new Vector();
+		BufferedReader input = new BufferedReader(new FileReader(fileName));
+		String line;
+		while((line = input.readLine()) != null) {
+			if(line.equals(""))
+				continue;
+			String[] params = line.split(";");
+			Field f = new Field(Integer.parseInt(params[0]));
+			f.setNeighbour(up, getFieldById(Integer.parseInt(params[2])));
+			f.setNeighbour(left, getFieldById(Integer.parseInt(params[3])));
+			if(params[1].equals("W"))
+				f.setObject(new Wall(f));
+			else if(params[1].equals("F"))
+				f.setObject(new FieldBerry(f));
+			else if(params[1].equals("T"))
+				f.setObject(new StoneBerry(f));
+			else if(params[1].equals("A"))
+				f.setObject(new SawBerry(f));
+			fields.add(f);
 		}
 	}
 }

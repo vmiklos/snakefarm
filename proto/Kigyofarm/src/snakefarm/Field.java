@@ -8,15 +8,15 @@ import java.util.HashMap;
 public class Field {
 
 	private static int lastid = 0;
-	private int id = lastid;
+	public int id;
 	private HashMap<Direction, Field> neighbours = new HashMap<Direction, Field>(Direction.numberOfDirections);
 	private Collidable objectOnField = null;
 
 	/**
 	 * A jatekmezo konstruktora.
 	 */
-	public Field() {
-		lastid++;
+	public Field(int id) {
+		this.id = id;
 	}
 
 	/**
@@ -104,7 +104,10 @@ public class Field {
 	 * @param field a szomszed referenciaja
 	 */
 	public void setNeighbour(Direction dir, Field field) {
-		neighbours.put(dir, field);
-		field.neighbours.put(dir.reverse(), this);
+		if(field != null)
+		{
+			neighbours.put(dir, field);
+			field.neighbours.put(dir.reverse(), this);
+		}
 	}
 }

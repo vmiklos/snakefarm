@@ -14,7 +14,7 @@ public class Game {
 	private static int lastid = 0;
 	private int id = lastid;
 	private static final String type = "Game";
-	private GameField gameField;
+	public GameField gameField;
 	private List<Player> players = new LinkedList<Player>();
 
 	/**

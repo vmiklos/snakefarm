@@ -1,9 +1,7 @@
 package snakefarm;
 
-import java.io.InputStreamReader;
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.PrintStream;
+import java.io.*;
+import java.util.*;
 
 /**
  * Ez a proto fo classa, innen indul a program. Soha nem
@@ -46,17 +44,22 @@ public class Proto {
 		}
 	}
 
+	private class Load implements CommandParser {
+		public void parseCommand(String[] args) throws Exception {
+			if(args.length != 1)
+				throw new Exception("Proto.Load.parseCommand: too few parameters");
+			game.gameField.loadMap(args[0]);
+		}
+	}
+
 	public Proto(String fileName) throws Exception {
 		game = new Game();
 		Parser parser = new Parser();
 		parser.addCommand("debug", new Debug());
 		parser.addCommand("out", new Out());
 		parser.addCommand("time", new Time());
+		parser.addCommand("load", new Load());
 		parser.parse(fileName);
-
-		out.println(debug);
-		out.println(out);
-		out.println(time);
 	}
 
 	/**
