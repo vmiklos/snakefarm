@@ -8,25 +8,27 @@ import java.util.List;
  */
 public class Snake {
 
-	private static int lastid = 0;
-	private int id = lastid;
-	private static final int sawCounterMax = 20;
+	public int id;
+	public static final int sawCounterMax = 20;
 	private Player player;
-	private Direction direction;
+	private Direction direction = new Direction(0);
 	private List<SnakeUnit> units;
 	private int sawCounter = 0;
 	private boolean isAlive = true;
+	private int controlPhase = 0;
+	private int controlSpeed = 0;
+	private int stonePhase = 0;
+	private int stoneSpeed = 0;
 
 	/**
 	 * A kigyo konstruktora.
 	 *
 	 * @param player a kigyot vezerlo jatekos
-	 * @param field a mezo amelyre a kigyo kerul
 	 */
-	public Snake(Player player, Field field) {
-		lastid++;
+	public Snake(Player player, int id) {
 		this.player = player;
-		// TODO: unites es direction inicializalasa
+		this.id = id;
+		// TODO: unites inicializalasa
 	}
 
 	/**
@@ -62,8 +64,20 @@ public class Snake {
 	 * Beallitja a kigyo furesz-szamlalojat, tehat hogy meg hany
 	 * lepesik van furesz modban a kigyo.
 	 */
-	public void setSawCounter() {
-		sawCounter = sawCounterMax;
+	public void setSawCounter(int sawCounter) {
+		this.sawCounter = sawCounter;
+	}
+
+	public void setDirection(Direction direction) {
+		this.direction = direction;
+	}
+
+	public void setControlSpeed(int controlSpeed) {
+		this.controlSpeed = controlSpeed;
+	}
+
+	public void setStoneSpeed(int stoneSpeed) {
+		this.stoneSpeed = stoneSpeed;
 	}
 
 	/**

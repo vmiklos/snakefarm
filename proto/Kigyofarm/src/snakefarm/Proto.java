@@ -60,6 +60,27 @@ public class Proto {
 		}
 	}
 
+	private class AddSnake implements CommandParser {
+		public void parseCommand(String[] args) throws Exception {
+			if(args.length != 6)
+				throw new Exception("Proto.AddSnake.parseCommand: too few parameters");
+			int playerid = Integer.parseInt(args[0]);
+			int snakeid = Integer.parseInt(args[1]);
+			Direction dir = new Direction(Integer.parseInt(args[2]));
+			int snakespeed = Integer.parseInt(args[3]);
+			int stonespeed = Integer.parseInt(args[4]);
+			int sawmode = Integer.parseInt(args[5]);
+
+			Player player = game.getPlayerById(playerid);
+			player.addSnake(snakeid);
+			Snake snake = player.getSnakeById(snakeid);
+			snake.setDirection(dir);
+			snake.setControlSpeed(snakespeed);
+			snake.setStoneSpeed(stonespeed);
+			snake.setSawCounter(sawmode);
+		}
+	}
+
 	public Proto(String fileName) throws Exception {
 		game = new Game();
 		Parser parser = new Parser();
@@ -68,6 +89,7 @@ public class Proto {
 		parser.addCommand("time", new Time());
 		parser.addCommand("load", new Load());
 		parser.addCommand("addplayer", new AddPlayer());
+		parser.addCommand("addsnake", new AddSnake());
 		parser.parse(fileName);
 	}
 

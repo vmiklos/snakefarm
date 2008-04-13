@@ -11,7 +11,7 @@ import java.util.Iterator;
 public class Player {
 
 	private static int lastid = 0;
-	private int id;
+	public int id;
 	private static final String type = "Player";
 	private Game game;
 	private List<Snake> snakes = new LinkedList<Snake>();
@@ -30,13 +30,23 @@ public class Player {
 	/**
 	 * Letrehoz egy uj kigyot, es a jatekoshoz, valamint a megadott
 	 * mezohoz rendeli.
-	 *
-	 * @param container mezo, ahonnan indul majd a kigyo
 	 */
-	public void addSnake(Field container) {
-		snakes.add(new Snake(this, container));
+	public void addSnake(int id) {
+		snakes.add(new Snake(this, id));
 	}
 
+	public Snake getSnakeById(int id) {
+		if (snakes != null)
+		{
+			for (Iterator i = snakes.listIterator(); i.hasNext();) {
+				Snake snake = (Snake) i.next();
+				if (snake.id == id) {
+					return snake;
+				}
+			}
+		}
+		return null;
+	}
 	/**
 	 * Lepteti a jatekost.
 	 * <p>

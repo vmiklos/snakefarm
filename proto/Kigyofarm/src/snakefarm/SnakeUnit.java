@@ -74,7 +74,7 @@ public class SnakeUnit extends Collidable {
 	 * @param sawBerry az utkozo fureszbogyo
 	 */
 	public void collideWith2(SawBerry sawBerry) {
-		snake.setSawCounter();
+		snake.setSawCounter(Snake.sawCounterMax);
 	}
 
 	/**

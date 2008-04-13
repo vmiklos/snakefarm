@@ -1,7 +1,6 @@
 package snakefarm;
 
-import java.util.List;
-import java.util.LinkedList;
+import java.util.*;
 
 /**
  * Osszefogja a jatekteret es a jatekosokat, valamint inicializalja a
@@ -31,7 +30,6 @@ public class Game {
 	public void newPlayer(int id) {
 		Player player = new Player(this, id);
 		players.add(player);
-		player.addSnake(gameField.GetRandomFreeField());
 	}
 
 	/**
@@ -42,4 +40,18 @@ public class Game {
 			((Player) (i.next())).step();
 		}
 	}
+
+	public Player getPlayerById(int id) {
+		if (players != null)
+		{
+			for (Iterator i = players.listIterator(); i.hasNext();) {
+				Player player = (Player) i.next();
+				if (player.id == id) {
+					return player;
+				}
+			}
+		}
+		return null;
+	}
+
 }
