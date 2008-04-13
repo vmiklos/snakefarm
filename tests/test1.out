@@ -3,6 +3,6 @@ Event MapLoad test1.map
 load test1_output.map
 addplayer 1
 addsnake 1 1 0 1 1 0
-2 1
+6 1
 endsnake
 Event Exit
