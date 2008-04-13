@@ -114,6 +114,9 @@ public class GameField {
 				f.setObject(new StoneBerry(f));
 			else if(params[1].equals("A"))
 				f.setObject(new SawBerry(f));
+			else if(params[1].equals("0"));
+			else
+				throw new Exception("unknown collidable type: " + params[1]);
 			fields.add(f);
 		}
 	}
