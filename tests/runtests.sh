@@ -14,6 +14,6 @@ runtest() {
 	fi
 }
 
-for i in $(seq 1 1); do
+for i in $(seq 1 2); do
 	runtest $i;
 done

@@ -136,6 +136,7 @@ public class Snake {
 	 * Megoli a kigyot.
 	 */
 	public void die() {
+		Proto.out.println("StepEvent SnakeDie");
 		if (isAlive) {
 			isAlive = false;
 			/*for (Iterator i = units.iterator(); i.hasNext();) {

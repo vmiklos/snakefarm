@@ -48,6 +48,19 @@ public class Game {
 		for (java.util.Iterator i = players.iterator(); i.hasNext();) {
 			((Player) (i.next())).step();
 		}
+		Proto.out.println("End Step");
+		int countAlive = 0;
+		Player lastAlive = null;
+		for (Iterator i = players.iterator(); i.hasNext();) {
+			Player player = (Player) i.next();
+			if(player.hasSnake())
+			{
+				countAlive++;
+				lastAlive = player;
+			}
+		}
+		if(countAlive==1)
+			lastAlive.win();
 	}
 
 	public Player getPlayerById(int id) {

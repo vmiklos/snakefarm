@@ -71,6 +71,7 @@ public class SnakeUnit extends Collidable {
 	 * @param wall az utkozo fal
 	 */
 	public void collideWith2(Wall wall) {
+		Proto.out.println("StepEvent Snake_Wall");
 		die();
 	}
 

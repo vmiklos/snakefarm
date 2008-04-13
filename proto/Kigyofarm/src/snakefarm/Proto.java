@@ -130,6 +130,17 @@ public class Proto {
 		}
 	}
 
+	private class Step implements CommandParser {
+		public void parseCommand(String[] args) throws Exception {
+			int num = 1;
+			if(args.length == 1)
+				num = Integer.parseInt(args[0]);
+			out.println("Event Step " + num);
+			for(int i=0;i<num;i++)
+				game.step();
+		}
+	}
+
 	public Proto(String fileName) throws Exception {
 		game = new Game();
 		Parser parser = new Parser();
@@ -144,6 +155,7 @@ public class Proto {
 		parser.addCommand("comment", new Comment());
 		parser.addCommand("snapshot", new Snapshot());
 		parser.addCommand("exit", new Exit());
+		parser.addCommand("step", new Step());
 		parser.parse(fileName);
 	}
 

@@ -75,4 +75,17 @@ public class Player {
 	public void removeSnake(Snake snake) {
 		snakes.remove(snake);
 	}
+
+	public boolean hasSnake()
+	{
+		if (snakes.size() > 0)
+			return true;
+		else
+			return false;
+	}
+
+	public void win()
+	{
+		Proto.out.println("Event Win " + id);
+	}
 }
