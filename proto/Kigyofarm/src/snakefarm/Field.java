@@ -120,9 +120,9 @@ public class Field {
 	 * @param field a szomszed referenciaja
 	 */
 	public void setNeighbour(Direction dir, Field field) {
+		neighbours.put(dir, field);
 		if(field != null)
 		{
-			neighbours.put(dir, field);
 			field.neighbours.put(dir.reverse(), this);
 		}
 	}
