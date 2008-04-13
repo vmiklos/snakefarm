@@ -35,13 +35,25 @@ public class Parser {
 		while(i.hasNext()) {
 			String line = (String)i.next();
 			StringTokenizer tokens = new StringTokenizer(line);
-			CommandParser cp = (CommandParser)commands.get(tokens.nextToken());
+			String cmd = tokens.nextToken();
+			String[] args;
+			int j;
+			CommandParser cp;
+			try {
+				Integer.parseInt(cmd);
+				cp = (CommandParser)commands.get("addsnakeunit");
+				args = new String[tokens.countTokens()+1];
+				args[0] = cmd;
+				j = 1;
+			} catch(NumberFormatException e)
+			{
+				cp = (CommandParser)commands.get(cmd);
+				args = new String[tokens.countTokens()];
+				j = 0;
+			}
 			if(cp == null)
 				throw new Exception("Parser.parse: unkown command ("+line+")");
-			String[] args = null;
 			if(tokens.countTokens() > 0) {
-				args = new String[tokens.countTokens()];
-				int j = 0;
 				while(tokens.hasMoreTokens())
 					args[j++] = tokens.nextToken();
 			}

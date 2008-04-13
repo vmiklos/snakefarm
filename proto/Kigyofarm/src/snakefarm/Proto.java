@@ -12,6 +12,9 @@ public class Proto {
 	public static PrintStream out = null;
 	private static boolean debug = false;
 	private static int time = 0;
+	// ez ide azert kell mert egy addsnake utani parancsnak tudnia
+	// kell, hogy hanyas snake-hez kerulnek be uj unitok
+	private static Snake snake = null;
 
 	private class Debug implements CommandParser {
 		public void parseCommand(String[] args) throws Exception {
@@ -73,11 +76,24 @@ public class Proto {
 
 			Player player = game.getPlayerById(playerid);
 			player.addSnake(snakeid);
-			Snake snake = player.getSnakeById(snakeid);
+			snake = player.getSnakeById(snakeid);
 			snake.setDirection(dir);
 			snake.setControlSpeed(snakespeed);
 			snake.setStoneSpeed(stonespeed);
 			snake.setSawCounter(sawmode);
+		}
+	}
+
+	private class AddSnakeUnit implements CommandParser {
+		public void parseCommand(String[] args) throws Exception {
+			if(args.length != 2)
+				throw new Exception("Proto.AddSnakeUnit.parseCommand: too few parameters");
+			SnakeUnit su = new SnakeUnit(snake, game.gameField.getFieldById(Integer.parseInt(args[0])));
+			if(Integer.parseInt(args[1]) == 0)
+				su.setStone(false);
+			else
+				su.setStone(true);
+			snake.addSnakeUnit(su);
 		}
 	}
 
@@ -90,6 +106,7 @@ public class Proto {
 		parser.addCommand("load", new Load());
 		parser.addCommand("addplayer", new AddPlayer());
 		parser.addCommand("addsnake", new AddSnake());
+		parser.addCommand("addsnakeunit", new AddSnakeUnit());
 		parser.parse(fileName);
 	}
 
