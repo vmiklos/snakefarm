@@ -52,6 +52,11 @@ public class Snake {
 	 * @param tail az uj farok, amely a regi farok utan lesz fuzve
 	 */
 	public void addSnakeUnit(SnakeUnit tail) {
+		if(units.size() > 0)
+		{
+			SnakeUnit su = (SnakeUnit) units.get(units.size()-1);
+			su.setNextUnit(tail);
+		}
 		units.add(tail);
 		tail.id = units.size();
 	}
@@ -129,7 +134,7 @@ public class Snake {
 			}
 			SnakeUnit head = units.get(0);
 			Field next = head.getNextField(direction);
-			head.step(next, false, false);
+			head.step(next, false);
 		}
 	}
 

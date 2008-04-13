@@ -148,10 +148,9 @@ public class SnakeUnit extends Collidable {
 	 *
 	 * @param nextField kovetkezo mezo
 	 * @param isToGrow kell-e majd a faroknal novekedni
-	 * @param receivesStone kap-e kovet
-	 * @return az elozonek kuld-e vissza kovet
 	 */
-	public boolean step(Field nextField, boolean isToGrow, boolean receivesStone) {
+	public void step(Field nextField, boolean isToGrow) {
+		System.out.println("debug: SnakeUnit leptetese: " + id);
 		boolean rejectStone = false, nextRejectsStone;
 		Field prevField = field;
 
@@ -182,12 +181,12 @@ public class SnakeUnit extends Collidable {
 
 
 		}
-
-		/* novekedes es kovetkezo egyseg hivasa */
+		// novekedes es kovetkezo egyseg hivasa
 		if (isAlive) {
-			/* ha nincs kovetkezo */
+			// ha nincs kovetkezo
 			if (nextUnit == null) {
-				/* megnezzuk, kell-e novekedni */
+				System.out.println("utolso elem: " + id);
+				// megnezzuk, kell-e novekedni
 				if (isToGrow || eatenFieldBerry) {
 					SnakeUnit newTail = new SnakeUnit(snake, prevField);
 					newTail.setPrevUnit(this);
@@ -195,24 +194,15 @@ public class SnakeUnit extends Collidable {
 					snake.addSnakeUnit(newTail);
 					eatenFieldBerry = false;
 				}
-				/* megnezzuk, az elozonek kuld-e vissza kovet */
-				rejectStone = isStone && (receivesStone || eatenStoneBerry);
-				/* megnezzuk, ko lesz-e */
-				isStone = isStone || receivesStone || eatenStoneBerry;
-				eatenStoneBerry = false;
-			} /* ha van kovetkezo */ else {
-				/* szolunk neki is, es a kovet is tovabbadjuk */
-				nextRejectsStone = nextUnit.step(prevField, eatenFieldBerry || isToGrow, isStone);
+			} // ha van kovetkezo
+			else
+			{
+				// szolunk neki is
+				nextUnit.step(prevField, eatenFieldBerry || isToGrow);
 				eatenFieldBerry = false;
-				/* megnezzuk, az elozonek kuld-e vissza kovet */
-				rejectStone = isStone && nextRejectsStone && (receivesStone || eatenStoneBerry);
-				/* megnezzuk, ko lesz-e */
-				isStone = receivesStone || eatenStoneBerry || (nextRejectsStone && isStone);
 				eatenStoneBerry = false;
 			}
 		}
-
-		return rejectStone;
 	}
 
 	/**
