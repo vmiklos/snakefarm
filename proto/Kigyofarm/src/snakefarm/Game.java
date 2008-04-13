@@ -41,14 +41,8 @@ public class Game {
 		}
 	}
 
-	/**
-	 * Leptet egyet minden jatekoson.
-	 */
-	public void step() {
-		for (java.util.Iterator i = players.iterator(); i.hasNext();) {
-			((Player) (i.next())).step();
-		}
-		Proto.out.println("End Step");
+	private boolean checkEnd()
+	{
 		int countAlive = 0;
 		Player lastAlive = null;
 		for (Iterator i = players.iterator(); i.hasNext();) {
@@ -60,7 +54,22 @@ public class Game {
 			}
 		}
 		if(countAlive==1)
+		{
 			lastAlive.win();
+			return true;
+		}
+		else
+			return false;
+	}
+
+	/**
+	 * Leptet egyet minden jatekoson.
+	 */
+	public void step() {
+		for (java.util.Iterator i = players.iterator(); i.hasNext();) {
+			((Player) (i.next())).step();
+			checkEnd();
+		}
 	}
 
 	public Player getPlayerById(int id) {

@@ -94,6 +94,7 @@ public class GameField {
 
 	public void loadMap(String fileName) throws Exception {
 		Proto.out.println("Event MapLoad " + fileName);
+		fields = new LinkedList<Field>();
 		Direction up = new Direction(1);
 		Direction left = new Direction(2);
 		Vector lines = new Vector();

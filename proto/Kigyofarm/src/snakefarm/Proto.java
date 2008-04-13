@@ -135,7 +135,6 @@ public class Proto {
 			int num = 1;
 			if(args.length == 1)
 				num = Integer.parseInt(args[0]);
-			out.println("Event Step " + num);
 			for(int i=0;i<num;i++)
 				game.step();
 		}

@@ -14,6 +14,13 @@ runtest() {
 	fi
 }
 
-for i in $(seq 1 3); do
+if [ -z "$1" ]; then
+	start=1
+	stop=4
+else
+	start=$1
+	stop=$1
+fi
+for i in $(seq $start $stop); do
 	runtest $i;
 done

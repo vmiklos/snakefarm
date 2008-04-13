@@ -128,6 +128,7 @@ public class Snake {
 	 * Leptet egyet a kigyon.
 	 */
 	public void step() {
+		Proto.out.println("Event Step " + id);
 		if (isAlive) {
 			if (sawCounter > 0) {
 				sawCounter--;
@@ -136,6 +137,7 @@ public class Snake {
 			Field next = head.getNextField(direction);
 			head.step(next, false);
 		}
+		Proto.out.println("End Step");
 	}
 
 	/**
