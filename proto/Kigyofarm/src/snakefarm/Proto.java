@@ -122,6 +122,12 @@ public class Proto {
 		}
 	}
 
+	private class Exit implements CommandParser {
+		public void parseCommand(String[] args) throws Exception {
+			System.exit(0);
+		}
+	}
+
 	public Proto(String fileName) throws Exception {
 		game = new Game();
 		Parser parser = new Parser();
@@ -135,6 +141,7 @@ public class Proto {
 		parser.addCommand("endsnake", new EndSnake());
 		parser.addCommand("comment", new Comment());
 		parser.addCommand("snapshot", new Snapshot());
+		parser.addCommand("exit", new Exit());
 		parser.parse(fileName);
 	}
 
