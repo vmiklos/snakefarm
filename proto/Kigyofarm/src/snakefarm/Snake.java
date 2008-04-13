@@ -1,6 +1,6 @@
 package snakefarm;
 
-import java.util.List;
+import java.util.*;
 
 /**
  * Kigyo osztaly, amely osszefoglalja az egy kigyohoz tartozo kigyo
@@ -28,7 +28,7 @@ public class Snake {
 	public Snake(Player player, int id) {
 		this.player = player;
 		this.id = id;
-		// TODO: unites inicializalasa
+		units = new LinkedList<SnakeUnit>();
 	}
 
 	/**

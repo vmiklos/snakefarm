@@ -97,6 +97,11 @@ public class Proto {
 		}
 	}
 
+	private class EndSnake implements CommandParser {
+		public void parseCommand(String[] args) throws Exception {
+		}
+	}
+
 	public Proto(String fileName) throws Exception {
 		game = new Game();
 		Parser parser = new Parser();
@@ -107,6 +112,7 @@ public class Proto {
 		parser.addCommand("addplayer", new AddPlayer());
 		parser.addCommand("addsnake", new AddSnake());
 		parser.addCommand("addsnakeunit", new AddSnakeUnit());
+		parser.addCommand("endsnake", new EndSnake());
 		parser.parse(fileName);
 	}
 
