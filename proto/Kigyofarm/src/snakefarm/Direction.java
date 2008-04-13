@@ -16,6 +16,7 @@ public class Direction {
 	 */
 	private int dir;
 	private boolean turnedLeft = false;
+	private boolean turnedRight = false;
 
 	/**
 	 * Beallitja az iranyt.
@@ -55,6 +56,11 @@ public class Direction {
 			Proto.out.println("StepEvent TurnLeft");
 			turnedLeft = false;
 		}
+		if(turnedRight)
+		{
+			Proto.out.println("StepEvent TurnRight");
+			turnedRight = false;
+		}
 		if (obj == null) {
 			return false;
 		}
@@ -80,6 +86,7 @@ public class Direction {
 	 * Jobbra forditja az iranyt.
 	 */
 	public void turnRight() {
+		turnedRight = true;
 		dir = (dir + numberOfDirections - 1) % numberOfDirections;
 	}
 
