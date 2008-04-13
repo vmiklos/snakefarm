@@ -86,10 +86,9 @@ public class GameField {
 					field.getObjectString()+ ";" +
 					upid+ ";" +
 					leftid);
+			dos.writeBytes("\r\n");
 			if(last)
 				break;
-			else
-				dos.writeBytes("\r\n");
 		}
 	}
 
