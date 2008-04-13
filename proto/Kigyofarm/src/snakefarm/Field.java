@@ -101,7 +101,7 @@ public class Field {
 			return "T";
 		else if(type.equals("snakefarm.SawBerry"))
 			return "A";
-		return null;
+		return "0";
 	}
 
 	/**
