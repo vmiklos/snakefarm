@@ -16,14 +16,13 @@ public class Parser {
 		BufferedReader input = new BufferedReader(new FileReader(file));
 		String line;
 		while((line = input.readLine()) != null) {
+			if(line.startsWith("#"))
+				continue;
 			line = line.replaceAll("\\s+", " ");
 			line = line.replaceAll("^ ", "");
-			StringBuffer linebuf = new StringBuffer(line);
-			int begin = 0;
-			if((begin = linebuf.indexOf("#")) != -1)
-				linebuf.delete(begin, linebuf.length());
-			if(!linebuf.toString().equals(""))
-				lines.add(linebuf.toString());
+			if(line.equals(""))
+				continue;
+				lines.add(line);
 		}
 		return lines;
 	}
