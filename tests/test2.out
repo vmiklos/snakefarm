@@ -1,5 +1,7 @@
 Event MapLoad test2.map
 Event Step 1
+End Step
+Event Step 2
 StepEvent Snake_Wall
 StepEvent SnakeDie
 End Step
