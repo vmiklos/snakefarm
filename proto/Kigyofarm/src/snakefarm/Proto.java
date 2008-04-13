@@ -4,8 +4,7 @@ import java.io.*;
 import java.util.*;
 
 /**
- * Ez a proto fo classa, innen indul a program. Soha nem
- * peldanyositjuk.
+ * Ez a proto fo classa, innen indul a program.
  */
 public class Proto {
 	private Game game;
@@ -102,6 +101,19 @@ public class Proto {
 		}
 	}
 
+	private class Comment implements CommandParser {
+		public void parseCommand(String[] args) throws Exception {
+			// poor man's StringUtils.join()
+			for(int i=0;i<args.length;i++)
+			{
+				if(i+1 == args.length)
+					out.println(args[i]);
+				else
+					out.print(args[i]+ " ");
+			}
+		}
+	}
+
 	public Proto(String fileName) throws Exception {
 		game = new Game();
 		Parser parser = new Parser();
@@ -113,6 +125,7 @@ public class Proto {
 		parser.addCommand("addsnake", new AddSnake());
 		parser.addCommand("addsnakeunit", new AddSnakeUnit());
 		parser.addCommand("endsnake", new EndSnake());
+		parser.addCommand("comment", new Comment());
 		parser.parse(fileName);
 	}
 
