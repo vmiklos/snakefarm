@@ -149,19 +149,21 @@ public class Snake {
 	 * Leptet egyet a kigyon.
 	 */
 	public void step() {
-		Proto.out.println("Event Step " + id);
 		if (isAlive) {
 			SnakeUnit head = units.get(0);
 			Field next = head.getNextField(direction);
 			controlPhase++;
 			if(controlPhase == controlSpeed)
 			{
+				Proto.out.println("Event Step " + id);
 				controlPhase = 0;
 				head.step(next, false);
+				Proto.out.println("End Step");
 			}
 			stonePhase++;
 			if(stonePhase == stoneSpeed)
 			{
+				Proto.out.println("Event StoneStep " + id);
 				stonePhase = 0;
 				head.stoneStep(false);
 			}
@@ -172,7 +174,6 @@ public class Snake {
 				sawCounter--;
 			}
 		}
-		Proto.out.println("End Step");
 	}
 
 	/**
