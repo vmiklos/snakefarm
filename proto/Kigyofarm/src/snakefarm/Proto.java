@@ -201,6 +201,9 @@ public class Proto {
 	 * @param args Commandline argumentumok.
 	 */
 	public static void main(String args[]) throws Exception {
-		new Proto(args[0]);
+		String arg = null;
+		if(args.length > 0)
+			arg = args[0];
+		new Proto(arg);
 	}
 }

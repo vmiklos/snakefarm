@@ -11,9 +11,13 @@ public class Parser {
 		commands = new HashMap();
 	}
 
-	private Vector preprocess(File file) throws Exception {
+	private Vector preprocess(String fileName) throws Exception {
 		Vector lines = new Vector();
-		BufferedReader input = new BufferedReader(new FileReader(file));
+		BufferedReader input;
+		if(fileName != null)
+			input = new BufferedReader(new FileReader(new File(fileName)));
+		else
+			input = new BufferedReader(new InputStreamReader(System.in));
 		String line;
 		while((line = input.readLine()) != null) {
 			if(line.startsWith("#"))
@@ -28,8 +32,7 @@ public class Parser {
 	}
 
 	public void parse(String fileName) throws Exception {
-		File file = new File(fileName);
-		Vector lines = preprocess(file);
+		Vector lines = preprocess(fileName);
 		Iterator i = lines.iterator();
 		while(i.hasNext()) {
 			String line = (String)i.next();
