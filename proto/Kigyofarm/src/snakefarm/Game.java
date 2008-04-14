@@ -77,6 +77,20 @@ public class Game {
 		}
 	}
 
+	public void end()
+	{
+		Player max = null;
+		for (Iterator i = players.iterator(); i.hasNext();) {
+			Player player = (Player) i.next();
+			if(max == null)
+				max = player;
+			else
+				if(max.getMaxLength() < player.getMaxLength())
+					max = player;
+		}
+		max.win();
+	}
+
 	public Player getPlayerById(int id) {
 		if (players != null)
 		{

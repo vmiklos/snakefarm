@@ -17,7 +17,7 @@ runtest() {
 
 if [ -z "$1" ]; then
 	start=1
-	stop=11
+	stop=12
 else
 	start=$1
 	stop=$1

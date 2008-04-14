@@ -137,6 +137,9 @@ public class Proto {
 				num = Integer.parseInt(args[0]);
 			for(int i=0;i<num;i++)
 				game.step();
+			time--;
+			if(time==0)
+				game.end();
 		}
 	}
 
