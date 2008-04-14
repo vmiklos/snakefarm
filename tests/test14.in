@@ -1,0 +1,17 @@
+debug 1
+out 1
+time 100
+load test14.map
+addplayer 1
+addsnake 1 1 0 1 1 1
+18 0
+17 0
+endsnake
+addplayer 2
+addsnake 2 2 3 1 1 0
+19 0
+12 0
+endsnake
+comment # a masodik kigyonak meg kell halnia, az elsonek sertetlennek maradnia, es miutan az elso lepett, a masodik mar nem is tud
+step
+exit

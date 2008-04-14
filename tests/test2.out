@@ -3,7 +3,7 @@ Event Step 1
 End Step
 Event Step 2
 StepEvent Snake_Wall
-StepEvent SnakeDie
+StepEvent SnakeDie 2
 End Step
 Event Win 1
 Event Exit
