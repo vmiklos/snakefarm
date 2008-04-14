@@ -1,0 +1,14 @@
+debug 1
+out 1
+time 100
+load test10.map
+addplayer 1
+addsnake 1 1 3 1 1 0
+12 0
+13 0
+20 0
+19 0
+18 0
+endsnake
+step
+exit
