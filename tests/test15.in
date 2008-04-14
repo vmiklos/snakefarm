@@ -1,0 +1,17 @@
+debug 1
+out 1
+time 100
+load test15.map
+addplayer 1
+addsnake 1 1 0 1 1 1
+18 0
+17 0
+endsnake
+addplayer 2
+addsnake 2 2 2 1 1 1
+19 0
+20 0
+endsnake
+comment # az elso lep eloszor, megeszi a masodik fejet, a masodik meghal, igy lepni sem fog
+step
+exit
