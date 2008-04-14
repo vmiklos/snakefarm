@@ -71,16 +71,25 @@ public class SnakeUnit extends Collidable {
 		} else {
 			snakeUnit.collideWith2(this);
 			snake.removeSnakeUnit(this);
-			int snakeid = snake.getPlayer().addSnake(0);
-			Snake newsnake = snake.getPlayer().getSnakeById(snakeid);
-			// itt azert -1 mert az eredeti erteket majd
-			// csokkenteni fogjuk de az uj kigyoet nem
-			// tudjuk majd, tehat itt tesszuk meg
-			newsnake.setSawCounter(snake.getSawCounter()-1);
-			newsnake.setControlSpeed(snake.getControlSpeed());
-			newsnake.setStoneSpeed(snake.getStoneSpeed());
-			newsnake.addSnakeUnit(nextUnit);
-			System.out.println("StepEvent SnakeSplit "+id+" "+newsnake.getId());
+			if(prevUnit != null)
+			{
+				int snakeid = snake.getPlayer().addSnake(0);
+				Snake newsnake = snake.getPlayer().getSnakeById(snakeid);
+				// itt azert -1 mert az eredeti erteket majd
+				// csokkenteni fogjuk de az uj kigyoet nem
+				// tudjuk majd, tehat itt tesszuk meg
+				newsnake.setSawCounter(snake.getSawCounter()-1);
+				newsnake.setControlSpeed(snake.getControlSpeed());
+				newsnake.setStoneSpeed(snake.getStoneSpeed());
+				newsnake.addSnakeUnit(nextUnit);
+				System.out.println("StepEvent SnakeSplit "+id+" "+newsnake.getId());
+			}
+			else
+			{
+				// a kigyo fejevel utkoztek, szal ez
+				// halal
+				die();
+			}
 		}
 	}
 
