@@ -64,7 +64,7 @@ public class Snake {
 			tail.setPrevUnit(su);
 		}
 		units.add(tail);
-		tail.id = units.size();
+		tail.setId(units.size());
 		SnakeUnit i = tail.getNextUnit();
 		while(i != null)
 		{

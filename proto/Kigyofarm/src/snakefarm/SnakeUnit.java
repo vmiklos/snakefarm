@@ -6,7 +6,7 @@ package snakefarm;
  */
 public class SnakeUnit extends Collidable {
 
-	public int id;
+	private int id;
 	private Snake snake;
 	private SnakeUnit prevUnit = null;
 	private SnakeUnit nextUnit = null;
@@ -25,6 +25,11 @@ public class SnakeUnit extends Collidable {
 		this.snake = snake;
 		this.field = field;
 		field.setObject(this);
+	}
+
+	public void setId(int id)
+	{
+		this.id = id;
 	}
 
 	public void save()
