@@ -1,0 +1,9 @@
+Event MapLoad test9.map
+# az elso jatekos kigyojanak meg kell halnia, a masodiknak nem
+Event Step 1
+StepEvent Snake_Snake 2
+StepEvent SnakeDie
+End Step
+Event Step 2
+End Step
+Event Exit
