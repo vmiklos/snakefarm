@@ -11,6 +11,7 @@ runtest() {
 		echo -e "[\033[32mPASSED\033[0m]"
 	else
 		echo -e "[\033[31mFAILED\033[0m]"
+		diff -uw test$num.out curtest
 	fi
 }
 
