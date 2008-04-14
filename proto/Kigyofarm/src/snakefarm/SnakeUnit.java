@@ -239,7 +239,7 @@ public class SnakeUnit extends Collidable {
 	 */
 	public boolean stoneStep(boolean receivesStone) {
 		if(receivesStone)
-			Proto.out.println("Event StoneStep " + id);
+			Proto.out.println("Event StoneStep " + snake.getId());
 		boolean rejectStone = false, nextRejectsStone;
 
 		/* novekedes es kovetkezo egyseg hivasa */

@@ -151,12 +151,12 @@ public class Snake {
 	public void step() {
 		if (isAlive) {
 			SnakeUnit head = units.get(0);
-			Field next = head.getNextField(direction);
 			controlPhase++;
 			if(controlPhase == controlSpeed)
 			{
 				Proto.out.println("Event Step " + id);
 				controlPhase = 0;
+				Field next = head.getNextField(direction);
 				head.step(next, false);
 				Proto.out.println("End Step");
 			}
