@@ -11,7 +11,7 @@ import java.util.Iterator;
 public class Player {
 
 	private static int lastid = 0;
-	public int id;
+	private int id;
 	private static final String type = "Player";
 	private Game game;
 	private List<Snake> snakes = new LinkedList<Snake>();
@@ -25,6 +25,11 @@ public class Player {
 	public Player(Game game, int id) {
 		this.game = game;
 		this.id = id;
+	}
+
+	public int getId()
+	{
+		return id;
 	}
 
 	/**

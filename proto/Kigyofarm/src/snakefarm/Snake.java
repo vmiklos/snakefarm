@@ -33,7 +33,7 @@ public class Snake {
 
 	public void save()
 	{
-		Proto.out.println("addsnake " + player.id + " " +
+		Proto.out.println("addsnake " + player.getId() + " " +
 				id + " " +
 				direction.hashCode() + " " +
 				controlSpeed + " " +

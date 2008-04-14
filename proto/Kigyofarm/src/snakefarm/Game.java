@@ -41,7 +41,7 @@ public class Game {
 	{
 		for (Iterator i = players.listIterator(); i.hasNext();) {
 			Player player = (Player) i.next();
-			Proto.out.println("addplayer " + player.id);
+			Proto.out.println("addplayer " + player.getId());
 			player.saveSnakes();
 		}
 	}
@@ -82,7 +82,7 @@ public class Game {
 		{
 			for (Iterator i = players.listIterator(); i.hasNext();) {
 				Player player = (Player) i.next();
-				if (player.id == id) {
+				if (player.getId() == id) {
 					return player;
 				}
 			}
