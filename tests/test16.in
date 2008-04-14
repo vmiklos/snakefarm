@@ -1,0 +1,29 @@
+out 1
+time 1
+load test16.map
+addplayer 1
+addsnake 1 1 0 1 1 0
+11 0
+10 0
+endsnake
+addplayer 2
+addsnake 2 2 0 1 1 0
+18 0
+17 1
+16 1
+endsnake
+addplayer 3
+addsnake 3 3 0 1 1 0
+25 0
+24 1
+23 0
+endsnake
+comment # az elso kigyo 2 hosszu
+showsnake 1
+comment # a masodik 3 hosszu es 2 ko van benne
+showsnake 2
+comment # a harmadik 3 hosszu, es 1 ko van benne
+showsnake 3
+comment # igy a harmadik gyoz
+step
+exit

@@ -1,0 +1,47 @@
+Event MapLoad test16.map
+addplayer 1
+addsnake 1 1 0 1 1 0
+11 0
+10 0
+endsnake
+addplayer 2
+addsnake 2 2 0 1 1 0
+18 0
+17 1
+16 1
+endsnake
+addplayer 3
+addsnake 3 3 0 1 1 0
+25 0
+24 1
+23 0
+endsnake
+# az elso kigyo 2 hosszu
+Snake 1
+Prop 0 1 1
+1 11 0
+2 10 0
+endsnake
+# a masodik 3 hosszu es 2 ko van benne
+Snake 2
+Prop 0 1 1
+1 18 0
+2 17 1
+3 16 1
+endsnake
+# a harmadik 3 hosszu, es 1 ko van benne
+Snake 1
+Prop 0 1 1
+1 25 0
+2 24 1
+3 23 0
+endsnake
+# igy a harmadik gyoz
+Event Step 1
+End Step
+Event Step 2
+End Step
+Event Step 3
+End Step
+Event Win 3
+Event Exit
