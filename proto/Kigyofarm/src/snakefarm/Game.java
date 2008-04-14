@@ -13,7 +13,7 @@ public class Game {
 	private static int lastid = 0;
 	private int id = lastid;
 	private static final String type = "Game";
-	public GameField gameField;
+	private GameField gameField;
 	private List<Player> players = new LinkedList<Player>();
 
 	/**
@@ -22,6 +22,11 @@ public class Game {
 	public Game() {
 		lastid++;
 		gameField = new GameField(this);
+	}
+
+	public GameField getGameField()
+	{
+		return gameField;
 	}
 
 	/**

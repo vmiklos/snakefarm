@@ -50,7 +50,7 @@ public class Proto {
 		public void parseCommand(String[] args) throws Exception {
 			if(args.length != 1)
 				throw new Exception("Proto.Load.parseCommand: too few parameters");
-			game.gameField.loadMap(args[0]);
+			game.getGameField().loadMap(args[0]);
 		}
 	}
 
@@ -87,7 +87,7 @@ public class Proto {
 		public void parseCommand(String[] args) throws Exception {
 			if(args.length != 2)
 				throw new Exception("Proto.AddSnakeUnit.parseCommand: too few parameters");
-			SnakeUnit su = new SnakeUnit(snake, game.gameField.getFieldById(Integer.parseInt(args[0])));
+			SnakeUnit su = new SnakeUnit(snake, game.getGameField().getFieldById(Integer.parseInt(args[0])));
 			if(Integer.parseInt(args[1]) == 0)
 				su.setStone(false);
 			else
@@ -118,7 +118,7 @@ public class Proto {
 		public void parseCommand(String[] args) throws Exception {
 			if(args.length != 1)
 				throw new Exception("Proto.Snapshot.parseCommand: too few parameters");
-			game.gameField.saveMap(args[0]);
+			game.getGameField().saveMap(args[0]);
 			game.savePlayers();
 		}
 	}
