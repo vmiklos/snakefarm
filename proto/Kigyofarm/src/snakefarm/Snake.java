@@ -163,7 +163,6 @@ public class Snake {
 			stonePhase++;
 			if(stonePhase == stoneSpeed)
 			{
-				Proto.out.println("Event StoneStep " + id);
 				stonePhase = 0;
 				head.stoneStep(false);
 			}
