@@ -1,0 +1,8 @@
+Event MapLoad test12.map
+# csak 1 egyseg a jatekido, tehat itt le kell allnia, es az elso jatekos kigyoja a leghosszabb, tehat o a nyertes
+Event Step 1
+End Step
+Event Step 2
+End Step
+Even Win 1
+Event Exit
