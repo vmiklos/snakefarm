@@ -221,17 +221,47 @@ public class SnakeUnit extends Collidable {
 					newTail.setPrevUnit(this);
 					setNextUnit(newTail);
 					snake.addSnakeUnit(newTail);
-					eatenFieldBerry = false;
 				}
 			} // ha van kovetkezo
 			else
 			{
 				// szolunk neki is
 				nextUnit.step(prevField, eatenFieldBerry || isToGrow);
+			}
+		}
+	}
+
+	/**
+	 * Ko leptetese
+	 *
+	 * @param receivesStone kap-e kovet
+	 * @return az elozonek kuld-e vissza kovet
+	 */
+	public boolean stoneStep(boolean receivesStone) {
+		boolean rejectStone = false, nextRejectsStone;
+
+		/* novekedes es kovetkezo egyseg hivasa */
+		if (isAlive) {
+			/* ha nincs kovetkezo */
+			if (nextUnit == null) {
+				/* megnezzuk, az elozonek kuld-e vissza kovet */
+				rejectStone = isStone && (receivesStone || eatenStoneBerry);
+				/* megnezzuk, ko lesz-e */
+				isStone = isStone || receivesStone || eatenStoneBerry;
+				eatenStoneBerry = false;
+			} /* ha van kovetkezo */ else {
+				/* szolunk neki is, es a kovet is tovabbadjuk */
+				nextRejectsStone = nextUnit.stoneStep(isStone);
 				eatenFieldBerry = false;
+				/* megnezzuk, az elozonek kuld-e vissza kovet */
+				rejectStone = isStone && nextRejectsStone && (receivesStone || eatenStoneBerry);
+				/* megnezzuk, ko lesz-e */
+				isStone = receivesStone || eatenStoneBerry || (nextRejectsStone && isStone);
 				eatenStoneBerry = false;
 			}
 		}
+
+		return rejectStone;
 	}
 
 	/**

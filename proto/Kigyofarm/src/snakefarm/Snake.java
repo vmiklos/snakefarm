@@ -151,13 +151,20 @@ public class Snake {
 	public void step() {
 		Proto.out.println("Event Step " + id);
 		if (isAlive) {
-			controlPhase++;
-			if(controlPhase != controlSpeed)
-				return;
-			controlPhase = 0;
 			SnakeUnit head = units.get(0);
 			Field next = head.getNextField(direction);
-			head.step(next, false);
+			controlPhase++;
+			if(controlPhase == controlSpeed)
+			{
+				controlPhase = 0;
+				head.step(next, false);
+			}
+			stonePhase++;
+			if(stonePhase == stoneSpeed)
+			{
+				stonePhase = 0;
+				head.stoneStep(false);
+			}
 			if (sawCounter > 0) {
 				if(sawCounter==1)
 					// most lep at normal modba
