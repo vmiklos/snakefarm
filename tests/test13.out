@@ -6,4 +6,5 @@ StepEvent SnakeDie 1
 End Step
 Event Step 2
 End Step
+Event StoneStep 2
 Event Exit

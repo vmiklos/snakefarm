@@ -170,7 +170,7 @@ public class Snake {
 			if(stepped)
 				Proto.out.println("End Step");
 			stonePhase++;
-			if(stonePhase == stoneSpeed)
+			if(isAlive && stonePhase == stoneSpeed)
 			{
 				stonePhase = 0;
 				head.stoneStep(false);
