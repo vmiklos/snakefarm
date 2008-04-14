@@ -7,11 +7,9 @@ package snakefarm;
 public class SnakeUnit extends Collidable {
 
 	public int id;
-	// ezek valszeg lehetnek majd private-ek de most debug celbol legyen
-	// public
-	public Snake snake;
-	public SnakeUnit prevUnit = null;
-	public SnakeUnit nextUnit = null;
+	private Snake snake;
+	private SnakeUnit prevUnit = null;
+	private SnakeUnit nextUnit = null;
 	private boolean eatenFieldBerry = false;
 	private boolean eatenStoneBerry = false;
 	private boolean isAlive = true;
@@ -150,6 +148,11 @@ public class SnakeUnit extends Collidable {
 		nextUnit = snakeUnit;
 	}
 
+	public SnakeUnit getNextUnit()
+	{
+		return nextUnit;
+	}
+
 	/**
 	 * Elozo elem allitasa
 	 *
@@ -157,6 +160,11 @@ public class SnakeUnit extends Collidable {
 	 */
 	public void setPrevUnit(SnakeUnit snakeUnit) {
 		prevUnit = snakeUnit;
+	}
+
+	public SnakeUnit getPrevUnit()
+	{
+		return prevUnit;
 	}
 
 	/**

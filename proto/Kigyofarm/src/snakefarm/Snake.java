@@ -65,11 +65,11 @@ public class Snake {
 		}
 		units.add(tail);
 		tail.id = units.size();
-		SnakeUnit i = tail.nextUnit;
+		SnakeUnit i = tail.getNextUnit();
 		while(i != null)
 		{
 			units.add(i);
-			i = i.nextUnit;
+			i = i.getNextUnit();
 		}
 	}
 
@@ -80,16 +80,16 @@ public class Snake {
 	 */
 	public void removeSnakeUnit(SnakeUnit unit) {
 		units.remove(unit);
-		if(unit.prevUnit != null)
+		if(unit.getPrevUnit() != null)
 		{
-			unit.prevUnit.nextUnit = null;
-			unit.prevUnit = null;
+			unit.getPrevUnit().setNextUnit(null);
+			unit.setPrevUnit(null);
 		}
-		SnakeUnit i = unit.nextUnit;
+		SnakeUnit i = unit.getNextUnit();
 		while(i != null)
 		{
 			units.remove(i);
-			i = i.nextUnit;
+			i = i.getNextUnit();
 		}
 	}
 
