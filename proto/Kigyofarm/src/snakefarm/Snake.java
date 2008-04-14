@@ -183,7 +183,7 @@ public class Snake {
 	 */
 	public void die() {
 		if (isAlive) {
-			Proto.out.println("StepEvent SnakeDie");
+			Proto.out.println("StepEvent SnakeDie "+id);
 			isAlive = false;
 			/*for (Iterator i = units.iterator(); i.hasNext();) {
 			((SnakeUnit) (i.next())).die();
