@@ -11,8 +11,7 @@ public class Parser {
 		commands = new HashMap();
 	}
 
-	private Vector preprocess(String fileName) throws Exception {
-		Vector lines = new Vector();
+	public void parse(String fileName) throws Exception {
 		BufferedReader input;
 		if(fileName != null)
 			input = new BufferedReader(new FileReader(new File(fileName)));
@@ -26,16 +25,6 @@ public class Parser {
 			line = line.replaceAll("^ ", "");
 			if(line.equals(""))
 				continue;
-				lines.add(line);
-		}
-		return lines;
-	}
-
-	public void parse(String fileName) throws Exception {
-		Vector lines = preprocess(fileName);
-		Iterator i = lines.iterator();
-		while(i.hasNext()) {
-			String line = (String)i.next();
 			StringTokenizer tokens = new StringTokenizer(line);
 			String cmd = tokens.nextToken();
 			String[] args;
