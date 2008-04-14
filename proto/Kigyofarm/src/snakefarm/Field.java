@@ -8,7 +8,7 @@ import java.util.HashMap;
 public class Field {
 
 	private static int lastid = 0;
-	public int id;
+	private int id;
 	private HashMap<Direction, Field> neighbours = new HashMap<Direction, Field>(Direction.numberOfDirections);
 	private Collidable objectOnField = null;
 
@@ -17,6 +17,11 @@ public class Field {
 	 */
 	public Field(int id) {
 		this.id = id;
+	}
+
+	public int getId()
+	{
+		return id;
 	}
 
 	/**

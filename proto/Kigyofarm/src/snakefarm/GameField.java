@@ -52,7 +52,7 @@ public class GameField {
 		{
 			for (Iterator i = fields.listIterator(); i.hasNext();) {
 				Field field = (Field) i.next();
-				if (field.id == id) {
+				if (field.getId() == id) {
 					return field;
 				}
 			}
@@ -77,12 +77,12 @@ public class GameField {
 			Field up = field.getNext(new Direction(1));
 			int upid = 0;
 			if(up != null)
-				upid = up.id;
+				upid = up.getId();
 			Field left = field.getNext(new Direction(2));
 			int leftid = 0;
 			if(left != null)
-				leftid = left.id;
-			dos.writeBytes(field.id + ";" +
+				leftid = left.getId();
+			dos.writeBytes(field.getId() + ";" +
 					field.getObjectString()+ ";" +
 					upid+ ";" +
 					leftid);

@@ -36,7 +36,7 @@ public class SnakeUnit extends Collidable {
 			stone = "1";
 		else
 			stone = "0";
-		Proto.out.println(field.id + " " + stone);
+		Proto.out.println(field.getId() + " " + stone);
 	}
 
 	/**
@@ -252,7 +252,7 @@ public class SnakeUnit extends Collidable {
 			stone = "1";
 		else
 			stone = "0";
-		Proto.out.println(id + " " + field.id + " " + stone);
+		Proto.out.println(id + " " + field.getId() + " " + stone);
 	}
 
 	/**
