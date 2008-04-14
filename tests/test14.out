@@ -3,5 +3,6 @@ Event MapLoad test14.map
 Event Step 1
 StepEvent Snake_Snake 2
 StepEvent SnakeDie 2
+StepEvent SnakeModeNormal
 End Step
 Event Exit
