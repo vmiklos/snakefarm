@@ -169,4 +169,19 @@ public class Snake {
 		}
 		Proto.out.println("endsnake");
 	}
+
+	public int getLength()
+	{
+		return units.size();
+	}
+
+	public int getControlSpeed()
+	{
+		return controlSpeed;
+	}
+
+	public int getStoneSpeed()
+	{
+		return stoneSpeed;
+	}
 }

@@ -43,6 +43,7 @@ public class SnakeUnit extends Collidable {
 	 * @param snakeUnit a masik kigyoelem
 	 */
 	public void collideWith(SnakeUnit snakeUnit) {
+		Proto.out.println("StepEvent Snake_Snake " + snakeUnit.id);
 		if (isStone) {
 			snakeUnit.collideWith2Stone(this);
 		} else {

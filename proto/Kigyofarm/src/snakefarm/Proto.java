@@ -149,6 +149,15 @@ public class Proto {
 		}
 	}
 
+	private class ShowPlayer implements CommandParser {
+		public void parseCommand(String[] args) throws Exception {
+			if(args.length != 1)
+				throw new Exception("Proto.ShowPlayer.parseCommand: != 1 not yet implemented");
+			Player player = game.getPlayerById(Integer.parseInt(args[0]));
+			player.show();
+		}
+	}
+
 	private class TurnLeft implements CommandParser {
 		public void parseCommand(String[] args) throws Exception {
 			if(args.length != 1)
@@ -183,6 +192,7 @@ public class Proto {
 		parser.addCommand("showsnake", new ShowSnake());
 		parser.addCommand("turnleft", new TurnLeft());
 		parser.addCommand("turnright", new TurnRight());
+		parser.addCommand("showplayer", new ShowPlayer());
 		parser.parse(fileName);
 	}
 

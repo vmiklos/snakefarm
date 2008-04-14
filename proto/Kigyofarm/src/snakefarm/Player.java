@@ -80,6 +80,25 @@ public class Player {
 		temp.clear();
 	}
 
+	public void show()
+	{
+		Proto.out.println("Player " + id);
+		if (snakes != null)
+		{
+			for (Iterator i = snakes.listIterator(); i.hasNext();) {
+				Snake snake = (Snake) i.next();
+				int saw;
+				if(snake.isSaw())
+					saw = 1;
+				else
+					saw = 0;
+				Proto.out.println(snake.id + " " + snake.getLength() + " " + saw + " " +
+						snake.getControlSpeed() + " " + snake.getStoneSpeed());
+			}
+		}
+		Proto.out.println("endplayer");
+	}
+
 	/**
 	 * Eltavolit egy kigyot a jatekostol.
 	 */
