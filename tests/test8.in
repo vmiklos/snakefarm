@@ -1,0 +1,16 @@
+debug 1
+out 1
+time 100
+load test8.map
+addplayer 1
+addsnake 1 1 1 1 1 1
+12 0
+13 0
+20 0
+19 0
+18 0
+endsnake
+step
+comment # a jatekos kigyoi kozt kell lennie egy 2-es sorszamunak
+showplayer 1
+exit

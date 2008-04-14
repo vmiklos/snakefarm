@@ -1,0 +1,11 @@
+Event MapLoad test8.map
+Event Step 1
+StepEvent Snake_Snake 1
+StepEvent SnakeSplit 4 2
+End Step
+# a jatekos kigyoi kozt kell lennie egy 2-es sorszamunak
+Player 1
+1 3 1 1 1
+2 1 1 1 1
+endplayer
+Event Exit
