@@ -150,27 +150,30 @@ public class Snake {
 	 */
 	public void step() {
 		if (isAlive) {
+			boolean stepped = false;
 			SnakeUnit head = units.get(0);
 			controlPhase++;
 			if(controlPhase == controlSpeed)
 			{
 				Proto.out.println("Event Step " + id);
 				controlPhase = 0;
+				stepped = true;
 				Field next = head.getNextField(direction);
 				head.step(next, false);
-				Proto.out.println("End Step");
 			}
+			if (stepped && sawCounter > 0) {
+				if(sawCounter==1)
+					// most lep at normal modba
+					Proto.out.println("StepEvent SnakeModeNormal");
+				sawCounter--;
+			}
+			if(stepped)
+				Proto.out.println("End Step");
 			stonePhase++;
 			if(stonePhase == stoneSpeed)
 			{
 				stonePhase = 0;
 				head.stoneStep(false);
-			}
-			if (sawCounter > 0) {
-				if(sawCounter==1)
-					// most lep at normal modba
-					Proto.out.println("StepEvent SnakeModeNormal");
-				sawCounter--;
 			}
 		}
 	}
