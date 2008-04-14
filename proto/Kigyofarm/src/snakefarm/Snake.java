@@ -162,7 +162,7 @@ public class Snake {
 				head.step(next, false);
 			}
 			if (stepped && sawCounter > 0) {
-				if(sawCounter==1)
+				if(sawCounter==1 && isAlive)
 					// most lep at normal modba
 					Proto.out.println("StepEvent SnakeModeNormal");
 				sawCounter--;
