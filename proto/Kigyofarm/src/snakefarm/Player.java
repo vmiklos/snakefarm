@@ -59,7 +59,7 @@ public class Player {
 		{
 			for (Iterator i = snakes.listIterator(); i.hasNext();) {
 				Snake snake = (Snake) i.next();
-				if(snake.id == id)
+				if(snake.getId() == id)
 					snake.show();
 			}
 		}
@@ -69,7 +69,7 @@ public class Player {
 		{
 			for (Iterator i = snakes.listIterator(); i.hasNext();) {
 				Snake snake = (Snake) i.next();
-				if (snake.id == id) {
+				if (snake.getId() == id) {
 					return snake;
 				}
 			}
@@ -102,7 +102,7 @@ public class Player {
 					saw = 1;
 				else
 					saw = 0;
-				Proto.out.println(snake.id + " " + snake.getLength() + " " + saw + " " +
+				Proto.out.println(snake.getId() + " " + snake.getLength() + " " + saw + " " +
 						snake.getControlSpeed() + " " + snake.getStoneSpeed());
 			}
 		}
@@ -135,7 +135,7 @@ public class Player {
 		{
 			for (Iterator i = snakes.listIterator(); i.hasNext();) {
 				Snake snake = (Snake) i.next();
-				if (snake.id == id) {
+				if (snake.getId() == id) {
 					snake.turnLeft();
 				}
 			}
@@ -147,7 +147,7 @@ public class Player {
 		{
 			for (Iterator i = snakes.listIterator(); i.hasNext();) {
 				Snake snake = (Snake) i.next();
-				if (snake.id == id) {
+				if (snake.getId() == id) {
 					snake.turnRight();
 				}
 			}

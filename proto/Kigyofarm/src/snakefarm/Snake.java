@@ -8,7 +8,7 @@ import java.util.*;
  */
 public class Snake {
 
-	public int id;
+	private int id;
 	public static final int sawCounterMax = 20;
 	public Player player;
 	private Direction direction = new Direction(0);
@@ -29,6 +29,11 @@ public class Snake {
 		this.player = player;
 		this.id = id;
 		units = new LinkedList<SnakeUnit>();
+	}
+
+	public int getId()
+	{
+		return id;
 	}
 
 	public void save()
