@@ -31,8 +31,13 @@ public class Player {
 	 * Letrehoz egy uj kigyot, es a jatekoshoz, valamint a megadott
 	 * mezohoz rendeli.
 	 */
-	public void addSnake(int id) {
+	public int addSnake(int id) {
+		if(id>0)
+			lastid = id;
+		else
+			id = ++lastid;
 		snakes.add(new Snake(this, id));
+		return id;
 	}
 
 	public void saveSnakes()

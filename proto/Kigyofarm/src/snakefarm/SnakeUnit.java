@@ -7,9 +7,11 @@ package snakefarm;
 public class SnakeUnit extends Collidable {
 
 	public int id;
-	private Snake snake;
-	private SnakeUnit prevUnit = null;
-	private SnakeUnit nextUnit = null;
+	// ezek valszeg lehetnek majd private-ek de most debug celbol legyen
+	// public
+	public Snake snake;
+	public SnakeUnit prevUnit = null;
+	public SnakeUnit nextUnit = null;
 	private boolean eatenFieldBerry = false;
 	private boolean eatenStoneBerry = false;
 	private boolean isAlive = true;
@@ -38,7 +40,8 @@ public class SnakeUnit extends Collidable {
 	}
 
 	/**
-	 * Ket kigyoelem utkozteteset vegzi el.
+	 * Ket kigyoelem utkozteteset vegzi el ugy, hogy tudjuk, hogy a
+	 * masik kigyolem nincs fureszmodban.
 	 *
 	 * @param snakeUnit a masik kigyoelem
 	 */
@@ -63,7 +66,14 @@ public class SnakeUnit extends Collidable {
 			snakeUnit.collideWith2Stone(this);
 		} else {
 			snakeUnit.collideWith2(this);
-			die();
+			snake.removeSnakeUnit(this);
+			int snakeid = snake.player.addSnake(0);
+			Snake newsnake = snake.player.getSnakeById(snakeid);
+			newsnake.sawCounter = snake.sawCounter;
+			newsnake.controlSpeed = snake.controlSpeed;
+			newsnake.stoneSpeed = snake.stoneSpeed;
+			newsnake.addSnakeUnit(nextUnit);
+			System.out.println("StepEvent SnakeSplit "+id+" "+newsnake.id);
 		}
 	}
 
@@ -106,11 +116,12 @@ public class SnakeUnit extends Collidable {
 
 	/**
 	 * Utkozes kezelese kigyoelemmel abban az esetben, ha nekunk
-	 * utkoznek, es nem mi utkozunk.
+	 * utkoznek, es a masik kigyoelemben nincs ko.
 	 *
 	 * @param snakeUnit utkozo kigyoelem
 	 */
 	public void collideWith2(SnakeUnit snakeUnit) {
+		System.out.println("StepEvent Snake_Snake "+id);
 		if (!snake.isSaw()) {
 			die();
 		}
@@ -159,10 +170,10 @@ public class SnakeUnit extends Collidable {
 			die();
 		}
 
-		/* utkozunk */
 		if (isAlive) {
 			field.stepOut(this);
 			Collidable collidee = nextField.stepOn(this);
+			/* utkozunk */
 			if (collidee != null) {
 				if (snake.isSaw()) {
 					collidee.collideWithSaw(this);

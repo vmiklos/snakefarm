@@ -10,15 +10,15 @@ public class Snake {
 
 	public int id;
 	public static final int sawCounterMax = 20;
-	private Player player;
+	public Player player;
 	private Direction direction = new Direction(0);
 	private List<SnakeUnit> units;
-	private int sawCounter = 0;
+	public int sawCounter = 0;
 	private boolean isAlive = true;
 	private int controlPhase = 0;
-	private int controlSpeed = 0;
+	public int controlSpeed = 0;
 	private int stonePhase = 0;
-	private int stoneSpeed = 0;
+	public int stoneSpeed = 0;
 
 	/**
 	 * A kigyo konstruktora.
@@ -56,9 +56,16 @@ public class Snake {
 		{
 			SnakeUnit su = (SnakeUnit) units.get(units.size()-1);
 			su.setNextUnit(tail);
+			tail.setPrevUnit(su);
 		}
 		units.add(tail);
 		tail.id = units.size();
+		SnakeUnit i = tail.nextUnit;
+		while(i != null)
+		{
+			units.add(i);
+			i = i.nextUnit;
+		}
 	}
 
 	/**
@@ -67,9 +74,18 @@ public class Snake {
 	 * @param unit melyik elem legyen torolve
 	 */
 	public void removeSnakeUnit(SnakeUnit unit) {
-		/* TODO: itt sztem fixelni kene meg az szomszedoes
-		 * elemek referenciait (vmiklos). */
 		units.remove(unit);
+		if(unit.prevUnit != null)
+		{
+			unit.prevUnit.nextUnit = null;
+			unit.prevUnit = null;
+		}
+		SnakeUnit i = unit.nextUnit;
+		while(i != null)
+		{
+			units.remove(i);
+			i = i.nextUnit;
+		}
 	}
 
 	/**
@@ -130,12 +146,12 @@ public class Snake {
 	public void step() {
 		Proto.out.println("Event Step " + id);
 		if (isAlive) {
-			if (sawCounter > 0) {
-				sawCounter--;
-			}
 			SnakeUnit head = units.get(0);
 			Field next = head.getNextField(direction);
 			head.step(next, false);
+			if (sawCounter > 0) {
+				sawCounter--;
+			}
 		}
 		Proto.out.println("End Step");
 	}
@@ -144,8 +160,8 @@ public class Snake {
 	 * Megoli a kigyot.
 	 */
 	public void die() {
-		Proto.out.println("StepEvent SnakeDie");
 		if (isAlive) {
+			Proto.out.println("StepEvent SnakeDie");
 			isAlive = false;
 			/*for (Iterator i = units.iterator(); i.hasNext();) {
 			((SnakeUnit) (i.next())).die();
