@@ -30,16 +30,4 @@ public class Wall extends Collidable {
 	public void collideWith(SnakeUnit snakeUnit) {
 		snakeUnit.collideWith2(this);
 	}
-
-	/*
-	 * Utkozes fureszmodban levo kigyoelemmel.
-	 *
-	 * @param snakeUnit utkozo kigyoelem
-	 */
-	@Override
-	public void collideWithSaw(SnakeUnit snakeUnit) {
-		/* TODO: wtf? nem tokmind1, hha falnak megyunk akkor
-		 * van-e fureszunk? (vmiklos) */
-		snakeUnit.collideWith2(this);
-	}
 }
