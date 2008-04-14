@@ -93,6 +93,7 @@ public class SnakeUnit extends Collidable {
 	 * @param sawBerry az utkozo fureszbogyo
 	 */
 	public void collideWith2(SawBerry sawBerry) {
+		Proto.out.println("StepEvent Snake_SawBerry");
 		snake.setSawCounter(Snake.sawCounterMax);
 	}
 
@@ -102,6 +103,7 @@ public class SnakeUnit extends Collidable {
 	 * @param fieldBerry az utkozo mezei bogyo
 	 */
 	public void collideWith2(FieldBerry fieldBerry) {
+		Proto.out.println("StepEvent Snake_FieldBerry");
 		eatenFieldBerry = true;
 	}
 
@@ -111,6 +113,7 @@ public class SnakeUnit extends Collidable {
 	 * @param stoneBerry az utkozo kobogyo
 	 */
 	public void collideWith2(StoneBerry stoneBerry) {
+		Proto.out.println("StepEvent Snake_StoneBerry");
 		eatenStoneBerry = true;
 	}
 
@@ -134,6 +137,7 @@ public class SnakeUnit extends Collidable {
 	 * @param snakeUnit masik elem
 	 */
 	public void collideWith2Stone(SnakeUnit snakeUnit) {
+		System.out.println("StepEvent Snake_Snake "+id);
 		die();
 	}
 
