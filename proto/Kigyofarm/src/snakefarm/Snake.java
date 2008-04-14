@@ -10,7 +10,7 @@ public class Snake {
 
 	private int id;
 	public static final int sawCounterMax = 20;
-	public Player player;
+	private Player player;
 	private Direction direction = new Direction(0);
 	private List<SnakeUnit> units;
 	public int sawCounter = 0;

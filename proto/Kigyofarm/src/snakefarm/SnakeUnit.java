@@ -67,8 +67,8 @@ public class SnakeUnit extends Collidable {
 		} else {
 			snakeUnit.collideWith2(this);
 			snake.removeSnakeUnit(this);
-			int snakeid = snake.player.addSnake(0);
-			Snake newsnake = snake.player.getSnakeById(snakeid);
+			int snakeid = snake.getPlayer().addSnake(0);
+			Snake newsnake = snake.getPlayer().getSnakeById(snakeid);
 			newsnake.sawCounter = snake.sawCounter;
 			newsnake.controlSpeed = snake.controlSpeed;
 			newsnake.stoneSpeed = snake.stoneSpeed;
