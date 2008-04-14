@@ -1,0 +1,54 @@
+Event MapLoad test11.map
+# kezdetben mindegyik kigyonak a fejeben van ko
+Snake 1
+Prop 0 2 1
+1 11 1
+2 10 0
+3 9 0
+endsnake
+Snake 2
+Prop 0 2 2
+1 18 1
+2 17 0
+3 16 0
+endsnake
+Snake 3
+Prop 0 2 4
+1 25 1
+2 24 0
+3 23 0
+endsnake
+# leptetunk kettot, mindegyik kigyonak 2 a controlspeedje, ezert ezalatt 1-et mozog
+# az elso lepes alatt csak egy kolepes tortenik az elso kigyoban
+Event StoneStep 1
+# a masodik lepes alatt lep megint az elso kigyo kove, meg a masodike is, es mindegyik kigyo mozog egyet
+Event Step 1
+End Step
+Event StoneStep 1
+Event Step 2
+End Step
+Event StoneStep 2
+Event Step 3
+End Step
+# az elso kigyo stonespeedje 1, ezert kettot lep benne a ko
+Snake 1
+Prop 0 2 1
+1 12 0
+2 11 0
+3 10 1
+endsnake
+# a masodik kigyo stonespeedje 2, ezert egyet lep benne a ko
+Snake 2
+Prop 0 2 2
+1 19 0
+2 18 1
+3 17 0
+endsnake
+# a harmadik kigyo stonespeedje 4, ezert nem lep benne a ko
+Snake 3
+Prop 0 2 4
+1 26 1
+2 25 0
+3 24 0
+endsnake
+Event Exit

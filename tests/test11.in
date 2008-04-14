@@ -1,0 +1,38 @@
+debug 1
+out 1
+time 100
+load test11.map
+addplayer 1
+addsnake 1 1 0 2 1 0
+11 1
+10 0
+9 0
+endsnake
+addplayer 2
+addsnake 2 2 0 2 2 0
+18 1
+17 0
+16 0
+endsnake
+addplayer 3
+addsnake 3 3 0 2 4 0
+25 1
+24 0
+23 0
+endsnake
+comment # kezdetben mindegyik kigyonak a fejeben van ko
+showsnake 1
+showsnake 2
+showsnake 3
+comment # leptetunk kettot, mindegyik kigyonak 2 a controlspeedje, ezert ezalatt 1-et mozog
+comment # az elso lepes alatt csak egy kolepes tortenik az elso kigyoban
+step
+comment # a masodik lepes alatt lep megint az elso kigyo kove, meg a masodike is, es mindegyik kigyo mozog egyet
+step
+comment # az elso kigyo stonespeedje 1, ezert kettot lep benne a ko
+showsnake 1
+comment # a masodik kigyo stonespeedje 2, ezert egyet lep benne a ko
+showsnake 2
+comment # a harmadik kigyo stonespeedje 4, ezert nem lep benne a ko
+showsnake 3
+exit
