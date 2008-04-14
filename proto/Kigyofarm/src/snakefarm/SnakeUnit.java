@@ -72,7 +72,10 @@ public class SnakeUnit extends Collidable {
 			snake.removeSnakeUnit(this);
 			int snakeid = snake.getPlayer().addSnake(0);
 			Snake newsnake = snake.getPlayer().getSnakeById(snakeid);
-			newsnake.setSawCounter(snake.getSawCounter());
+			// itt azert -1 mert az eredeti erteket majd
+			// csokkenteni fogjuk de az uj kigyoet nem
+			// tudjuk majd, tehat itt tesszuk meg
+			newsnake.setSawCounter(snake.getSawCounter()-1);
 			newsnake.setControlSpeed(snake.getControlSpeed());
 			newsnake.setStoneSpeed(snake.getStoneSpeed());
 			newsnake.addSnakeUnit(nextUnit);

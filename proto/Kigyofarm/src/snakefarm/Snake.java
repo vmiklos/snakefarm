@@ -155,6 +155,9 @@ public class Snake {
 			Field next = head.getNextField(direction);
 			head.step(next, false);
 			if (sawCounter > 0) {
+				if(sawCounter==1)
+					// most lep at normal modba
+					Proto.out.println("StepEvent SnakeModeNormal");
 				sawCounter--;
 			}
 		}
