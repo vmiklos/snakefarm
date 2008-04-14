@@ -49,7 +49,7 @@ public class SnakeUnit extends Collidable {
 	 * @param snakeUnit a masik kigyoelem
 	 */
 	public void collideWith(SnakeUnit snakeUnit) {
-		Proto.out.println("StepEvent Snake_Snake " + snakeUnit.id);
+		Proto.out.println("StepEvent Snake_Snake " + snake.getId());
 		if (isStone) {
 			snakeUnit.collideWith2Stone(this);
 		} else {
@@ -65,6 +65,7 @@ public class SnakeUnit extends Collidable {
 	 */
 	@Override
 	public void collideWithSaw(SnakeUnit snakeUnit) {
+		Proto.out.println("StepEvent Snake_Snake " + snake.getId());
 		if (isStone) {
 			snakeUnit.collideWith2Stone(this);
 		} else {
@@ -130,7 +131,6 @@ public class SnakeUnit extends Collidable {
 	 * @param snakeUnit utkozo kigyoelem
 	 */
 	public void collideWith2(SnakeUnit snakeUnit) {
-		System.out.println("StepEvent Snake_Snake "+id);
 		if (!snake.isSaw()) {
 			die();
 		}
@@ -143,7 +143,6 @@ public class SnakeUnit extends Collidable {
 	 * @param snakeUnit masik elem
 	 */
 	public void collideWith2Stone(SnakeUnit snakeUnit) {
-		System.out.println("StepEvent Snake_Snake "+id);
 		die();
 	}
 
