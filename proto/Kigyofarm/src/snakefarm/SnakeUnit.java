@@ -69,9 +69,9 @@ public class SnakeUnit extends Collidable {
 			snake.removeSnakeUnit(this);
 			int snakeid = snake.getPlayer().addSnake(0);
 			Snake newsnake = snake.getPlayer().getSnakeById(snakeid);
-			newsnake.sawCounter = snake.sawCounter;
-			newsnake.controlSpeed = snake.controlSpeed;
-			newsnake.stoneSpeed = snake.stoneSpeed;
+			newsnake.setSawCounter(snake.getSawCounter());
+			newsnake.setControlSpeed(snake.getControlSpeed());
+			newsnake.setStoneSpeed(snake.getStoneSpeed());
 			newsnake.addSnakeUnit(nextUnit);
 			System.out.println("StepEvent SnakeSplit "+id+" "+newsnake.getId());
 		}

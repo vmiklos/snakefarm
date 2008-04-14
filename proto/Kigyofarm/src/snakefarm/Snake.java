@@ -13,12 +13,12 @@ public class Snake {
 	private Player player;
 	private Direction direction = new Direction(0);
 	private List<SnakeUnit> units;
-	public int sawCounter = 0;
+	private int sawCounter = 0;
 	private boolean isAlive = true;
 	private int controlPhase = 0;
-	public int controlSpeed = 0;
+	private int controlSpeed = 0;
 	private int stonePhase = 0;
-	public int stoneSpeed = 0;
+	private int stoneSpeed = 0;
 
 	/**
 	 * A kigyo konstruktora.
@@ -204,5 +204,10 @@ public class Snake {
 	public int getStoneSpeed()
 	{
 		return stoneSpeed;
+	}
+
+	public int getSawCounter()
+	{
+		return sawCounter;
 	}
 }
