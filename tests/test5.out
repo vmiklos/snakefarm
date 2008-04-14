@@ -4,6 +4,7 @@ End Step
 Event Step 2
 StepEvent Snake_Snake 1
 StepEvent SnakeSplit 2 3
+StepEvent SnakeModeNormal
 End Step
 # az elozo lepesben az elso kigyo 3. egysege leszakadt, a 2. megevodott, a 3.-bol uj kigyo keletkezett 3 sorszammal
 Player 1
