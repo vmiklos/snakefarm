@@ -1,0 +1,32 @@
+Event MapLoad test17.map
+# mindegyik kigyo 3 hosszu
+# az elsoben 3 ko van
+Snake 1
+Prop 0 1 1
+1 11 1
+2 10 1
+3 9 1
+endsnake
+# a masodikban es a harmadikban 2
+Snake 2
+Prop 0 1 1
+1 18 0
+2 17 1
+3 16 1
+endsnake
+Snake 3
+Prop 0 1 1
+1 25 0
+2 24 1
+3 23 1
+endsnake
+# ket nyertesnek kell lennie, a masodiknak es a harmadiknak
+Event Step 1
+End Step
+Event Step 2
+End Step
+Event Step 3
+End Step
+Event Win 2
+Event Win 3
+Event Exit
