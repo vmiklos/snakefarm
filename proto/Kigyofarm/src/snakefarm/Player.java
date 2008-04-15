@@ -1,14 +1,12 @@
 package snakefarm;
 
-import java.util.List;
-import java.util.LinkedList;
-import java.util.Iterator;
+import java.util.*;
 
 /**
  * Jatekos alaposztaly. Tartalmazza a jatekos kigyoit. Felel a sajat
  * kigyoinak a letrehozasaert.
  */
-public class Player {
+public class Player implements Comparable {
 
 	private static int lastid = 0;
 	private int id;
@@ -64,15 +62,15 @@ public class Player {
 		return max;
 	}
 
-	public int getMaxStoneLength()
+	public int getMinStoneLength()
 	{
-		int max = 0;
+		int min = 0;
 		for (Iterator i = snakes.listIterator(); i.hasNext();) {
 			Snake snake = (Snake) i.next();
-			if (snake.getStoneLength() > max)
-				max = snake.getStoneLength();
+			if (min == 0 || snake.getStoneLength() < min)
+				min = snake.getStoneLength();
 		}
-		return max;
+		return min;
 	}
 
 	public void showSnake(int id)
@@ -174,5 +172,27 @@ public class Player {
 				}
 			}
 		}
+	}
+
+	public int compareTo (Object o)
+	{
+		Player b = (Player) o;
+		List<Player> ret = new LinkedList<Player>();
+		if(getMaxLength() != b.getMaxLength())
+		{
+			if(getMaxLength() > b.getMaxLength())
+				return -1;
+			else
+				return 1;
+		}
+		else if(getMinStoneLength() != b.getMinStoneLength())
+		{
+			if(getMinStoneLength() > b.getMinStoneLength())
+				return 1;
+			else
+				return -1;
+		}
+		else
+			return 0;
 	}
 }

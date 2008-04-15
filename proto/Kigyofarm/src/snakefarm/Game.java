@@ -79,18 +79,14 @@ public class Game {
 
 	public void end()
 	{
-		Player max = null;
+		Collections.sort((List)players);
+		int max = players.get(0).getMaxLength();
+		int minStone = players.get(0).getMinStoneLength();
 		for (Iterator i = players.iterator(); i.hasNext();) {
 			Player player = (Player) i.next();
-			if(max == null)
-				max = player;
-			else
-				if((max.getMaxLength() < player.getMaxLength()) ||
-						((max.getMaxLength() == player.getMaxLength()) &&
-						 (max.getMaxStoneLength() > player.getMaxStoneLength())))
-					max = player;
+			if(player.compareTo(players.get(0))==0)
+				player.win();
 		}
-		max.win();
 	}
 
 	public Player getPlayerById(int id) {
