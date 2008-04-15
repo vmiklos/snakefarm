@@ -47,6 +47,12 @@ public class GameField {
 		}
 	}
 
+	/**
+	 * Visszaad egy Field-et az azonositoja alapjan.
+	 *
+	 * @param id az azonosito
+	 * @return a Field
+	 */
 	public Field getFieldById(int id) {
 		if (fields != null)
 		{
@@ -60,6 +66,11 @@ public class GameField {
 		return null;
 	}
 
+	/**
+	 * Elmenti a jatekmezot.
+	 *
+	 * @param fileName kimenet fileneve
+	 */
 	public void saveMap(String fileName) throws Exception {
 		Proto.out.println("load " + fileName);
 		File file = new File(fileName);
@@ -92,6 +103,11 @@ public class GameField {
 		}
 	}
 
+	/**
+	 * Betolt egy jatekmezot
+	 *
+	 * @param fileName a jatekmezo eleresi utja
+	 */
 	public void loadMap(String fileName) throws Exception {
 		Proto.out.println("Event MapLoad " + fileName);
 		fields = new LinkedList<Field>();
