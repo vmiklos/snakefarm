@@ -15,6 +15,9 @@ public class Proto {
 	// kell, hogy hanyas snake-hez kerulnek be uj unitok
 	private static Snake snake = null;
 
+	/**
+	 * A debug parancs ertelmezoje.
+	 */
 	private class Debug implements CommandParser {
 		public void parseCommand(String[] args) throws Exception {
 			if(args.length != 1)
@@ -26,6 +29,9 @@ public class Proto {
 		}
 	}
 
+	/**
+	 * Az out parancs ertelmezoje.
+	 */
 	private class Out implements CommandParser {
 		public void parseCommand(String[] args) throws Exception {
 			if(args.length != 1)
@@ -38,6 +44,9 @@ public class Proto {
 		}
 	}
 
+	/**
+	 * A time parancs ertelmezoje.
+	 */
 	private class Time implements CommandParser {
 		public void parseCommand(String[] args) throws Exception {
 			if(args.length != 1)
@@ -46,6 +55,9 @@ public class Proto {
 		}
 	}
 
+	/**
+	 * A load parancs ertelmezoje.
+	 */
 	private class Load implements CommandParser {
 		public void parseCommand(String[] args) throws Exception {
 			if(args.length != 1)
@@ -54,6 +66,9 @@ public class Proto {
 		}
 	}
 
+	/**
+	 * Az addplayer parancs ertelmezoje.
+	 */
 	private class AddPlayer implements CommandParser {
 		public void parseCommand(String[] args) throws Exception {
 			if(args.length != 1)
@@ -62,6 +77,9 @@ public class Proto {
 		}
 	}
 
+	/**
+	 * Az addsnake parancs ertelmezoje.
+	 */
 	private class AddSnake implements CommandParser {
 		public void parseCommand(String[] args) throws Exception {
 			if(args.length != 6)
@@ -83,6 +101,9 @@ public class Proto {
 		}
 	}
 
+	/**
+	 * Az addsnakeunit parancs ertelmezoje.
+	 */
 	private class AddSnakeUnit implements CommandParser {
 		public void parseCommand(String[] args) throws Exception {
 			if(args.length != 2)
@@ -96,11 +117,17 @@ public class Proto {
 		}
 	}
 
+	/**
+	 * Az endsnake parancs ertelmezoje.
+	 */
 	private class EndSnake implements CommandParser {
 		public void parseCommand(String[] args) throws Exception {
 		}
 	}
 
+	/**
+	 * A comment parancs ertelmezoje.
+	 */
 	private class Comment implements CommandParser {
 		public void parseCommand(String[] args) throws Exception {
 			// poor man's StringUtils.join()
@@ -114,6 +141,9 @@ public class Proto {
 		}
 	}
 
+	/**
+	 * A snapshot parancs ertelmezoje.
+	 */
 	private class Snapshot implements CommandParser {
 		public void parseCommand(String[] args) throws Exception {
 			if(args.length != 1)
@@ -123,6 +153,9 @@ public class Proto {
 		}
 	}
 
+	/**
+	 * Az exit parancs ertelmezoje.
+	 */
 	private class Exit implements CommandParser {
 		public void parseCommand(String[] args) throws Exception {
 			out.println("Event Exit");
@@ -130,6 +163,9 @@ public class Proto {
 		}
 	}
 
+	/**
+	 * A step parancs ertelmezoje.
+	 */
 	private class Step implements CommandParser {
 		public void parseCommand(String[] args) throws Exception {
 			int num = 1;
@@ -143,6 +179,9 @@ public class Proto {
 		}
 	}
 
+	/**
+	 * A showsnake parancs ertelmezoje.
+	 */
 	private class ShowSnake implements CommandParser {
 		public void parseCommand(String[] args) throws Exception {
 			if(args.length != 1)
@@ -152,6 +191,9 @@ public class Proto {
 		}
 	}
 
+	/**
+	 * A showplayer parancs ertelmezoje.
+	 */
 	private class ShowPlayer implements CommandParser {
 		public void parseCommand(String[] args) throws Exception {
 			if(args.length != 1)
@@ -161,6 +203,9 @@ public class Proto {
 		}
 	}
 
+	/**
+	 * A turnleft parancs ertelmezoje.
+	 */
 	private class TurnLeft implements CommandParser {
 		public void parseCommand(String[] args) throws Exception {
 			if(args.length != 1)
@@ -169,6 +214,9 @@ public class Proto {
 		}
 	}
 
+	/**
+	 * A turnright parancs ertelmezoje.
+	 */
 	private class TurnRight implements CommandParser {
 		public void parseCommand(String[] args) throws Exception {
 			if(args.length != 1)
@@ -177,6 +225,12 @@ public class Proto {
 		}
 	}
 
+	/**
+	 * A proto konstruktora.
+	 *
+	 * @param fileName a bemeneti file eleresi utja. null azt
+	 * jelenti, hogy stdinrol olvasson a program.
+	 */
 	public Proto(String fileName) throws Exception {
 		game = new Game();
 		Parser parser = new Parser();
