@@ -1,5 +1,5 @@
 #!/bin/bash
-proto="java -jar ../proto/Kigyofarm/dist/Kigyofarm.jar"
+proto="java -jar ../proto/Kigyofarm/src/Kigyofarm.jar"
 compare="java -jar compare/TestCompare.jar"
 
 runtest() {
