@@ -24,6 +24,11 @@ public class Game {
 		gameField = new GameField(this);
 	}
 
+	/**
+	 * Visszaadja a jatek jatekteret.
+	 *
+	 * @return a jatekter
+	 */
 	public GameField getGameField()
 	{
 		return gameField;
@@ -37,6 +42,9 @@ public class Game {
 		players.add(player);
 	}
 
+	/**
+	 * Elmenti a jatekosokat.
+	 */
 	public void savePlayers()
 	{
 		for (Iterator i = players.listIterator(); i.hasNext();) {
@@ -46,6 +54,9 @@ public class Game {
 		}
 	}
 
+	/**
+	 * Megnezi, hogy vege van-e a jateknak.
+	 */
 	private boolean checkEnd()
 	{
 		int countAlive = 0;
@@ -77,6 +88,9 @@ public class Game {
 		}
 	}
 
+	/**
+	 * Veget vet a jateknak.
+	 */
 	public void end()
 	{
 		Collections.sort((List)players);
@@ -89,6 +103,12 @@ public class Game {
 		}
 	}
 
+	/**
+	 * Megkeres egy jatekost az azonositoja alapjan.
+	 *
+	 * @param id azonosito
+	 * @return a jatekos
+	 */
 	public Player getPlayerById(int id) {
 		if (players != null)
 		{
@@ -102,6 +122,11 @@ public class Game {
 		return null;
 	}
 
+	/**
+	 * Megmutat egy kigyot
+	 *
+	 * @param id a kigyo azonositoja
+	 */
 	public void showSnake(int id)
 	{
 		if (players != null)
@@ -113,6 +138,11 @@ public class Game {
 		}
 	}
 
+	/**
+	 * Balra forgat egy kigyot
+	 *
+	 * @param snakeId a kigyo azonositoja
+	 */
 	public void turnLeft(int snakeId) {
 		if (players != null)
 		{
@@ -123,6 +153,11 @@ public class Game {
 		}
 	}
 
+	/**
+	 * Jobbra forgat egy kigyot
+	 * 
+	 * @param snakeId a kigyo azonositoja
+	 */
 	public void turnRight(int snakeId) {
 		if (players != null)
 		{
