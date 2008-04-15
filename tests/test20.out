@@ -1,0 +1,174 @@
+Event MapLoad test20.map
+Event Step 1
+StepEvent Snake_StoneBerry
+End Step
+Event Step 2
+End Step
+Event Step 3
+End Step
+Event Step 4
+StepEvent Snake_SawBerry
+End Step
+Event Step 5
+End Step
+Event Step 6
+StepEvent Snake_FieldBerry
+End Step
+Event Step 7
+End Step
+Event Step 8
+End Step
+Event Step 1
+StepEvent Snake_StoneBerry
+End Step
+Event StoneStep 1
+Event Step 2
+End Step
+Event Step 3
+StepEvent Snake_SawBerry
+End Step
+Event Step 4
+StepEvent Snake_Snake 2
+StepEvent SnakeSplit 3 9
+End Step
+Event Step 5
+StepEvent Snake_FieldBerry
+End Step
+Event Step 6
+End Step
+Event Step 7
+StepEvent TurnRight
+End Step
+Event Step 8
+StepEvent TurnRight
+StepEvent Snake_SawBerry
+End Step
+Event Step 1
+End Step
+Event StoneStep 1
+Event StoneStep 1
+Event Step 2
+End Step
+Event Step 9
+End Step
+Event Step 3
+End Step
+Event Step 4
+End Step
+Event Step 5
+StepEvent Snake_Snake 2
+StepEvent SnakeDie 5
+End Step
+Event Step 6
+End Step
+Event Step 7
+StepEvent TurnRight
+End Step
+Event Step 8
+StepEvent TurnRight
+StepEvent Snake_FieldBerry
+End Step
+Event Step 1
+StepEvent Snake_SawBerry
+End Step
+Event Step 2
+End Step
+Event Step 9
+StepEvent Snake_Wall
+StepEvent SnakeDie 9
+End Step
+Event Step 3
+End Step
+Event Step 4
+StepEvent Snake_Wall
+StepEvent SnakeDie 4
+End Step
+Event Step 6
+StepEvent TurnLeft
+End Step
+Event Step 7
+StepEvent TurnRight
+StepEvent Snake_Snake 7
+StepEvent SnakeDie 7
+End Step
+Event Step 8
+StepEvent TurnRight
+StepEvent Snake_Snake 8
+StepEvent SnakeSplit 4 10
+End Step
+Event Step 1
+StepEvent TurnLeft
+End Step
+Event Step 2
+End Step
+Event Step 3
+End Step
+Event Step 6
+StepEvent TurnRight
+End Step
+Event Step 8
+End Step
+Event Step 10
+End Step
+Event Step 1
+End Step
+Event Step 2
+End Step
+Event Step 3
+End Step
+Event Step 6
+StepEvent TurnRight
+End Step
+Event Step 8
+StepEvent Snake_Wall
+StepEvent SnakeDie 8
+End Step
+Event Step 10
+StepEvent Snake_Wall
+StepEvent SnakeDie 10
+End Step
+Event Step 1
+StepEvent Snake_FieldBerry
+End Step
+Event StoneStep 1
+Event StoneStep 1
+Event Step 2
+StepEvent TurnRight
+End Step
+Event Step 3
+End Step
+Event Step 6
+End Step
+Event Step 1
+End Step
+Event Step 2
+StepEvent Snake_Snake 1
+StepEvent SnakeDie 2
+End Step
+Event Step 3
+StepEvent Snake_Snake 1
+StepEvent SnakeDie 3
+End Step
+Event Step 6
+End Step
+Event Step 1
+StepEvent TurnLeft
+End Step
+Event Step 6
+StepEvent TurnLeft
+End Step
+Event Step 1
+End Step
+Event Step 6
+End Step
+Event Step 1
+End Step
+Event Step 6
+StepEvent TurnLeft
+End Step
+Event Step 1
+End Step
+Event Step 6
+StepEvent Snake_Snake 1
+StepEvent SnakeDie 6
+End Step

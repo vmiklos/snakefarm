@@ -1,0 +1,82 @@
+debug 1
+out 1
+time 14
+load test20.map
+addplayer 1
+addsnake 1 1 2 1 1 0
+24 0
+25 0
+26 0
+endsnake
+addplayer 2
+addsnake 2 2 1 1 1 0
+138 0
+153 0
+168 0
+183 0
+198 0
+endsnake
+addplayer 3
+addsnake 3 3 2 1 1 0
+58 0
+59 0
+endsnake
+addplayer 4
+addsnake 4 4 2 1 1 0
+140 0
+141 0
+endsnake
+addplayer 5
+addsnake 5 5 2 1 1 0
+96 0
+97 0
+98 0
+endsnake
+addplayer 6
+addsnake 6 6 1 1 1 0
+174 0
+189 0
+204 0
+endsnake
+addplayer 7
+addsnake 7 7 0 1 1 0
+148 0
+147 0
+146 0
+145 0
+130 0
+endsnake
+addplayer 8
+addsnake 8 8 3 1 1 0
+118 0
+103 0
+88 0
+73 0
+72 0
+endsnake
+step
+turnright 7
+turnright 8
+step
+turnright 7
+turnright 8
+step
+turnleft 6
+turnright 7
+turnright 8
+step
+turnleft 1
+turnright 6
+step
+turnright 6
+step
+turnright 2
+step
+step
+turnleft 1
+turnleft 6
+step
+step
+turnleft 6
+step
+step
