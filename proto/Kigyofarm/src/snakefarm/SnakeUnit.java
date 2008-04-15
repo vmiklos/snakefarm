@@ -92,7 +92,7 @@ public class SnakeUnit extends Collidable {
 				newsnake.setControlSpeed(snake.getControlSpeed());
 				newsnake.setStoneSpeed(snake.getStoneSpeed());
 				newsnake.addSnakeUnit(nextUnit);
-				System.out.println("StepEvent SnakeSplit "+id+" "+newsnake.getId());
+				Proto.out.println("StepEvent SnakeSplit "+id+" "+newsnake.getId());
 			}
 			else
 			{
