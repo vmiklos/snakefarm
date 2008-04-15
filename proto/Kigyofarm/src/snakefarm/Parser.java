@@ -3,14 +3,24 @@ package snakefarm;
 import java.util.*;
 import java.io.*;
 
-
+/**
+ * A bemeneti file ertelmezo osztalya.
+ */
 public class Parser {
 	private HashMap commands;
 
+	/**
+	 * Az osztaly konstruktora.
+	 */
 	public Parser() {
 		commands = new HashMap();
 	}
 
+	/**
+	 * Ertelmez egy bemeneti file-t.
+	 *
+	 * @param fileName a bemeneti file eleresi utja
+	 */
 	public void parse(String fileName) throws Exception {
 		BufferedReader input;
 		if(fileName != null)
@@ -52,6 +62,12 @@ public class Parser {
 		}
 	}
 
+	/**
+	 * Hozzaad egy uj parancsertelmezot.
+	 *
+	 * @param commandString a parancs neve
+	 * @param command az ertelmezo objektum
+	 */
 	public void addCommand(String commandString, CommandParser command) {
 		commands.put(commandString, command);
 	}
