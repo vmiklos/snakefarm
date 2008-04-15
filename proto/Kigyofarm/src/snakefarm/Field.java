@@ -19,6 +19,11 @@ public class Field {
 		this.id = id;
 	}
 
+	/**
+	 * Visszaadja a mezo azonositojat.
+	 *
+	 * @return azonosito
+	 */
 	public int getId()
 	{
 		return id;
@@ -93,6 +98,11 @@ public class Field {
 		}
 	}
 
+	/**
+	 * Megadja, egy betuvel, hogy milyen objektum van a mezon.
+	 *
+	 * @return a betu
+	 */
 	public String getObjectString()
 	{
 		if(objectOnField == null)
