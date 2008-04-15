@@ -81,6 +81,7 @@ public class SnakeUnit extends Collidable {
 			{
 				int snakeid = snake.getPlayer().addSnake(0);
 				Snake newsnake = snake.getPlayer().getSnakeById(snakeid);
+				newsnake.setDirection(snakeUnit.getSnake().getDirection());
 				// itt azert -1 mert az eredeti erteket majd
 				// csokkenteni fogjuk de az uj kigyoet nem
 				// tudjuk majd, tehat itt tesszuk meg,
@@ -335,5 +336,10 @@ public class SnakeUnit extends Collidable {
 	public boolean hasStone()
 	{
 		return isStone;
+	}
+
+	public Snake getSnake()
+	{
+		return snake;
 	}
 }

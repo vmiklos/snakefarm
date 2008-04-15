@@ -116,6 +116,11 @@ public class Snake {
 		this.direction = direction;
 	}
 
+	public Direction getDirection()
+	{
+		return direction;
+	}
+
 	public void setControlSpeed(int controlSpeed) {
 		this.controlSpeed = controlSpeed;
 	}
