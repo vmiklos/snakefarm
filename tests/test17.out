@@ -23,14 +23,10 @@ endsnake
 # ket nyertesnek kell lennie, a masodiknak es a harmadiknak
 Event Step 1
 End Step
-Event StoneStep 1
-Event StoneStep 1
 Event Step 2
 End Step
-Event StoneStep 2
 Event Step 3
 End Step
-Event StoneStep 3
 Event Win 2
 Event Win 3
 Event Exit
