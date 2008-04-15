@@ -322,4 +322,9 @@ public class SnakeUnit extends Collidable {
 		Field next = field.getNext(dir);
 		return next;
 	}
+
+	public boolean hasStone()
+	{
+		return isStone;
+	}
 }

@@ -208,6 +208,17 @@ public class Snake {
 		return units.size();
 	}
 
+	public int getStoneLength()
+	{
+		int ret = 0;
+		for (Iterator i = units.listIterator(); i.hasNext();) {
+			SnakeUnit su = (SnakeUnit) i.next();
+			if(su.hasStone())
+				ret++;
+		}
+		return ret;
+	}
+
 	public int getControlSpeed()
 	{
 		return controlSpeed;

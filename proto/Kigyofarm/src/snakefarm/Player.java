@@ -64,6 +64,17 @@ public class Player {
 		return max;
 	}
 
+	public int getMaxStoneLength()
+	{
+		int max = 0;
+		for (Iterator i = snakes.listIterator(); i.hasNext();) {
+			Snake snake = (Snake) i.next();
+			if (snake.getStoneLength() > max)
+				max = snake.getStoneLength();
+		}
+		return max;
+	}
+
 	public void showSnake(int id)
 	{
 		if (snakes != null)

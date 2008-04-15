@@ -85,7 +85,9 @@ public class Game {
 			if(max == null)
 				max = player;
 			else
-				if(max.getMaxLength() < player.getMaxLength())
+				if((max.getMaxLength() < player.getMaxLength()) ||
+						((max.getMaxLength() == player.getMaxLength()) &&
+						 (max.getMaxStoneLength() > player.getMaxStoneLength())))
 					max = player;
 		}
 		max.win();
