@@ -155,7 +155,7 @@ public class Player implements Comparable {
 		{
 			for (Iterator i = snakes.listIterator(); i.hasNext();) {
 				Snake snake = (Snake) i.next();
-				if (snake.getId() == id) {
+				if (snake.getId() == snakeId) {
 					snake.turnLeft();
 				}
 			}
@@ -167,7 +167,7 @@ public class Player implements Comparable {
 		{
 			for (Iterator i = snakes.listIterator(); i.hasNext();) {
 				Snake snake = (Snake) i.next();
-				if (snake.getId() == id) {
+				if (snake.getId() == snakeId) {
 					snake.turnRight();
 				}
 			}
