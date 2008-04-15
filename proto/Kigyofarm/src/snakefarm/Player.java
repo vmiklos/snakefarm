@@ -25,6 +25,11 @@ public class Player implements Comparable {
 		this.id = id;
 	}
 
+	/**
+	 * Megadja egy jatekos azonositojat.
+	 *
+	 * @return az azonosito.
+	 */
 	public int getId()
 	{
 		return id;
@@ -33,6 +38,10 @@ public class Player implements Comparable {
 	/**
 	 * Letrehoz egy uj kigyot, es a jatekoshoz, valamint a megadott
 	 * mezohoz rendeli.
+	 *
+	 * @param id ha 0 akkor automatikusan kap azonositot a kigyo, ha
+	 * nagyobb akkor a kivant azonosito
+	 * @return az uj kigyo azonositoja
 	 */
 	public int addSnake(int id) {
 		if(id>0)
@@ -43,6 +52,9 @@ public class Player implements Comparable {
 		return id;
 	}
 
+	/**
+	 * Elmenti a jatekos kigyoit.
+	 */
 	public void saveSnakes()
 	{
 		for (Iterator i = snakes.listIterator(); i.hasNext();) {
@@ -51,6 +63,11 @@ public class Player implements Comparable {
 		}
 	}
 
+	/**
+	 * Megadja a jatekos leghosszabb kigyojanak hosszat.
+	 *
+	 * @return a leghosszabb kigyo hossza
+	 */
 	public int getMaxLength()
 	{
 		int max = 0;
@@ -62,6 +79,12 @@ public class Player implements Comparable {
 		return max;
 	}
 
+	/**
+	 * Megadja a jatekos legkevesebb kovet tartalmazo kigyojaban
+	 * levo kovek szamat.
+	 *
+	 * @return a kovek szama.
+	 */
 	public int getMinStoneLength()
 	{
 		int min = 0;
@@ -73,6 +96,11 @@ public class Player implements Comparable {
 		return min;
 	}
 
+	/**
+	 * Megmutat egy kigyot
+	 *
+	 * @param id a kigyo azonositoja
+	 */
 	public void showSnake(int id)
 	{
 		if (snakes != null)
@@ -84,6 +112,13 @@ public class Player implements Comparable {
 			}
 		}
 	}
+
+	/**
+	 * Visszaadja a jatekos egy kigyojat az azonositoja alapjan.
+	 *
+	 * @param id az azonosito
+	 * @return null ha a jatekosnak nincs ilyen azonositoju kigyoja,
+	 * vagy a kigyo referenciaja, ha van.
 	public Snake getSnakeById(int id) {
 		if (snakes != null)
 		{
@@ -96,6 +131,7 @@ public class Player implements Comparable {
 		}
 		return null;
 	}
+
 	/**
 	 * Lepteti a jatekost.
 	 * <p>
@@ -110,6 +146,9 @@ public class Player implements Comparable {
 		temp.clear();
 	}
 
+	/**
+	 * Megmutatja a jatekost.
+	 */
 	public void show()
 	{
 		Proto.out.println("Player " + id);
@@ -136,6 +175,11 @@ public class Player implements Comparable {
 		snakes.remove(snake);
 	}
 
+	/**
+	 * Megmondja, hogy van-e a jatekosnak kigyoja.
+	 *
+	 * @return a fenti allitas igazsaga
+	 */
 	public boolean hasSnake()
 	{
 		if (snakes.size() > 0)
@@ -144,12 +188,20 @@ public class Player implements Comparable {
 			return false;
 	}
 
+	/**
+	 * Nyeresre szolitja fel a jatekost.
+	 */
 	public void win()
 	{
 		if(!Proto.debug)
 			Proto.out.println("Event Win " + id);
 	}
 
+	/**
+	 * A jatekos egy kigyojat balra forgatja.
+	 *
+	 * @param snakeId a kigyo azonositoja.
+	 */
 	public void turnLeft(int snakeId) {
 		if (snakes != null)
 		{
@@ -162,6 +214,11 @@ public class Player implements Comparable {
 		}
 	}
 
+	/**
+	 * A jatekos egy kigyojat jobbra forgatja.
+	 *
+	 * @param snakeId a kigyo azonositoja.
+	 */
 	public void turnRight(int snakeId) {
 		if (snakes != null)
 		{
@@ -174,6 +231,15 @@ public class Player implements Comparable {
 		}
 	}
 
+	/**
+	 * Osszehasonlitja a jatekost egy masik jatekossal. Ha egy masik
+	 * jatekos nagyobb az aztjelenti, hogy rosszabbul all, tehat
+	 * vagy rovidebb vagy ugyanolyan hosszu mint mi, de tobb kove
+	 * van.
+	 *
+	 * @param o a masik jatekos
+	 * @return -1, 0, 1 aszerint, hogy melyik jatekos a nagyobb.
+	 */
 	public int compareTo (Object o)
 	{
 		Player b = (Player) o;
