@@ -27,16 +27,29 @@ public class SnakeUnit extends Collidable {
 		field.setObject(this);
 	}
 
+	/**
+	 * Beallitja az elem azonositojat.
+	 *
+	 * @param id az uj azonosito
+	 */
 	public void setId(int id)
 	{
 		this.id = id;
 	}
 
+	/**
+	 * Beallitja, hogy az elem melyik kigyohoz tartozik.
+	 *
+	 * @param snake az uj kigyo
+	 */
 	public void setSnake(Snake snake)
 	{
 		this.snake = snake;
 	}
 
+	/**
+	 * Elmenti az elemet.
+	 */
 	public void save()
 	{
 		String stone;
@@ -189,6 +202,11 @@ public class SnakeUnit extends Collidable {
 		prevUnit = snakeUnit;
 	}
 
+	/**
+	 * Elozo elem lekerdezese
+	 *
+	 * @return az elozo elem referenciaja
+	 */
 	public SnakeUnit getPrevUnit()
 	{
 		return prevUnit;
@@ -312,6 +330,9 @@ public class SnakeUnit extends Collidable {
 		}
 	}
 
+	/**
+	 * Megjeleniti az elemet.
+	 */
 	public void show()
 	{
 		String stone;
@@ -333,11 +354,22 @@ public class SnakeUnit extends Collidable {
 		return next;
 	}
 
+	/**
+	 * Megmondja, hogy az adott elemben van-e ko.
+	 *
+	 * @return a fenti allitas igazsaga
+	 */
 	public boolean hasStone()
 	{
 		return isStone;
 	}
 
+	/**
+	 * Megmondja, hogy az adott elemben, es a kigyo minden utanalevo
+	 * elemeben van-e ko.
+	 *
+	 * @return a fenti allitas igazsaga
+	 */
 	public boolean isFullStone()
 	{
 		if(isStone)
@@ -351,6 +383,11 @@ public class SnakeUnit extends Collidable {
 			return false;
 	}
 
+	/**
+	 * Megadja, hogy melyik kigyohoz tartozik az elem.
+	 *
+	 * @return a kigyo referenciaja
+	 */
 	public Snake getSnake()
 	{
 		return snake;
