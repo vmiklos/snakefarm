@@ -74,3 +74,7 @@ java -jar compare/TestCompare.jar test18.out curtest
 echo Running test 19...
 java -jar ../proto/Kigyofarm/src/Kigyofarm.jar test19.in >curtest
 java -jar compare/TestCompare.jar test19.out curtest
+
+echo Running test 20...
+java -jar ../proto/Kigyofarm/src/Kigyofarm.jar test20.in >curtest
+java -jar compare/TestCompare.jar test20.out curtest
