@@ -32,6 +32,11 @@ public class SnakeUnit extends Collidable {
 		this.id = id;
 	}
 
+	public void setSnake(Snake snake)
+	{
+		this.snake = snake;
+	}
+
 	public void save()
 	{
 		String stone;

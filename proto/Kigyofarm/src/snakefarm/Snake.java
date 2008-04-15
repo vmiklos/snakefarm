@@ -64,11 +64,13 @@ public class Snake {
 			tail.setPrevUnit(su);
 		}
 		units.add(tail);
+		tail.setSnake(this);
 		tail.setId(units.size());
 		SnakeUnit i = tail.getNextUnit();
 		while(i != null)
 		{
 			units.add(i);
+			i.setSnake(this);
 			i = i.getNextUnit();
 		}
 	}
