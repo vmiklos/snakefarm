@@ -119,6 +119,7 @@ public class Player implements Comparable {
 	 * @param id az azonosito
 	 * @return null ha a jatekosnak nincs ilyen azonositoju kigyoja,
 	 * vagy a kigyo referenciaja, ha van.
+	 */
 	public Snake getSnakeById(int id) {
 		if (snakes != null)
 		{
