@@ -258,7 +258,7 @@ public class SnakeUnit extends Collidable {
 	 * @return az elozonek kuld-e vissza kovet
 	 */
 	public boolean stoneStep(boolean receivesStone) {
-		if(receivesStone)
+		if(receivesStone && !isFullStone())
 			Proto.out.println("Event StoneStep " + snake.getId());
 		boolean rejectStone = false, nextRejectsStone;
 
@@ -336,6 +336,19 @@ public class SnakeUnit extends Collidable {
 	public boolean hasStone()
 	{
 		return isStone;
+	}
+
+	public boolean isFullStone()
+	{
+		if(isStone)
+		{
+			if(nextUnit == null)
+				return true;
+			else
+				return nextUnit.isFullStone();
+		}
+		else
+			return false;
 	}
 
 	public Snake getSnake()
