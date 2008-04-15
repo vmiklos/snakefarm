@@ -31,11 +31,19 @@ public class Snake {
 		units = new LinkedList<SnakeUnit>();
 	}
 
+	/**
+	 * Megadja a kigyo azonositojat.
+	 *
+	 * @return azonosito
+	 */
 	public int getId()
 	{
 		return id;
 	}
 
+	/**
+	 * Elmenti a kigyot.
+	 */
 	public void save()
 	{
 		Proto.out.println("addsnake " + player.getId() + " " +
@@ -112,19 +120,39 @@ public class Snake {
 		this.sawCounter = sawCounter;
 	}
 
+	/**
+	 * Beallitja a kigyo iranyat.
+	 *
+	 * @param direction az uj irany
+	 */
 	public void setDirection(Direction direction) {
 		this.direction = direction;
 	}
 
+	/**
+	 * Megadja a kigyo iranyat
+	 *
+	 * @return a kigyo iranya
+	 */
 	public Direction getDirection()
 	{
 		return direction;
 	}
 
+	/**
+	 * Beallitja a kigyo sebesseget
+	 *
+	 * @param controlSpeed az uj sebesseg.
+	 */
 	public void setControlSpeed(int controlSpeed) {
 		this.controlSpeed = controlSpeed;
 	}
 
+	/**
+	 * Beallitja a kovek sebesseget
+	 *
+	 * @param az uj sebesseg
+	 */
 	public void setStoneSpeed(int stoneSpeed) {
 		this.stoneSpeed = stoneSpeed;
 	}
@@ -199,6 +227,9 @@ public class Snake {
 		}
 	}
 
+	/**
+	 * Megjeleniti a kigyot.
+	 */
 	public void show()
 	{
 		Proto.out.println("Snake " + id);
@@ -210,11 +241,21 @@ public class Snake {
 		Proto.out.println("endsnake");
 	}
 
+	/**
+	 * Megadja a kigyo hosszat.
+	 *
+	 * @return a kigyo hossza
+	 */
 	public int getLength()
 	{
 		return units.size();
 	}
 
+	/**
+	 * Megadja a kigyo kohosszat, tehat hogy hany ko van a kigyoban.
+	 *
+	 * @return a kohossz
+	 */
 	public int getStoneLength()
 	{
 		int ret = 0;
@@ -226,16 +267,32 @@ public class Snake {
 		return ret;
 	}
 
+	/**
+	 * Megadja a kigyo sebesseget.
+	 *
+	 * @return a sebesseg
+	 */
 	public int getControlSpeed()
 	{
 		return controlSpeed;
 	}
 
+	/**
+	 * Megadja a kigyo koveinek sebesseget.
+	 *
+	 * @return a sebesseg.
+	 */
 	public int getStoneSpeed()
 	{
 		return stoneSpeed;
 	}
 
+	/**
+	 * Megadja a kigyo furesszamlalojat, tehat hogy hany lepesig
+	 * lesz meg fureszmodban.
+	 *
+	 * @return a szamlalo allasa
+	 */
 	public int getSawCounter()
 	{
 		return sawCounter;
