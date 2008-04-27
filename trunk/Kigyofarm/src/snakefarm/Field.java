@@ -1,23 +1,27 @@
 package snakefarm;
 
+import java.awt.Point;
 import java.util.HashMap;
 
 /**
  * Egy jatekmezot valosit meg.
  */
-public class Field {
+public class Field extends Viewable{
 
 	private static int lastid = 0;
 	private int id;
 	private HashMap<Direction, Field> neighbours = new HashMap<Direction, Field>(Direction.numberOfDirections);
 	private Collidable objectOnField = null;
+	private Coordinate coordinate;
 
 	/**
 	 * A jatekmezo konstruktora.
 	 */
-	public Field(int id) {
+	public Field(int id, Coordinate coordinate) {
 		this.id = id;
+		this.coordinate = coordinate;
 	}
+
 
 	/**
 	 * Visszaadja a mezo azonositojat.
@@ -141,4 +145,18 @@ public class Field {
 			field.neighbours.put(dir.reverse(), this);
 		}
 	}
+
+	public Coordinate getCoordinate() {
+		return coordinate;
+	}
+
+	Viewable getViewable() {
+		return objectOnField;
+	}
+
+	@Override
+	protected BaseView genBaseView() {
+		return new FieldView(this);
+	}
+
 }

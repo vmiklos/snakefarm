@@ -392,4 +392,13 @@ public class SnakeUnit extends Collidable {
 	{
 		return snake;
 	}
+
+	@Override
+	protected BaseView genBaseView() {
+		return new SnakeUnitView(this);
+	}
+
+	public Player getPlayer() {
+		return snake.getPlayer();
+	}
 }

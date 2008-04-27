@@ -262,4 +262,9 @@ public class Player implements Comparable {
 		else
 			return 0;
 	}
+
+	public java.awt.Color getColor() {
+		/*FIXME szin szamitas megirasa*/
+		throw new UnsupportedOperationException("Not yet implemented");
+	}
 }

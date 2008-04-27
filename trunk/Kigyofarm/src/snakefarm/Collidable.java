@@ -4,7 +4,7 @@ package snakefarm;
  * Vilagobjektum. Ebbol a classbol oroklodik az osszes mezon
  * megtalalhato elem, amelyek kepes utkozni.
  */
-public abstract class Collidable {
+public abstract class Collidable extends Viewable{
 
 	/**
 	 * Ez a referencia arra a mezore mutat amin jelenleg allunk.
@@ -34,5 +34,9 @@ public abstract class Collidable {
 	 */
 	public void setField(Field field) {
 		this.field = field;
+	}
+
+	public Field getField() {
+		return field;
 	}
 }

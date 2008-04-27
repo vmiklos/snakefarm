@@ -30,4 +30,9 @@ public class Wall extends Collidable {
 	public void collideWith(SnakeUnit snakeUnit) {
 		snakeUnit.collideWith2(this);
 	}
+
+	@Override
+	protected BaseView genBaseView() {
+		return new WallView(this);
+	}
 }

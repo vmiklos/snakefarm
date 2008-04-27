@@ -26,4 +26,9 @@ public class SawBerry extends Collidable {
 		snakeUnit.collideWith2(this);
 		field.unsetObject(this);
 	}
+
+	@Override
+	protected BaseView genBaseView() {
+		return new SawBerryView(this);
+	}
 }

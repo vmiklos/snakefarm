@@ -3,6 +3,7 @@ package snakefarm;
 import java.io.*;
 import java.util.*;
 
+
 /**
  * Jatekter osztaly, amely a mezoket tartalmazza. Jatek inditaskor
  * felepiti a jatekteret (letrehozza a mezoket es beallitja a
@@ -120,7 +121,10 @@ public class GameField {
 			if(line.equals(""))
 				continue;
 			String[] params = line.split(";");
+			
+			/* FIXME koordinatat adni a Field-nek a map alapjan */
 			Field f = new Field(Integer.parseInt(params[0]));
+			
 			f.setNeighbour(up, getFieldById(Integer.parseInt(params[2])));
 			f.setNeighbour(left, getFieldById(Integer.parseInt(params[3])));
 			if(params[1].equals("W"))
@@ -136,5 +140,9 @@ public class GameField {
 				throw new Exception("unknown collidable type: " + params[1]);
 			fields.add(f);
 		}
+	}
+
+	List<Viewable> getViewables() {
+		return new LinkedList<Viewable>(fields);
 	}
 }
