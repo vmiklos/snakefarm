@@ -55,6 +55,7 @@ public class Player {
 	}
 
 	public java.awt.Color getColor() {
+		/*FIXME szin szamitas megirasa*/
 		throw new UnsupportedOperationException("Not yet implemented");
 	}
 }
