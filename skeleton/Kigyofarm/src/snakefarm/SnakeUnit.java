@@ -6,6 +6,9 @@ package snakefarm;
  */
 public class SnakeUnit extends Collidable {
 
+	private static int lastid = 0;
+	private int id = lastid;
+	private static final String type = "SnakeUnit";
 	private Snake snake;
 	private SnakeUnit prevUnit = null;
 	private SnakeUnit nextUnit = null;
@@ -21,9 +24,12 @@ public class SnakeUnit extends Collidable {
 	 * @param field melyik mezon lesz
 	 */
 	public SnakeUnit(Snake snake, Field field) {
+		lastid++;
+		Skeleton.enterMethod(type, id, "SnakeUnit(Snake, Field)");
 		this.snake = snake;
 		this.field = field;
 		field.setObject(this);
+		Skeleton.exitMethod(type, id, "SnakeUnit(Snake, Field)");
 	}
 
 	/**
@@ -32,11 +38,13 @@ public class SnakeUnit extends Collidable {
 	 * @param snakeUnit a masik kigyoelem
 	 */
 	public void collideWith(SnakeUnit snakeUnit) {
+		Skeleton.enterMethod(type, id, "collideWith(SnakeUnit)");
 		if (isStone) {
 			snakeUnit.collideWith2Stone(this);
 		} else {
 			snakeUnit.collideWith2(this);
 		}
+		Skeleton.exitMethod(type, id, "collideWith(SnakeUnit)");
 	}
 
 	/**
@@ -47,12 +55,14 @@ public class SnakeUnit extends Collidable {
 	 */
 	@Override
 	public void collideWithSaw(SnakeUnit snakeUnit) {
+		Skeleton.enterMethod(type, id, "collideWithSaw(SnakeUnit)");
 		if (isStone) {
 			snakeUnit.collideWith2Stone(this);
 		} else {
 			snakeUnit.collideWith2(this);
 			die();
 		}
+		Skeleton.exitMethod(type, id, "collideWithSaw(SnakeUnit)");
 	}
 
 	/**
@@ -61,7 +71,9 @@ public class SnakeUnit extends Collidable {
 	 * @param wall az utkozo fal
 	 */
 	public void collideWith2(Wall wall) {
+		Skeleton.enterMethod(type, id, "collideWith2(Wall)");
 		die();
+		Skeleton.exitMethod(type, id, "collideWith2(Wall)");
 	}
 
 	/**
@@ -70,7 +82,9 @@ public class SnakeUnit extends Collidable {
 	 * @param sawBerry az utkozo fureszbogyo
 	 */
 	public void collideWith2(SawBerry sawBerry) {
+		Skeleton.enterMethod(type, id, "collideWith2(SawBerry)");
 		snake.setSawCounter();
+		Skeleton.exitMethod(type, id, "collideWith2(SawBerry)");
 	}
 
 	/**
@@ -79,7 +93,9 @@ public class SnakeUnit extends Collidable {
 	 * @param fieldBerry az utkozo mezei bogyo
 	 */
 	public void collideWith2(FieldBerry fieldBerry) {
+		Skeleton.enterMethod(type, id, "collideWith2(FieldBerry)");
 		eatenFieldBerry = true;
+		Skeleton.exitMethod(type, id, "collideWith2(FieldBerry)");
 	}
 
 	/**
@@ -88,7 +104,9 @@ public class SnakeUnit extends Collidable {
 	 * @param stoneBerry az utkozo kobogyo
 	 */
 	public void collideWith2(StoneBerry stoneBerry) {
+		Skeleton.enterMethod(type, id, "collideWith2(StoneBerry)");
 		eatenStoneBerry = true;
+		Skeleton.exitMethod(type, id, "collideWith2(StoneBerry)");
 	}
 
 	/**
@@ -98,9 +116,11 @@ public class SnakeUnit extends Collidable {
 	 * @param snakeUnit utkozo kigyoelem
 	 */
 	public void collideWith2(SnakeUnit snakeUnit) {
+		Skeleton.enterMethod(type, id, "collideWith2(SnakeUnit)");
 		if (!snake.isSaw()) {
 			die();
 		}
+		Skeleton.exitMethod(type, id, "collideWith2(SnakeUnit)");
 	}
 
 	/**
@@ -110,7 +130,9 @@ public class SnakeUnit extends Collidable {
 	 * @param snakeUnit masik elem
 	 */
 	public void collideWith2Stone(SnakeUnit snakeUnit) {
+		Skeleton.enterMethod(type, id, "collideWith2Stone(SnakeUnit)");
 		die();
+		Skeleton.exitMethod(type, id, "collideWith2Stone(SnakeUnit)");
 	}
 
 	/**
@@ -119,7 +141,9 @@ public class SnakeUnit extends Collidable {
 	 * @param snakeUnit leendo kovetkezo elem
 	 */
 	public void setNextUnit(SnakeUnit snakeUnit) {
+		Skeleton.enterMethod(type, id, "setNextUnit(SnakeUnit)");
 		nextUnit = snakeUnit;
+		Skeleton.exitMethod(type, id, "setNextUnit(SnakeUnit)");
 	}
 
 	/**
@@ -128,7 +152,9 @@ public class SnakeUnit extends Collidable {
 	 * @param snakeUnit leendo elozo elem
 	 */
 	public void setPrevUnit(SnakeUnit snakeUnit) {
+		Skeleton.enterMethod(type, id, "setPrevUnit(SnakeUnit)");
 		prevUnit = snakeUnit;
+		Skeleton.exitMethod(type, id, "setPrevUnit(SnakeUnit)");
 	}
 
 	/**
@@ -140,6 +166,7 @@ public class SnakeUnit extends Collidable {
 	 * @return az elozonek kuld-e vissza kovet
 	 */
 	public boolean step(Field nextField, boolean isToGrow, boolean receivesStone) {
+		Skeleton.enterMethod(type, id, "step(Field, boolean, boolean)");
 		boolean rejectStone = false, nextRejectsStone;
 		Field prevField = field;
 
@@ -200,6 +227,7 @@ public class SnakeUnit extends Collidable {
 			}
 		}
 
+		Skeleton.exitMethod(type, id, "step(Field, boolean, boolean)");
 		return rejectStone;
 	}
 
@@ -209,13 +237,16 @@ public class SnakeUnit extends Collidable {
 	 * @param has az allitas igazsagara vonatkozo logikai ertek
 	 */
 	public void setStone(boolean has) {
+		Skeleton.enterMethod(type, id, "setStone(boolean)");
 		isStone = has;
+		Skeleton.exitMethod(type, id, "setStone(boolean)");
 	}
 
 	/**
 	 * Megoli a kigyoelemet
 	 */
 	public void die() {
+		Skeleton.enterMethod(type, id, "die()");
 		if (isAlive) {
 			isAlive = false;
 			field.unsetObject(this);
@@ -227,6 +258,7 @@ public class SnakeUnit extends Collidable {
 				snake.die();
 			}
 		}
+		Skeleton.exitMethod(type, id, "die()");
 	}
 
 	/**
@@ -236,15 +268,9 @@ public class SnakeUnit extends Collidable {
 	 * @return kovetkezo elem
 	 */
 	public Field getNextField(Direction dir) {
+		Skeleton.enterMethod(type, id, "getNextField(Direction)");
 		Field next = field.getNext(dir);
+		Skeleton.exitMethod(type, id, "getNextField(Direction)");
 		return next;
-	}
-	public Player getPlayer() {
-		return snake.getPlayer();
-	}
-
-	@Override
-	protected BaseView genBaseView() {
-		return new SnakeUnitView(this);
 	}
 }

@@ -4,16 +4,12 @@ package snakefarm;
  * Vilagobjektum. Ebbol a classbol oroklodik az osszes mezon
  * megtalalhato elem, amelyek kepes utkozni.
  */
-public abstract class Collidable extends Viewable{
+public abstract class Collidable {
 
 	/**
 	 * Ez a referencia arra a mezore mutat amin jelenleg allunk.
 	 */
 	protected Field field;
-
-	public Field getField() {
-		return field;
-	}
 
 	/**
 	 * Utkozik a SnakeUnit kigyo egyseggel es visszater az utkozes

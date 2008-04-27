@@ -10,6 +10,9 @@ import java.util.Iterator;
  */
 public class Player {
 
+	private static int lastid = 0;
+	private int id = lastid;
+	private static final String type = "Player";
 	private Game game;
 	private List<Snake> snakes = new LinkedList<Snake>();
 	private List<Snake> temp = new LinkedList<Snake>();
@@ -20,7 +23,10 @@ public class Player {
 	 * @param game a jatek amelyben a jatekos letrejon
 	 */
 	public Player(Game game) {
+		lastid++;
+		Skeleton.enterMethod(type, id, "Player(Game)");
 		this.game = game;
+		Skeleton.exitMethod(type, id, "Player(Game)");
 	}
 
 	/**
@@ -30,7 +36,9 @@ public class Player {
 	 * @param container mezo, ahonnan indul majd a kigyo
 	 */
 	public void addSnake(Field container) {
+		Skeleton.enterMethod(type, id, "addSnake(Field)");
 		snakes.add(new Snake(this, container));
+		Skeleton.exitMethod(type, id, "addSnake(Field)");
 	}
 
 	/**
@@ -40,22 +48,21 @@ public class Player {
 	 * lepteti.
 	 */
 	public void step() {
+		Skeleton.enterMethod(type, id, "step()");
 		temp.addAll(snakes);
 		for (Iterator i = temp.iterator(); i.hasNext();) {
 			((Snake) i.next()).step();
 		}
 		temp.clear();
+		Skeleton.exitMethod(type, id, "step()");
 	}
 
 	/**
 	 * Eltavolit egy kigyot a jatekostol.
 	 */
 	public void removeSnake(Snake snake) {
+		Skeleton.enterMethod(type, id, "removeSnake(Snake)");
 		snakes.remove(snake);
-	}
-
-	public java.awt.Color getColor() {
-		/*FIXME szin szamitas megirasa*/
-		throw new UnsupportedOperationException("Not yet implemented");
+		Skeleton.exitMethod(type, id, "removeSnake(Snake)");
 	}
 }
