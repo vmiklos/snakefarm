@@ -10,6 +10,7 @@ public class Wall extends Collidable {
 	private static int lastid = 0;
 	private int id = lastid;
 	private static final String type = "Wall";
+	private WallViewFactory factory = new WallViewFactory();
 
 	/**
 	 * Fal konstruktora.
@@ -31,8 +32,12 @@ public class Wall extends Collidable {
 		snakeUnit.collideWith2(this);
 	}
 
+	/**
+	 * modell elemhez tartozo nezet letrehozasa
+	 * @return az elemhez tartozo nezet objektum
+	 */
 	@Override
 	protected BaseView genBaseView() {
-		return new WallView(this);
+		return factory.genBaseView(this);
 	}
 }

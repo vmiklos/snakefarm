@@ -9,6 +9,7 @@ public class SawBerry extends Collidable {
 	private static int lastid = 0;
 	private int id = lastid;
 	private static final String type = "SawBerry";
+	private SawBerryViewFactory factory = new SawBerryViewFactory();
 
 	/**
 	 * A fureszbogyo konstruktora.
@@ -27,8 +28,12 @@ public class SawBerry extends Collidable {
 		field.unsetObject(this);
 	}
 
+	/**
+	 * modell elemhez tartozo nezet letrehozasa
+	 * @return az elemhez tartozo nezet objektum
+	 */
 	@Override
 	protected BaseView genBaseView() {
-		return new SawBerryView(this);
+		return factory.genBaseView(this);
 	}
 }

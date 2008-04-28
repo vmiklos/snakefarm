@@ -1,6 +1,5 @@
 package snakefarm;
 
-import java.awt.Point;
 import java.util.HashMap;
 
 /**
@@ -13,6 +12,7 @@ public class Field extends Viewable{
 	private HashMap<Direction, Field> neighbours = new HashMap<Direction, Field>(Direction.numberOfDirections);
 	private Collidable objectOnField = null;
 	private Coordinate coordinate;
+	private FieldViewFactory factory = new FieldViewFactory();
 
 	/**
 	 * A jatekmezo konstruktora.
@@ -154,9 +154,13 @@ public class Field extends Viewable{
 		return objectOnField;
 	}
 
+	/**
+	 * modell elemhez tartozo nezet letrehozasa
+	 * @return az elemhez tartozo nezet objektum
+	 */
 	@Override
 	protected BaseView genBaseView() {
-		return new FieldView(this);
+		return factory.genBaseView(this);
 	}
 
 }

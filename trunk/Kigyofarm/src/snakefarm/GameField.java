@@ -9,12 +9,13 @@ import java.util.*;
  * felepiti a jatekteret (letrehozza a mezoket es beallitja a
  * szomszedokat).
  */
-public class GameField {
+public class GameField extends Viewable {
 
 	private static int lastid = 0;
 	private int id = lastid;
 	private Game game;
 	private List<Field> fields = new LinkedList<Field>();
+	private GameFieldViewFactory factory = new GameFieldViewFactory();
 
 	/**
 	 * A jatekter konstruktora.
@@ -144,5 +145,14 @@ public class GameField {
 
 	List<Viewable> getViewables() {
 		return new LinkedList<Viewable>(fields);
+	}
+
+	/**
+	 * modell elemhez tartozo nezet letrehozasa
+	 * @return az elemhez tartozo nezet objektum
+	 */
+	@Override
+	protected BaseView genBaseView() {
+		return factory.genBaseView(this);
 	}
 }

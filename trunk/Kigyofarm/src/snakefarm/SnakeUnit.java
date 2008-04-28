@@ -14,6 +14,7 @@ public class SnakeUnit extends Collidable {
 	private boolean eatenStoneBerry = false;
 	private boolean isAlive = true;
 	private boolean isStone;
+	private SnakeUnitViewFactory factory = new SnakeUnitViewFactory();
 
 	/**
 	 * A kigyoelem konstruktora.
@@ -393,12 +394,28 @@ public class SnakeUnit extends Collidable {
 		return snake;
 	}
 
+	/**
+	 * modell elemhez tartozo nezet letrehozasa
+	 * @return az elemhez tartozo nezet objektum
+	 */
 	@Override
 	protected BaseView genBaseView() {
-		return new SnakeUnitView(this);
+		return factory.genBaseView(this);
 	}
 
+	/**
+	 * jatekos lekerdezese
+	 * @return a kigyot iranyito jatekos
+	 */
 	public Player getPlayer() {
 		return snake.getPlayer();
+	}
+
+	/**
+	 * a kigyoelem fureszenek lekerdezese
+	 * @return ez a kigyoelem fej es rendelkezik furesszel a kigyo
+	 */
+	boolean hasSaw() {
+		return (getPrevUnit() == null && snake.isSaw());
 	}
 }

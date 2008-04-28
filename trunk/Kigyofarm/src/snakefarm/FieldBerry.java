@@ -7,6 +7,7 @@ public class FieldBerry extends Collidable {
 
 	private static int lastid = 0;
 	private int id = lastid;
+	private FieldBerryViewFactory factory = new FieldBerryViewFactory();
 
 	/**
 	 * A mezei bogyo konstruktora.
@@ -29,8 +30,12 @@ public class FieldBerry extends Collidable {
 		field.unsetObject(this);
 	}
 
+	/**
+	 * modell elemhez tartozo nezet letrehozasa
+	 * @return az elemhez tartozo nezet objektum
+	 */
 	@Override
 	protected BaseView genBaseView() {
-		return new FieldBerryView(this);
+		return factory.genBaseView(this);
 	}
 }

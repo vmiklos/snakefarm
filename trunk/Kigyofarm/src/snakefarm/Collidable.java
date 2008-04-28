@@ -4,12 +4,7 @@ package snakefarm;
  * Vilagobjektum. Ebbol a classbol oroklodik az osszes mezon
  * megtalalhato elem, amelyek kepes utkozni.
  */
-public abstract class Collidable extends Viewable{
-
-	/**
-	 * Ez a referencia arra a mezore mutat amin jelenleg allunk.
-	 */
-	protected Field field;
+public abstract class Collidable extends FieldElement{
 
 	/**
 	 * Utkozik a SnakeUnit kigyo egyseggel es visszater az utkozes
@@ -25,18 +20,5 @@ public abstract class Collidable extends Viewable{
 	 */
 	public void collideWithSaw(SnakeUnit snakeUnit) {
 		collideWith(snakeUnit);
-	}
-
-	/**
-	 * Beallitja, hogy melyik mezon vagyunk.
-	 *
-	 * @param field az uj mezo referenciaja
-	 */
-	public void setField(Field field) {
-		this.field = field;
-	}
-
-	public Field getField() {
-		return field;
 	}
 }

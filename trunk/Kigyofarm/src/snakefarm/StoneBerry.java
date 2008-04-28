@@ -8,6 +8,7 @@ public class StoneBerry extends Collidable {
 	private static int lastid = 0;
 	private int id = lastid;
 	private static final String type = "StoneBerry";
+	private StoneBerryFactory factory = new StoneBerryFactory();
 
 	/**
 	 * Kobogyo konstruktora.
@@ -30,8 +31,12 @@ public class StoneBerry extends Collidable {
 		field.unsetObject(this);
 	}
 
+	/**
+	 * modell elemhez tartozo nezet letrehozasa
+	 * @return az elemhez tartozo nezet objektum
+	 */
 	@Override
 	protected BaseView genBaseView() {
-		return new StoneBerryView(this);
+		return factory.genBaseView(this);
 	}
 }
