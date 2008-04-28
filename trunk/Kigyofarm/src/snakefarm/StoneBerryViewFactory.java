@@ -3,7 +3,7 @@ package snakefarm;
 /**
  * Factory osztaly a view letrehozas levalasztasahoz a modellrol
  */
-class StoneBerryFactory {
+class StoneBerryViewFactory {
 
 	/**
 	 * letrehozza a modellt megjelenito view objektumot

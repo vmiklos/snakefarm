@@ -8,7 +8,7 @@ public class StoneBerry extends Collidable {
 	private static int lastid = 0;
 	private int id = lastid;
 	private static final String type = "StoneBerry";
-	private StoneBerryFactory factory = new StoneBerryFactory();
+	private StoneBerryViewFactory factory = new StoneBerryViewFactory();
 
 	/**
 	 * Kobogyo konstruktora.
