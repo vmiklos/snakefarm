@@ -1,5 +1,8 @@
 package snakefarm;
 
+import snakefarm.viewfactories.SnakeUnitViewFactory;
+import snakefarm.views.BaseView;
+
 /**
  * A kigyot alkoto egyseg. Egy kigyohoz tobb ilyen egyseg is tartozhat,
  * attol fuggoen, hogy a kigyo milyen hosszu.
@@ -49,26 +52,12 @@ public class SnakeUnit extends Collidable {
 	}
 
 	/**
-	 * Elmenti az elemet.
-	 */
-	public void save()
-	{
-		String stone;
-		if(isStone)
-			stone = "1";
-		else
-			stone = "0";
-		Proto.out.println(field.getId() + " " + stone);
-	}
-
-	/**
 	 * Ket kigyoelem utkozteteset vegzi el ugy, hogy tudjuk, hogy a
 	 * masik kigyolem nincs fureszmodban.
 	 *
 	 * @param snakeUnit a masik kigyoelem
 	 */
 	public void collideWith(SnakeUnit snakeUnit) {
-		Proto.out.println("StepEvent Snake_Snake " + snake.getId());
 		if (isStone) {
 			snakeUnit.collideWith2Stone(this);
 		} else {
@@ -84,33 +73,30 @@ public class SnakeUnit extends Collidable {
 	 */
 	@Override
 	public void collideWithSaw(SnakeUnit snakeUnit) {
-		Proto.out.println("StepEvent Snake_Snake " + snake.getId());
 		if (isStone) {
 			snakeUnit.collideWith2Stone(this);
 		} else {
 			SnakeUnit pu = prevUnit;
 			snakeUnit.collideWith2(this);
 			snake.removeSnakeUnit(this);
-			if(pu != null)
-			{
-				int snakeid = snake.getPlayer().addSnake(0);
+			if(pu != null) {
+				//fixme: ezt itt teljesen ujrairni bittenoffsnakecreatorral
+				/*int snakeid = snake.getPlayer().addSnake(0);
 				Snake newsnake = snake.getPlayer().getSnakeById(snakeid);
 				newsnake.setDirection(snakeUnit.getSnake().getDirection());
 				// itt azert -1 mert az eredeti erteket majd
 				// csokkenteni fogjuk de az uj kigyoet nem
 				// tudjuk majd, tehat itt tesszuk meg,
 				// ha kell
-				if(snake.getSawCounter()>0)
+				if (snake.getSawCounter()>0) {
 					newsnake.setSawCounter(snake.getSawCounter()-1);
-				else
+                                } else {
 					newsnake.setSawCounter(snake.getSawCounter());
-				newsnake.setControlSpeed(snake.getControlSpeed());
+                                }
+                                newsnake.setControlSpeed(snake.getControlSpeed());
 				newsnake.setStoneSpeed(snake.getStoneSpeed());
-				newsnake.addSnakeUnit(nextUnit);
-				Proto.out.println("StepEvent SnakeSplit "+id+" "+newsnake.getId());
-			}
-			else
-			{
+				newsnake.addSnakeUnit(nextUnit);*/
+			} else {
 				// a kigyo fejevel utkoztek, szal ez
 				// halal
 				die();
@@ -124,7 +110,6 @@ public class SnakeUnit extends Collidable {
 	 * @param wall az utkozo fal
 	 */
 	public void collideWith2(Wall wall) {
-		Proto.out.println("StepEvent Snake_Wall");
 		die();
 	}
 
@@ -134,8 +119,7 @@ public class SnakeUnit extends Collidable {
 	 * @param sawBerry az utkozo fureszbogyo
 	 */
 	public void collideWith2(SawBerry sawBerry) {
-		Proto.out.println("StepEvent Snake_SawBerry");
-		snake.setSawCounter(Snake.sawCounterMax);
+		snake.setSawCounter(snake.getSawCounterMax());
 	}
 
 	/**
@@ -144,7 +128,6 @@ public class SnakeUnit extends Collidable {
 	 * @param fieldBerry az utkozo mezei bogyo
 	 */
 	public void collideWith2(FieldBerry fieldBerry) {
-		Proto.out.println("StepEvent Snake_FieldBerry");
 		eatenFieldBerry = true;
 	}
 
@@ -154,7 +137,6 @@ public class SnakeUnit extends Collidable {
 	 * @param stoneBerry az utkozo kobogyo
 	 */
 	public void collideWith2(StoneBerry stoneBerry) {
-		Proto.out.println("StepEvent Snake_StoneBerry");
 		eatenStoneBerry = true;
 	}
 
@@ -189,8 +171,7 @@ public class SnakeUnit extends Collidable {
 		nextUnit = snakeUnit;
 	}
 
-	public SnakeUnit getNextUnit()
-	{
+	public SnakeUnit getNextUnit() {
 		return nextUnit;
 	}
 
@@ -208,8 +189,7 @@ public class SnakeUnit extends Collidable {
 	 *
 	 * @return az elozo elem referenciaja
 	 */
-	public SnakeUnit getPrevUnit()
-	{
+	public SnakeUnit getPrevUnit() {
 		return prevUnit;
 	}
 
@@ -220,7 +200,6 @@ public class SnakeUnit extends Collidable {
 	 * @param isToGrow kell-e majd a faroknal novekedni
 	 */
 	public void step(Field nextField, boolean isToGrow) {
-		boolean rejectStone = false, nextRejectsStone;
 		Field prevField = field;
 
 		/* uressegbe lepunk-e */
@@ -261,10 +240,7 @@ public class SnakeUnit extends Collidable {
 					setNextUnit(newTail);
 					snake.addSnakeUnit(newTail);
 				}
-			} // ha van kovetkezo
-			else
-			{
-				// szolunk neki is
+			} else { // ha van kovetkezoszolunk neki is
 				nextUnit.step(prevField, eatenFieldBerry || isToGrow);
 			}
 		}
@@ -277,8 +253,6 @@ public class SnakeUnit extends Collidable {
 	 * @return az elozonek kuld-e vissza kovet
 	 */
 	public boolean stoneStep(boolean receivesStone) {
-		if(receivesStone && !isFullStone())
-			Proto.out.println("Event StoneStep " + snake.getId());
 		boolean rejectStone = false, nextRejectsStone;
 
 		/* novekedes es kovetkezo egyseg hivasa */
@@ -301,7 +275,6 @@ public class SnakeUnit extends Collidable {
 				eatenStoneBerry = false;
 			}
 		}
-
 		return rejectStone;
 	}
 
@@ -332,19 +305,6 @@ public class SnakeUnit extends Collidable {
 	}
 
 	/**
-	 * Megjeleniti az elemet.
-	 */
-	public void show()
-	{
-		String stone;
-		if(isStone)
-			stone = "1";
-		else
-			stone = "0";
-		Proto.out.println(id + " " + field.getId() + " " + stone);
-	}
-
-	/**
 	 * Visszadja a kovetkeozo elemet
 	 *
 	 * @param dir milyen iranyban kovetkezo elemet kerunk
@@ -360,8 +320,7 @@ public class SnakeUnit extends Collidable {
 	 *
 	 * @return a fenti allitas igazsaga
 	 */
-	public boolean hasStone()
-	{
+	public boolean hasStone() {
 		return isStone;
 	}
 
@@ -371,17 +330,16 @@ public class SnakeUnit extends Collidable {
 	 *
 	 * @return a fenti allitas igazsaga
 	 */
-	public boolean isFullStone()
-	{
-		if(isStone)
-		{
-			if(nextUnit == null)
+	public boolean isFullStone() {
+		if (isStone) {
+			if(nextUnit == null) {
 				return true;
-			else
+                        } else {
 				return nextUnit.isFullStone();
-		}
-		else
+                        }
+		} else {
 			return false;
+                }
 	}
 
 	/**
@@ -389,8 +347,7 @@ public class SnakeUnit extends Collidable {
 	 *
 	 * @return a kigyo referenciaja
 	 */
-	public Snake getSnake()
-	{
+	public Snake getSnake() {
 		return snake;
 	}
 
@@ -415,7 +372,7 @@ public class SnakeUnit extends Collidable {
 	 * a kigyoelem fureszenek lekerdezese
 	 * @return ez a kigyoelem fej es rendelkezik furesszel a kigyo
 	 */
-	boolean hasSaw() {
+	public boolean hasSaw() {
 		return (getPrevUnit() == null && snake.isSaw());
 	}
 }

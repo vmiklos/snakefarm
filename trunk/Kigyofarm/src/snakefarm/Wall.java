@@ -1,5 +1,8 @@
 package snakefarm;
 
+import snakefarm.viewfactories.WallViewFactory;
+import snakefarm.views.BaseView;
+
 /**
  * Fal objektum.
  * <p>
@@ -7,9 +10,6 @@ package snakefarm;
  */
 public class Wall extends Collidable {
 
-	private static int lastid = 0;
-	private int id = lastid;
-	private static final String type = "Wall";
 	private WallViewFactory factory = new WallViewFactory();
 
 	/**
@@ -18,7 +18,6 @@ public class Wall extends Collidable {
 	 * @param field melyik mezon jojjon letre
 	 */
 	public Wall(Field field) {
-		lastid++;
 		this.field = field;
 		field.setObject(this);
 	}

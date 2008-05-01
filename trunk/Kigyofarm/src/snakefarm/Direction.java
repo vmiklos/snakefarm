@@ -5,8 +5,6 @@ package snakefarm;
  */
 public class Direction {
 
-	private static int lastid = 0;
-	private int id = lastid;
 	/**
 	 * Megadja, hogy maximum hany iranyban allhat a kigyo.
 	 */
@@ -24,7 +22,6 @@ public class Direction {
 	 * @param dir az uj irany
 	 */
 	public Direction(int dir) {
-		lastid++;
 		this.dir = dir;
 	}
 
@@ -32,7 +29,6 @@ public class Direction {
 	 * Az irany osztaly konstruktora.
 	 */
 	public Direction() {
-		lastid++;
 		this.dir = (int) (Math.random() * (double) numberOfDirections);
 	}
 
@@ -51,14 +47,10 @@ public class Direction {
 	 */
 	@Override
 	public boolean equals(Object obj) {
-		if(turnedLeft)
-		{
-			Proto.out.println("StepEvent TurnLeft");
+		if (turnedLeft) {
 			turnedLeft = false;
 		}
-		if(turnedRight)
-		{
-			Proto.out.println("StepEvent TurnRight");
+		if (turnedRight) {
 			turnedRight = false;
 		}
 		if (obj == null) {

@@ -1,5 +1,7 @@
 package snakefarm;
 
+import snakefarm.views.BaseView;
+
 /**
  * megjelenitheto modell elemek ososztalya
  */

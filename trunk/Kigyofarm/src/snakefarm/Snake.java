@@ -1,6 +1,7 @@
 package snakefarm;
 
 import java.util.*;
+import snakefarm.creators.SnakeCreator;
 
 /**
  * Kigyo osztaly, amely osszefoglalja az egy kigyohoz tartozo kigyo
@@ -9,7 +10,7 @@ import java.util.*;
 public class Snake {
 
 	private int id;
-	public static final int sawCounterMax = 20;
+	private int sawCounterMax;
 	private Player player;
 	private Direction direction = new Direction(0);
 	private List<SnakeUnit> units;
@@ -25,10 +26,20 @@ public class Snake {
 	 *
 	 * @param player a kigyot vezerlo jatekos
 	 */
-	public Snake(Player player, int id) {
+	public Snake(Player player, SnakeCreator snakeCreator) {
+		snakeCreator.setSnake(this);
 		this.player = player;
-		this.id = id;
-		units = new LinkedList<SnakeUnit>();
+		//this.id = id;
+		stoneSpeed = snakeCreator.getStoneSpeed();
+		controlSpeed = snakeCreator.getControlSpeed();
+		stonePhase = snakeCreator.getStonePhase();
+		controlPhase = snakeCreator.getControlPhase();
+		sawCounterMax = snakeCreator.getSawCounterMax();
+		sawCounter = snakeCreator.getSawCounter();
+		direction = snakeCreator.getDirection();
+		units = snakeCreator.getSnakeUnits();
+		System.out.println(units.get(0).getField().getCoordinate().x);
+		//System.out.println(units.get(0).getField().getCoordinate().y);
 	}
 
 	/**
@@ -36,27 +47,8 @@ public class Snake {
 	 *
 	 * @return azonosito
 	 */
-	public int getId()
-	{
+	public int getId() {
 		return id;
-	}
-
-	/**
-	 * Elmenti a kigyot.
-	 */
-	public void save()
-	{
-		Proto.out.println("addsnake " + player.getId() + " " +
-				id + " " +
-				direction.hashCode() + " " +
-				controlSpeed + " " +
-				stoneSpeed + " " +
-				sawCounter);
-		for (Iterator i = units.listIterator(); i.hasNext();) {
-			SnakeUnit su = (SnakeUnit) i.next();
-			su.save();
-		}
-		Proto.out.println("endsnake");
 	}
 
 	/**
@@ -65,9 +57,8 @@ public class Snake {
 	 * @param tail az uj farok, amely a regi farok utan lesz fuzve
 	 */
 	public void addSnakeUnit(SnakeUnit tail) {
-		if(units.size() > 0)
-		{
-			SnakeUnit su = (SnakeUnit) units.get(units.size()-1);
+		if (units.size() > 0) {
+			SnakeUnit su = (SnakeUnit) units.get(units.size() - 1);
 			su.setNextUnit(tail);
 			tail.setPrevUnit(su);
 		}
@@ -75,8 +66,7 @@ public class Snake {
 		tail.setSnake(this);
 		tail.setId(units.size());
 		SnakeUnit i = tail.getNextUnit();
-		while(i != null)
-		{
+		while (i != null) {
 			units.add(i);
 			i.setSnake(this);
 			i = i.getNextUnit();
@@ -90,14 +80,12 @@ public class Snake {
 	 */
 	public void removeSnakeUnit(SnakeUnit unit) {
 		units.remove(unit);
-		if(unit.getPrevUnit() != null)
-		{
+		if (unit.getPrevUnit() != null) {
 			unit.getPrevUnit().setNextUnit(null);
 			unit.setPrevUnit(null);
 		}
 		SnakeUnit i = unit.getNextUnit();
-		while(i != null)
-		{
+		while (i != null) {
 			units.remove(i);
 			i = i.getNextUnit();
 		}
@@ -134,8 +122,7 @@ public class Snake {
 	 *
 	 * @return a kigyo iranya
 	 */
-	public Direction getDirection()
-	{
+	public Direction getDirection() {
 		return direction;
 	}
 
@@ -188,25 +175,17 @@ public class Snake {
 			boolean stepped = false;
 			SnakeUnit head = units.get(0);
 			controlPhase++;
-			if(controlPhase == controlSpeed)
-			{
-				Proto.out.println("Event Step " + id);
+			if (controlPhase == controlSpeed) {
 				controlPhase = 0;
 				stepped = true;
 				Field next = head.getNextField(direction);
 				head.step(next, false);
 			}
 			if (stepped && sawCounter > 0) {
-				if(sawCounter==1 && isAlive)
-					// most lep at normal modba
-					Proto.out.println("StepEvent SnakeModeNormal");
 				sawCounter--;
 			}
-			if(stepped)
-				Proto.out.println("End Step");
 			stonePhase++;
-			if(isAlive && stonePhase == stoneSpeed)
-			{
+			if (isAlive && stonePhase == stoneSpeed) {
 				stonePhase = 0;
 				head.stoneStep(false);
 			}
@@ -218,27 +197,9 @@ public class Snake {
 	 */
 	public void die() {
 		if (isAlive) {
-			Proto.out.println("StepEvent SnakeDie "+id);
 			isAlive = false;
-			/*for (Iterator i = units.iterator(); i.hasNext();) {
-			((SnakeUnit) (i.next())).die();
-			}*/
 			player.removeSnake(this);
 		}
-	}
-
-	/**
-	 * Megjeleniti a kigyot.
-	 */
-	public void show()
-	{
-		Proto.out.println("Snake " + id);
-		Proto.out.println("Prop " + sawCounter + " " + controlSpeed + " " + stoneSpeed);
-		for (Iterator i = units.listIterator(); i.hasNext();) {
-			SnakeUnit su = (SnakeUnit) i.next();
-			su.show();
-		}
-		Proto.out.println("endsnake");
 	}
 
 	/**
@@ -246,8 +207,7 @@ public class Snake {
 	 *
 	 * @return a kigyo hossza
 	 */
-	public int getLength()
-	{
+	public int getLength() {
 		return units.size();
 	}
 
@@ -256,13 +216,13 @@ public class Snake {
 	 *
 	 * @return a kohossz
 	 */
-	public int getStoneLength()
-	{
+	public int getStoneLength() {
 		int ret = 0;
 		for (Iterator i = units.listIterator(); i.hasNext();) {
 			SnakeUnit su = (SnakeUnit) i.next();
-			if(su.hasStone())
+			if (su.hasStone()) {
 				ret++;
+			}
 		}
 		return ret;
 	}
@@ -272,8 +232,7 @@ public class Snake {
 	 *
 	 * @return a sebesseg
 	 */
-	public int getControlSpeed()
-	{
+	public int getControlSpeed() {
 		return controlSpeed;
 	}
 
@@ -282,8 +241,7 @@ public class Snake {
 	 *
 	 * @return a sebesseg.
 	 */
-	public int getStoneSpeed()
-	{
+	public int getStoneSpeed() {
 		return stoneSpeed;
 	}
 
@@ -293,8 +251,16 @@ public class Snake {
 	 *
 	 * @return a szamlalo allasa
 	 */
-	public int getSawCounter()
-	{
+	public int getSawCounter() {
 		return sawCounter;
+	}
+
+	/**
+	 * Megadja a kigyo furesszamlalojanak maximalis erteket
+	 *
+	 * @return a szamlalo maximuma
+	 */
+	public int getSawCounterMax() {
+		return sawCounterMax;
 	}
 }

@@ -1,6 +1,7 @@
 package snakefarm;
 
 import java.util.*;
+import snakefarm.creators.PlayerCreator;
 
 /**
  * Jatekos alaposztaly. Tartalmazza a jatekos kigyoit. Felel a sajat
@@ -8,10 +9,9 @@ import java.util.*;
  */
 public class Player implements Comparable {
 
-	private static int lastid = 0;
-	private int id;
-	private static final String type = "Player";
+	private int id = 0;
 	private Game game;
+	private int numberOfSnakes;
 	private List<Snake> snakes = new LinkedList<Snake>();
 	private List<Snake> temp = new LinkedList<Snake>();
 
@@ -20,9 +20,13 @@ public class Player implements Comparable {
 	 *
 	 * @param game a jatek amelyben a jatekos letrejon
 	 */
-	public Player(Game game, int id) {
+	public Player(Game game, PlayerCreator playerCreator) {
 		this.game = game;
-		this.id = id;
+		numberOfSnakes = playerCreator.getNumberOfSnakes();
+		for (int i=0; i<numberOfSnakes; i++) {
+			snakes.add(new Snake(this, playerCreator.getSnakeCreator(i)));
+		}
+		//this.id = id;
 	}
 
 	/**
@@ -30,36 +34,14 @@ public class Player implements Comparable {
 	 *
 	 * @return az azonosito.
 	 */
-	public int getId()
-	{
+	public int getId() {
 		return id;
 	}
 
-	/**
-	 * Letrehoz egy uj kigyot, es a jatekoshoz, valamint a megadott
-	 * mezohoz rendeli.
-	 *
-	 * @param id ha 0 akkor automatikusan kap azonositot a kigyo, ha
-	 * nagyobb akkor a kivant azonosito
-	 * @return az uj kigyo azonositoja
-	 */
-	public int addSnake(int id) {
-		if(id>0)
-			lastid = id;
-		else
-			id = ++lastid;
-		snakes.add(new Snake(this, id));
-		return id;
-	}
-
-	/**
-	 * Elmenti a jatekos kigyoit.
-	 */
-	public void saveSnakes()
-	{
-		for (Iterator i = snakes.listIterator(); i.hasNext();) {
-			Snake snake = (Snake) i.next();
-			snake.save();
+	public void addSnake(Snake snake) {
+		if (!snakes.contains(snake)) {
+			snakes.add(snake);
+			numberOfSnakes++;
 		}
 	}
 
@@ -68,13 +50,13 @@ public class Player implements Comparable {
 	 *
 	 * @return a leghosszabb kigyo hossza
 	 */
-	public int getMaxLength()
-	{
+	public int getMaxLength() {
 		int max = 0;
 		for (Iterator i = snakes.listIterator(); i.hasNext();) {
 			Snake snake = (Snake) i.next();
-			if (snake.getLength() > max)
+			if (snake.getLength() > max) {
 				max = snake.getLength();
+			}
 		}
 		return max;
 	}
@@ -85,32 +67,15 @@ public class Player implements Comparable {
 	 *
 	 * @return a kovek szama.
 	 */
-	public int getMinStoneLength()
-	{
+	public int getMinStoneLength() {
 		int min = 0;
 		for (Iterator i = snakes.listIterator(); i.hasNext();) {
 			Snake snake = (Snake) i.next();
-			if (min == 0 || snake.getStoneLength() < min)
+			if (min == 0 || snake.getStoneLength() < min) {
 				min = snake.getStoneLength();
-		}
-		return min;
-	}
-
-	/**
-	 * Megmutat egy kigyot
-	 *
-	 * @param id a kigyo azonositoja
-	 */
-	public void showSnake(int id)
-	{
-		if (snakes != null)
-		{
-			for (Iterator i = snakes.listIterator(); i.hasNext();) {
-				Snake snake = (Snake) i.next();
-				if(snake.getId() == id)
-					snake.show();
 			}
 		}
+		return min;
 	}
 
 	/**
@@ -121,8 +86,7 @@ public class Player implements Comparable {
 	 * vagy a kigyo referenciaja, ha van.
 	 */
 	public Snake getSnakeById(int id) {
-		if (snakes != null)
-		{
+		if (snakes != null) {
 			for (Iterator i = snakes.listIterator(); i.hasNext();) {
 				Snake snake = (Snake) i.next();
 				if (snake.getId() == id) {
@@ -142,38 +106,23 @@ public class Player implements Comparable {
 	public void step() {
 		temp.addAll(snakes);
 		for (Iterator i = temp.iterator(); i.hasNext();) {
-			((Snake) i.next()).step();
-		}
-		temp.clear();
-	}
-
-	/**
-	 * Megmutatja a jatekost.
-	 */
-	public void show()
-	{
-		Proto.out.println("Player " + id);
-		if (snakes != null)
-		{
-			for (Iterator i = snakes.listIterator(); i.hasNext();) {
-				Snake snake = (Snake) i.next();
-				int saw;
-				if(snake.isSaw())
-					saw = 1;
-				else
-					saw = 0;
-				Proto.out.println(snake.getId() + " " + snake.getLength() + " " + saw + " " +
-						snake.getControlSpeed() + " " + snake.getStoneSpeed());
+			// ezt azert kell igy, mert lehet, hogy kozben mar meghalt...
+			Snake s = (Snake) i.next();
+			if (snakes.contains(s)) {
+				s.step();
 			}
 		}
-		Proto.out.println("endplayer");
+		temp.clear();
 	}
 
 	/**
 	 * Eltavolit egy kigyot a jatekostol.
 	 */
 	public void removeSnake(Snake snake) {
-		snakes.remove(snake);
+		if (snakes.contains(snake)) {
+			snakes.remove(snake);
+			numberOfSnakes--;
+		}
 	}
 
 	/**
@@ -181,21 +130,12 @@ public class Player implements Comparable {
 	 *
 	 * @return a fenti allitas igazsaga
 	 */
-	public boolean hasSnake()
-	{
-		if (snakes.size() > 0)
+	public boolean hasSnake() {
+		if (snakes.size() > 0) {
 			return true;
-		else
+		} else {
 			return false;
-	}
-
-	/**
-	 * Nyeresre szolitja fel a jatekost.
-	 */
-	public void win()
-	{
-		if(!Proto.debug)
-			Proto.out.println("Event Win " + id);
+		}
 	}
 
 	/**
@@ -204,8 +144,7 @@ public class Player implements Comparable {
 	 * @param snakeId a kigyo azonositoja.
 	 */
 	public void turnLeft(int snakeId) {
-		if (snakes != null)
-		{
+		if (snakes != null) {
 			for (Iterator i = snakes.listIterator(); i.hasNext();) {
 				Snake snake = (Snake) i.next();
 				if (snake.getId() == snakeId) {
@@ -221,8 +160,7 @@ public class Player implements Comparable {
 	 * @param snakeId a kigyo azonositoja.
 	 */
 	public void turnRight(int snakeId) {
-		if (snakes != null)
-		{
+		if (snakes != null) {
 			for (Iterator i = snakes.listIterator(); i.hasNext();) {
 				Snake snake = (Snake) i.next();
 				if (snake.getId() == snakeId) {
@@ -241,30 +179,29 @@ public class Player implements Comparable {
 	 * @param o a masik jatekos
 	 * @return -1, 0, 1 aszerint, hogy melyik jatekos a nagyobb.
 	 */
-	public int compareTo (Object o)
-	{
+	public int compareTo(Object o) {
 		Player b = (Player) o;
-		List<Player> ret = new LinkedList<Player>();
-		if(getMaxLength() != b.getMaxLength())
-		{
-			if(getMaxLength() > b.getMaxLength())
+		//List<Player> ret = new LinkedList<Player>();
+		if (getMaxLength() != b.getMaxLength()) {
+			if (getMaxLength() > b.getMaxLength()) {
 				return -1;
-			else
+			} else {
 				return 1;
-		}
-		else if(getMinStoneLength() != b.getMinStoneLength())
-		{
-			if(getMinStoneLength() > b.getMinStoneLength())
+			}
+		} else if (getMinStoneLength() != b.getMinStoneLength()) {
+			if (getMinStoneLength() > b.getMinStoneLength()) {
 				return 1;
-			else
+			} else {
 				return -1;
-		}
-		else
+			}
+		} else {
 			return 0;
+		}
 	}
 
 	public java.awt.Color getColor() {
 		/*FIXME szin szamitas megirasa*/
-		throw new UnsupportedOperationException("Not yet implemented");
+		return java.awt.Color.green;
+		//throw new UnsupportedOperationException("Not yet implemented");
 	}
 }

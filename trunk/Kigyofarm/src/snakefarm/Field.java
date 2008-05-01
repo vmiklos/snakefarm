@@ -1,14 +1,15 @@
 package snakefarm;
 
+import snakefarm.viewfactories.FieldViewFactory;
+import snakefarm.views.BaseView;
 import java.util.HashMap;
 
 /**
  * Egy jatekmezot valosit meg.
  */
-public class Field extends Viewable{
+public class Field extends Viewable {
 
-	private static int lastid = 0;
-	private int id;
+
 	private HashMap<Direction, Field> neighbours = new HashMap<Direction, Field>(Direction.numberOfDirections);
 	private Collidable objectOnField = null;
 	private Coordinate coordinate;
@@ -17,20 +18,8 @@ public class Field extends Viewable{
 	/**
 	 * A jatekmezo konstruktora.
 	 */
-	public Field(int id, Coordinate coordinate) {
-		this.id = id;
+	public Field(Coordinate coordinate) {
 		this.coordinate = coordinate;
-	}
-
-
-	/**
-	 * Visszaadja a mezo azonositojat.
-	 *
-	 * @return azonosito
-	 */
-	public int getId()
-	{
-		return id;
 	}
 
 	/**
@@ -56,8 +45,9 @@ public class Field extends Viewable{
 	 * @param snakeUnit a kileptetendo kigyoelem
 	 */
 	public void stepOut(SnakeUnit snakeUnit) {
-		/* FIXME ez a param ide teljesen felesleges (vmiklos) */
-		objectOnField = null;
+		if (objectOnField.equals(snakeUnit)) {
+			objectOnField = null;
+		}
 	}
 
 	/**
@@ -103,27 +93,6 @@ public class Field extends Viewable{
 	}
 
 	/**
-	 * Megadja, egy betuvel, hogy milyen objektum van a mezon.
-	 *
-	 * @return a betu
-	 */
-	public String getObjectString()
-	{
-		if(objectOnField == null)
-			return "0";
-		String type = objectOnField.getClass().getName();
-		if(type.equals("snakefarm.Wall"))
-			return "W";
-		else if(type.equals("snakefarm.FieldBerry"))
-			return "F";
-		else if(type.equals("snakefarm.StoneBerry"))
-			return "T";
-		else if(type.equals("snakefarm.SawBerry"))
-			return "A";
-		return "0";
-	}
-
-	/**
 	 * Megmondja, hogy a mezo ures-e.
 	 *
 	 * @return a mezo uressegere vonatkozo logikai ertek
@@ -140,8 +109,7 @@ public class Field extends Viewable{
 	 */
 	public void setNeighbour(Direction dir, Field field) {
 		neighbours.put(dir, field);
-		if(field != null)
-		{
+		if (field != null) {
 			field.neighbours.put(dir.reverse(), this);
 		}
 	}
@@ -150,7 +118,7 @@ public class Field extends Viewable{
 		return coordinate;
 	}
 
-	Viewable getViewable() {
+	public Viewable getViewable() {
 		return objectOnField;
 	}
 
@@ -162,5 +130,4 @@ public class Field extends Viewable{
 	protected BaseView genBaseView() {
 		return factory.genBaseView(this);
 	}
-
 }
