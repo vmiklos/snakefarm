@@ -2,6 +2,8 @@ package snakefarm;
 
 import java.util.*;
 import snakefarm.creators.PlayerCreator;
+import snakefarm.creators.SnakeCreator;
+import java.awt.Color;
 
 /**
  * Jatekos alaposztaly. Tartalmazza a jatekos kigyoit. Felel a sajat
@@ -9,11 +11,13 @@ import snakefarm.creators.PlayerCreator;
  */
 public class Player implements Comparable {
 
-	private int id = 0;
+	int cnt=0;
+	private int currentSnake = 0;
 	private Game game;
 	private int numberOfSnakes;
-	private List<Snake> snakes = new LinkedList<Snake>();
-	private List<Snake> temp = new LinkedList<Snake>();
+	private LinkedList<Snake> snakes = new LinkedList<Snake>();
+	private LinkedList<Snake> temp = new LinkedList<Snake>();
+	private Color color;
 
 	/**
 	 * A jatekos osztaly konstruktora.
@@ -23,26 +27,16 @@ public class Player implements Comparable {
 	public Player(Game game, PlayerCreator playerCreator) {
 		this.game = game;
 		numberOfSnakes = playerCreator.getNumberOfSnakes();
-		for (int i=0; i<numberOfSnakes; i++) {
+		for (int i = 0; i < numberOfSnakes; i++) {
 			snakes.add(new Snake(this, playerCreator.getSnakeCreator(i)));
 		}
-		//this.id = id;
+		color = playerCreator.getColor();
 	}
 
-	/**
-	 * Megadja egy jatekos azonositojat.
-	 *
-	 * @return az azonosito.
-	 */
-	public int getId() {
-		return id;
-	}
-
-	public void addSnake(Snake snake) {
-		if (!snakes.contains(snake)) {
-			snakes.add(snake);
-			numberOfSnakes++;
-		}
+	public void addSnake(SnakeCreator snakeCreator) {
+		snakes.addLast(new Snake(this, snakeCreator));
+		numberOfSnakes++;
+		System.out.println("addsnake");
 	}
 
 	/**
@@ -79,25 +73,6 @@ public class Player implements Comparable {
 	}
 
 	/**
-	 * Visszaadja a jatekos egy kigyojat az azonositoja alapjan.
-	 *
-	 * @param id az azonosito
-	 * @return null ha a jatekosnak nincs ilyen azonositoju kigyoja,
-	 * vagy a kigyo referenciaja, ha van.
-	 */
-	public Snake getSnakeById(int id) {
-		if (snakes != null) {
-			for (Iterator i = snakes.listIterator(); i.hasNext();) {
-				Snake snake = (Snake) i.next();
-				if (snake.getId() == id) {
-					return snake;
-				}
-			}
-		}
-		return null;
-	}
-
-	/**
 	 * Lepteti a jatekost.
 	 * <p>
 	 * Ez konkretan azt jelenti, hogy a jatekos minden kigyojat
@@ -120,6 +95,11 @@ public class Player implements Comparable {
 	 */
 	public void removeSnake(Snake snake) {
 		if (snakes.contains(snake)) {
+			if (currentSnake == snakes.indexOf(snake)) {
+				switchToNextSnake();
+			} else if (currentSnake > snakes.indexOf(snake)) {
+				currentSnake--;
+			}
 			snakes.remove(snake);
 			numberOfSnakes--;
 		}
@@ -131,42 +111,46 @@ public class Player implements Comparable {
 	 * @return a fenti allitas igazsaga
 	 */
 	public boolean hasSnake() {
-		if (snakes.size() > 0) {
-			return true;
+		return (numberOfSnakes > 0);
+	}
+
+	/**
+	 * A jatekos aktualis kigyojat balra forgatja.
+	 * 
+	 */
+	public void turnLeft() {
+		if (numberOfSnakes == 0) return;
+		Snake snake = snakes.get(currentSnake);
+		if (snake != null) {
+			snake.turnLeft();
+		}
+	}
+
+	/**
+	 * A jatekos aktualis kigyojat jobbra forgatja.
+	 * 
+	 */
+	public void turnRight() {
+		if (numberOfSnakes == 0) return;
+		Snake snake = snakes.get(currentSnake);
+		if (snake != null) {
+			snake.turnRight();
+		} else System.out.println("snake is null, " + currentSnake);
+	}
+
+	public void switchToNextSnake() {
+		if (numberOfSnakes == 0) {
+			currentSnake = 0;
 		} else {
-			return false;
+			currentSnake = (currentSnake + 1) % numberOfSnakes;
 		}
 	}
 
-	/**
-	 * A jatekos egy kigyojat balra forgatja.
-	 *
-	 * @param snakeId a kigyo azonositoja.
-	 */
-	public void turnLeft(int snakeId) {
-		if (snakes != null) {
-			for (Iterator i = snakes.listIterator(); i.hasNext();) {
-				Snake snake = (Snake) i.next();
-				if (snake.getId() == snakeId) {
-					snake.turnLeft();
-				}
-			}
-		}
-	}
-
-	/**
-	 * A jatekos egy kigyojat jobbra forgatja.
-	 *
-	 * @param snakeId a kigyo azonositoja.
-	 */
-	public void turnRight(int snakeId) {
-		if (snakes != null) {
-			for (Iterator i = snakes.listIterator(); i.hasNext();) {
-				Snake snake = (Snake) i.next();
-				if (snake.getId() == snakeId) {
-					snake.turnRight();
-				}
-			}
+	public void switchToPrevSnake() {
+		if (numberOfSnakes == 0) {
+			currentSnake = 0;
+		} else {
+			currentSnake = (currentSnake + numberOfSnakes - 1) % numberOfSnakes;
 		}
 	}
 
@@ -200,8 +184,6 @@ public class Player implements Comparable {
 	}
 
 	public java.awt.Color getColor() {
-		/*FIXME szin szamitas megirasa*/
-		return java.awt.Color.green;
-		//throw new UnsupportedOperationException("Not yet implemented");
+		return color;
 	}
 }

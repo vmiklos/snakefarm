@@ -29,12 +29,19 @@ public class GameFieldCreator {
 				fields.add(matrix[x][y]);
 				if ((x == 0) || (x == width - 1) || (y == 0) || (y == height - 1)) {
 					matrix[x][y].setObject(new Wall(matrix[x][y]));
+				} else {
+					double random=Math.random();
+					Collidable c=null;
+					if (random<0.1) c=new FieldBerry(matrix[x][y]);
+					else if (random<0.2) c=new StoneBerry(matrix[x][y]);
+					else if (random<0.3) c=new SawBerry(matrix[x][y]);
+					if (c!=null) matrix[x][y].setObject(c);
 				}
-				if (x>0) {
-					matrix[x][y].setNeighbour(left, matrix[x-1][y]);
+				if (x > 0) {
+					matrix[x][y].setNeighbour(left, matrix[x - 1][y]);
 				}
-				if (y>0) {
-					matrix[x][y].setNeighbour(up, matrix[x][y-1]);
+				if (y > 0) {
+					matrix[x][y].setNeighbour(up, matrix[x][y - 1]);
 				}
 			/* TODO: ide meg kell bogyo elhelyezo kod ... */
 			}

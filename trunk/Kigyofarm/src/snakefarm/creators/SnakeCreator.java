@@ -1,7 +1,6 @@
 package snakefarm.creators;
 
 import snakefarm.*;
-import java.util.List;
 import java.util.LinkedList;
 
 /**
@@ -10,8 +9,11 @@ import java.util.LinkedList;
  */
 public class SnakeCreator {
 
-	private Field field;
-	private Snake snake;
+	protected Field field = null;
+	protected Snake snake = null;
+	
+	public SnakeCreator() {
+	}
 
 	public SnakeCreator(Field f) {
 		field = f;
@@ -21,7 +23,7 @@ public class SnakeCreator {
 		this.snake = snake;
 	}
 
-	public List<SnakeUnit> getSnakeUnits() {
+	public LinkedList<SnakeUnit> getSnakeUnits() {
 		LinkedList<SnakeUnit> list = new LinkedList<SnakeUnit>();
 		list.add(new SnakeUnit(snake, field));
 		return list;

@@ -1,6 +1,7 @@
 package snakefarm.creators;
 
 import snakefarm.*;
+import java.awt.Color;
 
 /**
  *
@@ -12,11 +13,13 @@ public class GameCreator {
 	private int height;
 	private int players;
 	private GameField gameField;
+	private Color[] colors;
 
 	public GameCreator(int w, int h, int p) {
 		width = w;
 		height = h;
 		players = p;
+		initialiseColors();
 	}
 
 	public GameFieldCreator getGameFieldCreator() {
@@ -35,6 +38,14 @@ public class GameCreator {
 		if ((index < 0) || (index >= players)) {
 			throw new IllegalArgumentException();
 		}
-		return new PlayerCreator(gameField.GetRandomFreeField());
+		return new PlayerCreator(gameField.GetRandomFreeField(), colors[index]);
+	}
+	
+	private void initialiseColors() {
+		colors = new Color[4];
+		colors[0]=Color.GREEN;
+		colors[1]=Color.ORANGE;
+		colors[2]=Color.CYAN;
+		colors[3]=Color.YELLOW;
 	}
 }

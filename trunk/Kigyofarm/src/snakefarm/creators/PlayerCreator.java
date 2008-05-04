@@ -1,7 +1,7 @@
 package snakefarm.creators;
 
 import snakefarm.*;
-import java.lang.IllegalArgumentException;
+import java.awt.Color;
 
 /**
  *
@@ -10,9 +10,11 @@ import java.lang.IllegalArgumentException;
 public class PlayerCreator {
 
 	private Field field;
+	private Color color;
 
-	public PlayerCreator(Field f) {
-		field = f;
+	public PlayerCreator(Field field, Color color) {
+		this.field = field;
+		this.color = color;
 	}
 
 	public int getNumberOfSnakes() {
@@ -24,5 +26,9 @@ public class PlayerCreator {
 			throw new IllegalArgumentException();
 		}
 		return new SnakeCreator(field);
+	}
+	
+	public Color getColor() {
+		return color;
 	}
 }

@@ -2,6 +2,7 @@ package snakefarm;
 
 import snakefarm.viewfactories.SnakeUnitViewFactory;
 import snakefarm.views.BaseView;
+import snakefarm.creators.BittenOffSnakeCreator;
 
 /**
  * A kigyot alkoto egyseg. Egy kigyohoz tobb ilyen egyseg is tartozhat,
@@ -9,7 +10,6 @@ import snakefarm.views.BaseView;
  */
 public class SnakeUnit extends Collidable {
 
-	private int id;
 	private Snake snake;
 	private SnakeUnit prevUnit = null;
 	private SnakeUnit nextUnit = null;
@@ -29,16 +29,6 @@ public class SnakeUnit extends Collidable {
 		this.snake = snake;
 		this.field = field;
 		field.setObject(this);
-	}
-
-	/**
-	 * Beallitja az elem azonositojat.
-	 *
-	 * @param id az uj azonosito
-	 */
-	public void setId(int id)
-	{
-		this.id = id;
 	}
 
 	/**
@@ -78,29 +68,15 @@ public class SnakeUnit extends Collidable {
 		} else {
 			SnakeUnit pu = prevUnit;
 			snakeUnit.collideWith2(this);
-			snake.removeSnakeUnit(this);
-			if(pu != null) {
-				//fixme: ezt itt teljesen ujrairni bittenoffsnakecreatorral
-				/*int snakeid = snake.getPlayer().addSnake(0);
-				Snake newsnake = snake.getPlayer().getSnakeById(snakeid);
-				newsnake.setDirection(snakeUnit.getSnake().getDirection());
-				// itt azert -1 mert az eredeti erteket majd
-				// csokkenteni fogjuk de az uj kigyoet nem
-				// tudjuk majd, tehat itt tesszuk meg,
-				// ha kell
-				if (snake.getSawCounter()>0) {
-					newsnake.setSawCounter(snake.getSawCounter()-1);
-                                } else {
-					newsnake.setSawCounter(snake.getSawCounter());
-                                }
-                                newsnake.setControlSpeed(snake.getControlSpeed());
-				newsnake.setStoneSpeed(snake.getStoneSpeed());
-				newsnake.addSnakeUnit(nextUnit);*/
-			} else {
+			if(pu == null) {
 				// a kigyo fejevel utkoztek, szal ez
 				// halal
 				die();
+			} else if (nextUnit != null) {
+				snake.getPlayer().addSnake(new BittenOffSnakeCreator(snake, this));
 			}
+			snake.removeSnakeUnit(this);
+			field.unsetObject(this);
 		}
 	}
 

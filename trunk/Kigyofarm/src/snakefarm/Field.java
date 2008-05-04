@@ -3,6 +3,8 @@ package snakefarm;
 import snakefarm.viewfactories.FieldViewFactory;
 import snakefarm.views.BaseView;
 import java.util.HashMap;
+import java.util.Iterator;
+import java.util.Map;
 
 /**
  * Egy jatekmezot valosit meg.
@@ -116,6 +118,19 @@ public class Field extends Viewable {
 
 	public Coordinate getCoordinate() {
 		return coordinate;
+	}
+	
+	/**
+	 * megmondja, milyen iranyu szomszedja a masik mezo
+	 * @param f a mezo, aminek az iranya erdekel
+	 * @return az irany, null ha nem szomszedja
+	 */
+	public Direction getDirection(Field f) {
+		for (Iterator i=neighbours.entrySet().iterator(); i.hasNext();) {
+			Map.Entry current = (Map.Entry) i.next();
+			if (current.getValue() == f) return (Direction) current.getKey();
+		}
+		return null;
 	}
 
 	public Viewable getViewable() {

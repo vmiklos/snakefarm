@@ -25,7 +25,7 @@ public class FieldView extends BaseView {
 	/**
 	 * az elem kirajzolasa
 	 * feher hatter, es a rajta levo eloter, ha van
-	 * @param g Grafikus konextus, amire rajzolni kell
+	 * @param g Grafikus kontextus, amire rajzolni kell
 	 */
 	@Override
 	public void paint(Graphics g) {

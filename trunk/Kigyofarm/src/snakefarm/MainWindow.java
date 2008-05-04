@@ -8,18 +8,17 @@ import java.awt.*;
  */
 public class MainWindow extends Frame {
 
-	GraphicMain gm;
+	GraphicMain graphicMain;
 
-	public MainWindow(GraphicMain g) {
-		gm = g;
-		setLayout(new GridLayout(1, 2));
+	public MainWindow(GraphicMain graphicMain) {
+		this.graphicMain = graphicMain;
+		setLayout(new BorderLayout());
 		setTitle("Snakefarm");
-		setSize(600, 600);
-		addWindowListener(g);
+		addWindowListener(graphicMain);
 	}
 
 	@Override
 	public void paint(Graphics g) {
-		gm.getGameFieldView().paint(g);
+		graphicMain.paintGameField(g);
 	}
 }

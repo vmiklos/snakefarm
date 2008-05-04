@@ -31,7 +31,6 @@ public class WallView extends BaseView{
 	public void paint(Graphics g) {
 		Point p = getPointOfFieldElement(wall);
 		g.setColor(Color.darkGray);
-		System.out.println("wall: "+p.x+","+p.y+","+getFieldSize());
 		g.fillRect(p.x, p.y, getFieldSize(), getFieldSize());
 	}
 

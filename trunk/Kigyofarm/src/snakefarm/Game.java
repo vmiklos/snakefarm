@@ -63,7 +63,7 @@ public class Game {
 	public void step() {
 		for (java.util.Iterator i = players.iterator(); i.hasNext();) {
 			((Player) (i.next())).step();
-			checkEnd();
+			//checkEnd();
 		}
 	}
 
@@ -84,48 +84,32 @@ public class Game {
 	}
 
 	/**
-	 * Megkeres egy jatekost az azonositoja alapjan.
-	 *
-	 * @param id azonosito
-	 * @return a jatekos
-	 */
-	public Player getPlayerById(int id) {
-		if (players != null) {
-			for (Iterator i = players.listIterator(); i.hasNext();) {
-				Player player = (Player) i.next();
-				if (player.getId() == id) {
-					return player;
-				}
-			}
-		}
-		return null;
-	}
-
-	/**
-	 * Balra forgat egy kigyot
-	 *
-	 * @param snakeId a kigyo azonositoja
-	 */
-	public void turnLeft(int snakeId) {
-		if (players != null) {
-			for (Iterator i = players.listIterator(); i.hasNext();) {
-				Player player = (Player) i.next();
-				player.turnLeft(snakeId);
-			}
-		}
-	}
-
-	/**
-	 * Jobbra forgat egy kigyot
+	 * Balra forgatja a megadott jatekos aktualis kigyojat
 	 * 
-	 * @param snakeId a kigyo azonositoja
+	 * @param playerId a jatekos azonositoja
 	 */
-	public void turnRight(int snakeId) {
-		if (players != null) {
-			for (Iterator i = players.listIterator(); i.hasNext();) {
-				Player player = (Player) i.next();
-				player.turnRight(snakeId);
-			}
-		}
+	public void turnLeft(int playerId) {
+		Player player = players.get(playerId);
+		if (player != null) player.turnLeft();
+	}
+
+	/**
+	 * Jobbra forgatja a megadott jatekos aktualis kigyojat
+	 * 
+	 * @param snakeId a jatekos azonositoja
+	 */
+	public void turnRight(int playerId) {
+		Player player = players.get(playerId);
+		if (player != null) player.turnRight();
+	}
+	
+	public void switchToNextSnake(int playerId) {
+		Player player = players.get(playerId);
+		if (player != null) player.switchToNextSnake();
+	}
+	
+	public void switchToPrevSnake(int playerId) {
+		Player player = players.get(playerId);
+		if (player != null) player.switchToPrevSnake();
 	}
 }

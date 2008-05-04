@@ -9,7 +9,6 @@ import snakefarm.creators.SnakeCreator;
  */
 public class Snake {
 
-	private int id;
 	private int sawCounterMax;
 	private Player player;
 	private Direction direction = new Direction(0);
@@ -20,6 +19,7 @@ public class Snake {
 	private int controlSpeed = 0;
 	private int stonePhase = 0;
 	private int stoneSpeed = 0;
+	private boolean turnedInThisStep = false;
 
 	/**
 	 * A kigyo konstruktora.
@@ -29,7 +29,6 @@ public class Snake {
 	public Snake(Player player, SnakeCreator snakeCreator) {
 		snakeCreator.setSnake(this);
 		this.player = player;
-		//this.id = id;
 		stoneSpeed = snakeCreator.getStoneSpeed();
 		controlSpeed = snakeCreator.getControlSpeed();
 		stonePhase = snakeCreator.getStonePhase();
@@ -38,17 +37,6 @@ public class Snake {
 		sawCounter = snakeCreator.getSawCounter();
 		direction = snakeCreator.getDirection();
 		units = snakeCreator.getSnakeUnits();
-		System.out.println(units.get(0).getField().getCoordinate().x);
-		//System.out.println(units.get(0).getField().getCoordinate().y);
-	}
-
-	/**
-	 * Megadja a kigyo azonositojat.
-	 *
-	 * @return azonosito
-	 */
-	public int getId() {
-		return id;
 	}
 
 	/**
@@ -64,7 +52,7 @@ public class Snake {
 		}
 		units.add(tail);
 		tail.setSnake(this);
-		tail.setId(units.size());
+		//tail.setId(units.size());
 		SnakeUnit i = tail.getNextUnit();
 		while (i != null) {
 			units.add(i);
@@ -148,14 +136,16 @@ public class Snake {
 	 * Balra forditja a kigyot.
 	 */
 	public void turnLeft() {
-		direction.turnLeft();
+		if (!turnedInThisStep) direction.turnLeft();
+		turnedInThisStep = true;
 	}
 
 	/**
 	 * Jobbra forditja a kigyot.
 	 */
 	public void turnRight() {
-		direction.turnRight();
+		if (!turnedInThisStep) direction.turnRight();
+		turnedInThisStep = true;
 	}
 
 	/**
@@ -189,6 +179,7 @@ public class Snake {
 				stonePhase = 0;
 				head.stoneStep(false);
 			}
+			turnedInThisStep = false;
 		}
 	}
 
