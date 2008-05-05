@@ -1,1 +1,1 @@
-Main-Class: snakefarm.Proto
+Main-Class: snakefarm.GraphicMain
