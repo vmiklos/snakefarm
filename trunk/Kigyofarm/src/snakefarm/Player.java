@@ -78,7 +78,7 @@ public class Player implements Comparable {
 	 * Ez konkretan azt jelenti, hogy a jatekos minden kigyojat
 	 * lepteti.
 	 */
-	public void step() {
+	public synchronized void step() {
 		temp.addAll(snakes);
 		for (Iterator i = temp.iterator(); i.hasNext();) {
 			// ezt azert kell igy, mert lehet, hogy kozben mar meghalt...
@@ -118,7 +118,7 @@ public class Player implements Comparable {
 	 * A jatekos aktualis kigyojat balra forgatja.
 	 * 
 	 */
-	public void turnLeft() {
+	public synchronized void turnLeft() {
 		if (numberOfSnakes == 0) return;
 		Snake snake = snakes.get(currentSnake);
 		if (snake != null) {
@@ -130,7 +130,7 @@ public class Player implements Comparable {
 	 * A jatekos aktualis kigyojat jobbra forgatja.
 	 * 
 	 */
-	public void turnRight() {
+	public synchronized void turnRight() {
 		if (numberOfSnakes == 0) return;
 		Snake snake = snakes.get(currentSnake);
 		if (snake != null) {
@@ -138,7 +138,7 @@ public class Player implements Comparable {
 		} else System.out.println("snake is null, " + currentSnake);
 	}
 
-	public void switchToNextSnake() {
+	public synchronized void switchToNextSnake() {
 		if (numberOfSnakes == 0) {
 			currentSnake = 0;
 		} else {
@@ -146,7 +146,7 @@ public class Player implements Comparable {
 		}
 	}
 
-	public void switchToPrevSnake() {
+	public synchronized void switchToPrevSnake() {
 		if (numberOfSnakes == 0) {
 			currentSnake = 0;
 		} else {

@@ -22,7 +22,6 @@ public class GraphicMain extends WindowAdapter {
 	private int gameFieldHeight = 20;
 	private int numberOfPlayers = 2;
 	private int stepsLimit = 100;
-	private int stepsElapsed = 0;
 	private int stepDelay = 1000;
 	private boolean isPlaying;
 	private boolean isGameOver;
@@ -53,22 +52,23 @@ public class GraphicMain extends WindowAdapter {
 	}
 
 	public void newGame() {
-		game = new Game(new GameCreator(gameFieldWidth, gameFieldHeight, numberOfPlayers));
+		game = new Game(new GameCreator(gameFieldWidth, gameFieldHeight, numberOfPlayers, stepsLimit));
 		stepTimer = new StepTimer(this, stepDelay);
-		isPlaying=true;
+		isPlaying = true;
+		isGameOver = false;
+		mainWindow.removeAll();
 		mainWindow.add(gameFieldController.getCanvas(), BorderLayout.CENTER);
-		//mainWindow.add(winnersCanvas, BorderLayout.CENTER);
+		mainWindow.validate();
 	}
 
 	public void step() {
 		game.step();
-		stepsElapsed++;
 		gameFieldController.update();
-		if ((stepsElapsed == stepsLimit) || game.checkEnd()) {
+		if (game.checkEnd()) {
 			stepTimer.stop();
-			isPlaying=false;
-			isGameOver=true;
-			mainWindow.remove(gameFieldController.getCanvas());
+			isPlaying = false;
+			isGameOver = true;
+			mainWindow.removeAll();
 			mainWindow.add(winnersCanvas, BorderLayout.CENTER);
 			mainWindow.validate();
 		}
@@ -90,7 +90,7 @@ public class GraphicMain extends WindowAdapter {
 				break;
 		}
 	}
-	
+
 	public LinkedList<Player> getWinners() {
 		if (isGameOver) {
 			return game.getWinners();

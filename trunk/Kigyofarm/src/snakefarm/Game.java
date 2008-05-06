@@ -14,12 +14,16 @@ public class Game {
 	private GameField gameField;
 	private int numberOfPlayers;
 	private List<Player> players = new LinkedList<Player>();
+	private int stepsLimit;
+	private int stepsElapsed=0;
+	private boolean isPlaying = true;
 
 	/**
 	 * A jatek konstruktora.
 	 */
 	public Game(GameCreator gameCreator) {
 		gameField = new GameField(this, gameCreator.getGameFieldCreator());
+		stepsLimit=gameCreator.getStepsLimit();
 		gameCreator.setGameField(gameField);
 		numberOfPlayers = gameCreator.getNumberOfPlayers();
 		for (int i=0; i<numberOfPlayers; i++) {
@@ -41,15 +45,14 @@ public class Game {
 	 */
 	public boolean checkEnd() {
 		int countAlive = 0;
-		Player lastAlive = null;
+		if (stepsElapsed == stepsLimit) return true;
 		for (Iterator i = players.iterator(); i.hasNext();) {
 			Player player = (Player) i.next();
 			if (player.hasSnake()) {
 				countAlive++;
-				lastAlive = player;
 			}
 		}
-		if (countAlive == 1) {
+		if (countAlive <= 1) {
 			return true;
 		} else {
 			return false;
@@ -60,9 +63,12 @@ public class Game {
 	 * Leptet egyet minden jatekoson.
 	 */
 	public void step() {
-		for (java.util.Iterator i = players.iterator(); i.hasNext();) {
-			((Player) (i.next())).step();
-			//checkEnd();
+		if (isPlaying) {
+			for (java.util.Iterator i = players.iterator(); i.hasNext();) {
+				((Player) (i.next())).step();
+				stepsElapsed++;
+			}
+			checkEnd();
 		}
 	}
 
