@@ -25,28 +25,24 @@ public class GameFieldController extends KeyAdapter {
 	public void paintGameField(Graphics g) {
 		graphicMain.paintGameField(g);
 	}
-	
+
 	@Override
 	public void keyPressed(KeyEvent e) {
-		if (e.getKeyCode() == KeyEvent.VK_ENTER) {
-			graphicMain.step();
-		} else {
-			Integer player = keycodeToPlayer.get(e.getKeyCode());
-			Integer command = keycodeToCommand.get(e.getKeyCode());
-			if (player != null && command != null) {
-				graphicMain.playerCommand(player, command);
-			}
+		Integer player = keycodeToPlayer.get(e.getKeyCode());
+		Integer command = keycodeToCommand.get(e.getKeyCode());
+		if (player != null && command != null) {
+			graphicMain.playerCommand(player, command);
 		}
 	}
-	
+
 	public GameFieldCanvas getCanvas() {
 		return gameFieldCanvas;
 	}
-	
+
 	public void update() {
 		gameFieldCanvas.repaint();
 	}
-	
+
 	private void fillHashMaps() {
 		keycodeToPlayer = new HashMap<Integer, Integer>();
 		keycodeToPlayer.put(KeyEvent.VK_LEFT, 0);
@@ -57,7 +53,7 @@ public class GameFieldController extends KeyAdapter {
 		keycodeToPlayer.put(KeyEvent.VK_D, 1);
 		keycodeToPlayer.put(KeyEvent.VK_W, 1);
 		keycodeToPlayer.put(KeyEvent.VK_S, 1);
-		
+
 		keycodeToCommand = new HashMap<Integer, Integer>();
 		keycodeToCommand.put(KeyEvent.VK_LEFT, 0);
 		keycodeToCommand.put(KeyEvent.VK_RIGHT, 1);

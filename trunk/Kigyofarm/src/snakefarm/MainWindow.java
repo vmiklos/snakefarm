@@ -16,9 +16,4 @@ public class MainWindow extends Frame {
 		setTitle("Snakefarm");
 		addWindowListener(graphicMain);
 	}
-
-	@Override
-	public void paint(Graphics g) {
-		graphicMain.paintGameField(g);
-	}
 }

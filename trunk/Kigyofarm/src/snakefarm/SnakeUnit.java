@@ -68,6 +68,7 @@ public class SnakeUnit extends Collidable {
 		} else {
 			SnakeUnit pu = prevUnit;
 			snakeUnit.collideWith2(this);
+			
 			if(pu == null) {
 				// a kigyo fejevel utkoztek, szal ez
 				// halal
@@ -76,7 +77,7 @@ public class SnakeUnit extends Collidable {
 				snake.getPlayer().addSnake(new BittenOffSnakeCreator(snake, this));
 			}
 			snake.removeSnakeUnit(this);
-			field.unsetObject(this);
+			if (field!=null) field.unsetObject(this);
 		}
 	}
 

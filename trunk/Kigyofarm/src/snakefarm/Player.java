@@ -18,6 +18,7 @@ public class Player implements Comparable {
 	private LinkedList<Snake> snakes = new LinkedList<Snake>();
 	private LinkedList<Snake> temp = new LinkedList<Snake>();
 	private Color color;
+	private int turn = 0;
 
 	/**
 	 * A jatekos osztaly konstruktora.
@@ -36,7 +37,6 @@ public class Player implements Comparable {
 	public void addSnake(SnakeCreator snakeCreator) {
 		snakes.addLast(new Snake(this, snakeCreator));
 		numberOfSnakes++;
-		System.out.println("addsnake");
 	}
 
 	/**

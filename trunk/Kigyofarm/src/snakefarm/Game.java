@@ -39,7 +39,7 @@ public class Game {
 	/**
 	 * Megnezi, hogy vege van-e a jateknak.
 	 */
-	private boolean checkEnd() {
+	public boolean checkEnd() {
 		int countAlive = 0;
 		Player lastAlive = null;
 		for (Iterator i = players.iterator(); i.hasNext();) {
@@ -50,7 +50,6 @@ public class Game {
 			}
 		}
 		if (countAlive == 1) {
-			//lastAlive.win();
 			return true;
 		} else {
 			return false;
@@ -70,17 +69,16 @@ public class Game {
 	/**
 	 * Veget vet a jateknak.
 	 */
-	// WTF ez a metodus? FIXME csinalni vele valamit
-	public void end() {
+	public LinkedList<Player> getWinners() {
+		LinkedList<Player> winners = new LinkedList<Player>();
 		Collections.sort((List) players);
-		int max = players.get(0).getMaxLength();
-		int minStone = players.get(0).getMinStoneLength();
 		for (Iterator i = players.iterator(); i.hasNext();) {
 			Player player = (Player) i.next();
 			if (player.compareTo(players.get(0)) == 0) {
-				//player.win();
+				winners.add(player);
 			}
 		}
+		return winners;
 	}
 
 	/**
