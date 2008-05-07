@@ -14,7 +14,7 @@ public class GameFieldCanvas extends Canvas {
 	public GameFieldCanvas(GameFieldController gameFieldController) {
 		this.gameFieldController = gameFieldController;
 		addKeyListener(gameFieldController);
-		setSize(300, 300);
+		setSize(600, 600);
 	}
 
 	@Override

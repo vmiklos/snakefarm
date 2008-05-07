@@ -13,11 +13,11 @@ public class StepTimer extends TimerTask {
 	GraphicMain graphicMain;
 	int stepDelay;
 
-	public StepTimer(GraphicMain graphicMain, int stepDelay) {
+	public StepTimer(GraphicMain graphicMain, int initialDelay, int stepDelay) {
 		this.graphicMain = graphicMain;
 		this.stepDelay = stepDelay;
-		timer = new Timer();
-		timer.schedule(this, 3000, stepDelay);
+		timer = new Timer(true);
+		timer.schedule(this, initialDelay, stepDelay);
 	}
 
 	public void stop() {

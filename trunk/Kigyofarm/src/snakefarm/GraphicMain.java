@@ -18,11 +18,13 @@ public class GraphicMain extends WindowAdapter {
 	private GameFieldController gameFieldController;
 	private WinnersCanvas winnersCanvas;
 	private StepTimer stepTimer;
+	private ButtonsPanel buttonsPanel;
 	private int gameFieldWidth = 20;
 	private int gameFieldHeight = 20;
 	private int numberOfPlayers = 2;
-	private int stepsLimit = 100;
+	private int stepsLimit = 0;
 	private int stepDelay = 1000;
+	private int initialDelay = 3000;
 	private boolean isPlaying;
 	private boolean isGameOver;
 
@@ -33,9 +35,10 @@ public class GraphicMain extends WindowAdapter {
 	public GraphicMain() {
 		mainWindow = new MainWindow(this);
 		mainWindow.setVisible(true);
-		mainWindow.setSize(800, 800);
+		mainWindow.setSize(600, 700);
 		gameFieldController = new GameFieldController(this);
 		winnersCanvas = new WinnersCanvas(this);
+		buttonsPanel = new ButtonsPanel(this);
 		newGame();
 	}
 
@@ -53,11 +56,13 @@ public class GraphicMain extends WindowAdapter {
 
 	public void newGame() {
 		game = new Game(new GameCreator(gameFieldWidth, gameFieldHeight, numberOfPlayers, stepsLimit));
-		stepTimer = new StepTimer(this, stepDelay);
+		stepTimer = new StepTimer(this, initialDelay, stepDelay);
 		isPlaying = true;
 		isGameOver = false;
 		mainWindow.removeAll();
 		mainWindow.add(gameFieldController.getCanvas(), BorderLayout.CENTER);
+		gameFieldController.getCanvas().requestFocus();
+		mainWindow.add(buttonsPanel, BorderLayout.SOUTH);
 		mainWindow.validate();
 	}
 
@@ -70,6 +75,7 @@ public class GraphicMain extends WindowAdapter {
 			isGameOver = true;
 			mainWindow.removeAll();
 			mainWindow.add(winnersCanvas, BorderLayout.CENTER);
+			mainWindow.add(buttonsPanel, BorderLayout.SOUTH);
 			mainWindow.validate();
 		}
 	}
@@ -97,5 +103,9 @@ public class GraphicMain extends WindowAdapter {
 		} else {
 			return new LinkedList<Player>();
 		}
+	}
+	
+	public void exit() {
+		System.exit(0);
 	}
 }
