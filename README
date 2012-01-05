@@ -1,0 +1,33 @@
+= Snakefarm
+
+== What's Snakefarm?
+
+Snakefarm is a game, it was written by four of us: Adam Banko
+(documentation jedi), Peter Gerencser (UML maniac), Gergely Kis (design
+and testsuite mastah), Miklos Vajna (coding monkey).
+
+Contacts are available in the PDF (see below).
+
+== Status
+
+It has a loooooong Hungarian documentation which is available
+http://spqr-lab.sch.bme.hu/system/files/teljes.pdf[here] or
+https://github.com/downloads/vmiklos/snakefarm/teljes.pdf[here] (local mirror).
+
+The original project page was http://spqr-lab.sch.bme.hu/[here].
+The big PDF is browsable there on individual HTML pages, if you are
+interested.
+
+== Download
+
+From https://github.com/vmiklos/snakefarm[GitHub].
+
+== License
+
+http://creativecommons.org/licenses/by-nc-sa/3.0/[Creative Commons - Attribution / Noncommercial / Share Alike]
+
+== Additional resources
+
+* link:Shortlog[Shortlog]
+
+// vim: ft=asciidoc
