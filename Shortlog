@@ -1,0 +1,267 @@
+gerpetya (15):
+      Statikus Struktúra diagramok
+      Statikus Struktura diagram (Game osztaly javitva)
+      Statikus Struktura diagram
+      State diagramok felvetele
+      Visual Paradigm Project
+      Felesleges fájlok törlése
+      Kigyofarm (teamwork project)
+      Szekvencia diagramok frissítése
+      Szkeleton use-case update
+      Analizis modell 3:)
+      Analizis Modell Vegleges, skeleton elso resz
+      UML diagramokbol generalt Skeleton forras
+      Debuggolas a leadas elott
+      Hunglishrol englishre alakitas
+      Grafikus diagramok
+
+lordavatar (28):
+      git-svn-id: http://spqr4.svn.sourceforge.net/svnroot/spqr4@57 dfce5827-3746-0410-9ec7-c6586dabde71
+      git-svn-id: http://spqr4.svn.sourceforge.net/svnroot/spqr4@58 dfce5827-3746-0410-9ec7-c6586dabde71
+      git-svn-id: http://spqr4.svn.sourceforge.net/svnroot/spqr4@59 dfce5827-3746-0410-9ec7-c6586dabde71
+      Az osszes file formazasa, UserInterface atnevezese SkeletonInterface-re
+      4 palya kesz, sok hibajavitas, formazas, egy kis refactoring, mostmar skeleton a fo osztaly
+      Elvileg minden kesz, minden meg van formazva, kiveve, hogy a snakeunit nincs refactoralva meg
+      elso 3 teszt feltoltve
+      4-7 tesztek feltoltve, 2-3 mapek javitva
+      test1.out javitva
+      test8 hozzaadva
+      test9 hozzaadva
+      test10 hozzaadva
+      test11 hozzaadva
+      test 12 hozzaadva
+      test 13 hozzaadva
+      test 14 hozzaadva, snakedie kimenet mostmar a meghalo kigyo id-jat is kiirja, es ez alapjan a korabbiak frissitve
+      test 15 hozzaadva
+      test 16 hozzaadva
+      test 17 es 18 hozzaadva
+      player.turnright es player.turnleft hibaja javitva (nem ==id hanem ==snakeId kellett a lancolt listan vegigfutaskor)
+      Kiszortam a protobol meg a skeletonbol maradt szemet nagy reszet, meg a modell es a megjelenito furcsasagait javitgattam
+      creator-ok kulon mappaba rakva
+      viewfactory-k kulon mappaba rakva
+      view-ek kulon mappaba rakva
+      A modell hibai javitgatva (!), tovabbi takaritas
+      Játék vége már valami primitíven megoldva, kisebb változtatások, időzítés
+      Kisebb változtatások, Player thread-safe-fé téve
+      Alsó gombsor megcsinálva, győztesek kijelzése
+
+thefirstofall (13):
+      proba
+      proba-vissza
+      meg kevesebb privat cucc
+      proba
+      view osztalyok megirva, a szukseges uj metodusok csonkjai elhelyezve
+      Szin szamitas csonkhoz fixme megjegyzes elhelyezese, ezt meg kell majd irni
+      grafikus verzio letrehozasa
+      view osztalyok megirva, a szukseges uj metodusok csonkjai elhelyezve
+      view osztalyok megirva, a szukseges uj metodusok csonkjai elhelyezve
+      revert, a fejlesztest megse ebbe az agba csinaljuk...
+      revert, a fejlesztest megse ebbe az agba csinaljuk...
+      factory-s megoldásra alakítás, megjelenites pontositasa, kommentek irasa
+      Factory class es file nevek egysegesitve
+
+vmiklos (203):
+      create branch 'trunk'
+      add directory 'src'
+      create branch 'uml'
+      initial import
+      initial import
+      nezzuk tuleli-e a netbeans ha a usernevek bekerulnek az xml file-okba
+      remove private file
+      ignore private.properties
+      uj szekvenciadiagram: jatek inditasa
+      uj szekvenciadiagram: kigyo vezerlese
+      jatek inditasa szekvenciadiagram: a jatekos hozza letre a kigyot
+      kigyo verezlese szekvenciadiagram: Snake -> SnakeUnit
+      uj szekvenciadiagram: ido leptetese
+      kigyo vezerlese szekvenciadiagram: rosszul irtam az elobb, az iranyt a Snake tarolja, nem a SnakeUnit
+      jatek inditasa szekvenciadiagram: Snake letre kell hozza meg a SnakeUnitokat is
+      jatek inditasa szekvenciadiagram: setCollidable() -> setObject()
+      ekezetes filenevek eltavolitasa mert azt a Windowsos netbeans nem kezeli
+      kigyo vezerlese szekvenciadiagram: Direction objektum hozzaadasa
+      szekvenciadiagramok nevenek ekezettelenitese
+      ido leptetese: nem ugyanarra a mezore lepunk ra amirol az elobb leleptunk
+      Revert "State diagramok felvetele"
+      Revert "ido leptetese: nem ugyanarra a mezore lepunk ra amirol az elobb leleptunk"
+      ido leptetese: nem ugyanarra a mezore lepunk ra amirol az elobb leleptunk (v2)
+      ido leptetese: aszinkron->szinkron, hivatkozas a jovendobeli tobbi diagramra
+      utkozes FieldBerryvel: uj szekvenciadiagram
+      utkozes Wallal: uj szekvenciadiagram
+      ido leptetese: setSawCounter() hozzaadasa
+      utkozes SnakeUnittal: uj szekvenciadiagram
+      utkozes SawBerryvel: uj szekvenciadiagram
+      utkozes SnakeUnittal: SawBerry support
+      SnakeUnitnak hasStone() es setStone() metodusok
+      utkozes StoneBerryvel: uj szekvenciadiagram. egyben a SnakeUnittal valo utkozes is modositva ehhez
+      SnakeUnitnak die() metodus
+      ido leptetese diagramban osszecsuszott metodusok szetmazsolazasa
+      utkozes SnakeUnittal: Player removeSnake() reszletezes kiszedese, ez kulon diagram lesz.
+      utkozes SnakeUnittal: setNext(null)t nem hasznalunk kozvetlenul csak die()-t.
+      kigyoelem meghalasa: uj szekvenciadiagram
+      utkozes Wallal: die()-t nem reszletezzuk, van ra kulon diagram.
+      new dir: paradigm
+      Uj konyvtar: skeleton
+      compile.bat es manifest file hozzaadasa, mivel a laborban nincs ant.
+      run.bat hozzaadasa
+      Left/Forward/Right kerdesnel l/f/r emlitese, ezt csak a forrasbol lehetett idaig tudni
+      comment Skeletion.main-hez
+      Skeleton konstruktoranak eltavolitasa
+      Skeleton class dokumentalva
+      Collidable abstract class dokumentalasa
+      Skeletonhoz meg doksi
+      Direction class dokumentalasa
+      Field dokumentalasa
+      FieldBerry dokumentalasa
+      Game class doksija
+      GameField dokumentalasa
+      Player doksi
+      SawBerry doksi
+      Snake doksi
+      kis script a kommentek szazalekanak megallapitasahoz
+      Snake: egy todo
+      SnakeUnit doksi
+      StoneBerry doksi
+      Wall dokumentalasa
+      felesleges doc szemet kitakaritasa
+      LevelBase doksi
+      Level1 doksi
+      Level2 doksi
+      Level3 doksi
+      Level4 doksi
+      Level5 doksi
+      Level6 doksi
+      Level7 doksi
+      Level8 doksi
+      Level9 doksi
+      Level10 doksi
+      uj script doksi generalasara
+      typo fixek javadocban amiket a javadoc vett eszre
+      Ekezetek eltavolitasa commentekbol, mert nem szereti oket a javadoc.
+      uj script ekezettelenitesre
+      PATH allitasa, hogy a laborban is 6os java induljon
+      Altalanos takaritas: class es jar file-ok torlese svnbol
+      Van meg itt szemet, de elvileg ez a vege
+      Player.addSnake() javadoc simogatasa
+      tests/compare: import
+      tests: import runtests.*
+      run one test for now
+      skeleton -> proto masolas
+      levelek nem kellenek a protoba
+      Proto egyeb cuccainak kipucolasa
+      test1 elso 3 sora bedrotozva, hogy lehessen parsert irni
+      add basic parser
+      uj out es time parancsok
+      test1.map javitasa: nem le es jobbra vesszuk a szomszedokat hanem fel es balra
+      implemented GameField.loadMap
+      implement addplayer command
+      implemented addsnake command
+      implemented implicit addsnakeunit
+      added fake endsnake command
+      implement comment command
+      modositas a komment parsolasban
+      snapshot command implementalasa
+      hibakezeles GameField.loadMap()be
+      es meg is van h mi bugzott
+      implement exit command
+      test1: a hasstone boolean tehat 0 v 1: 2es csereje 1esre
+      test1: \nes sorvegek \r\n helyett (mint ahogy a forraskodokban is)
+      exit parancs implementalasa
+      Field: return null helyett mindig return "0"
+      mapfile-ok vegen mostmar van ujsor
+      test2: az elso kigyonak kell nyerni, nem a masodiknak
+      uj step parancs, igy mar lefut a masodik teszt is
+      test2 inputjabol felesleges debug kiszedese
+      showsnake parancs kesz
+      mostmar rendesen az osszes elep lep a kigyo leptetesenel
+      turnleft parancs implementalasa
+      turnright parancs implementalasa, igy mar lefut a 3. teszt is \o/
+      test4 output: 4db hianyzo StepEvent potlasa
+      test2 output: a masik kigyonak kell meghalnia
+      GameField.loadMap: field-ek torlese load elott. igy mar lefut a 4. teszt is
+      test5.in modositasa: a 10es cellabol es lefele induljon a fureszkigyo
+      showplayer parancs implementalasa
+      test5 lefut: ha belenkharap egy kigyo akkor ketteszakadunk
+      test6.out: typok javitasa:
+      6os teszt lefut: SnakeUnitba StepEvent Snake_foo-k berakasa
+      test7: hasonlo typok
+      lefut a 7es teszt is
+      Field idja ujra private
+      Game gameField-je ujra private
+      Player idja ujra private
+      Snake idja private
+      SnakeUnit: player private
+      Snake: sawCounter, controlSpeed, stoneSpeed ujra private
+      SnakeUnit: snake, prevUnit, nextUnit ujra private
+      SnakeUnit idja private
+      ha nincs parameter, olvasson stdinrol
+      preprocessor kiiktatasa, hogy lehessen interaktivan vezerelni a programon stdinrol
+      test8: kigyo irany lefele, nem felfele van
+      shownake-nel a saw erteke int es nem boolean
+      test8 kimenetben:
+      lefut a test8
+      test5 output: hianyzo StepEvent SnakeModeNormal hozzaadasa
+      test9: a masodik hozzaadott jatekos idjanak javitasa
+      snake-snake utkozes eseten ne csak akkor irja ki a StepEvent Snake_Snakeet mikor furesz van a masiknal
+      lefut a 9. teszt is
+      test10 lefut \o/
+      Snake.step: leptetes a controlSpeed figyelembevetelevel
+      SnakeUnit.stoneStep() implementalasa
+      Event StoneStep implementalasa
+      Event StoneStep atrakasa SnakeUnitba
+      Turn eventek visszapakolasa a Stepeken belulre
+      eventek rendezgetese h ujra lefusson az 5os es 8as teszt
+      lefut a 11es teszt is, futtassuk defaultbol
+      runtest.sh: diff automatikus futtatasa failed testeknel a konnyebb debuggolas erdekeben
+      wall felesleges collideWithSawjanek torlese
+      Game.win() implemantalasa, igy mar lefut a 12es teszt is
+      StepEvent SnakeDie-ba id bepakolasa
+      Snake: hamar 1x meghaltunk akkor senkit nem erdekel, hogy atmegyunk fureszbol normal modba
+      koveket se leptessuk hamar meghalt a kigyo
+      test14: mapload event szamanak javitasa
+      test14: typo
+      SnakeUnit: kigyo fejevel utkozik fureszkigyo c. sztori kezelese
+      SnakeUnit: mentsuk el az elozo elemet es azt vizsgaljuk, az elobb hazavagtam a snakesplit ficsort
+      es igy mar lefut a 14es teszt is
+      test15 output: u.az a typo mint test14nel
+      es igy mar lefut a 15os is
+      test16: bennemaradt a paste-elt input
+      test16: 2 hianyzo StoneStep potlasa
+      test16: typo (ha 3. snake idja 3 es nem 1)
+      eset kezelese mikor u.olyan hosszuak a vegen a kigyok de mas a bogyoszamuk
+      mert igy mar lefut a 16os teszt is
+      test17: hianyzo StoneStep-ek hozzaadasa
+      Player.compareTo implementalasa
+      es igy mar lefut a 17. test is \o/
+      es a 18as is lefut
+      runtests.bat frissitese a 18 testhez
+      proto/doc.bat: skeletonbol valo levels kigyomlalasa
+      tests: jar file path fix
+      compile.bat: forditsa a diffunket is
+      .sh-k addolasa
+      testall.bat/sh hozzaadasa
+      SnakeUnit: kigyo darabolasanal csak akkor csokkenjen a sawcounter ha nagyobb volt mint 0
+      snakesplitnel a uj kigyo elemeinek snake referenciajanak megfelelo allitasa
+      snakeunitban egy helyen system.outra irunk proto.out helyett
+      kigyo szakadasakor az utkozo kigyo iranyanak felvetele az uj kigyoban
+      SnakeUnit.isFullStone implemantalasa
+      test16 out: a masodik kigyoban nem lepnek kovek StoneStep eltavolitasa
+      test13: u.ez. a kigyo televan kovekkel, igy nincs StoneStep
+      test17: u.ez
+      runtests.*: 19es teszt futtatasa
+      test19.*: uj teszt gerpetyatol
+      test20: uj "brutal" teszt gerpetyatol
+      commandparser dokumentalasa
+      Field dokumentalasa
+      a game osztaly uj fveinek dokumentalasa
+      gamefield dokumentalasa
+      a parser dokumentalasa
+      a player uj fveinek dokumentalasa
+      a proto osztaly fveinek dokumentalasa
+      a snake osztaly uj fveinek dokumentalasa
+      a snakeunit uj fveinek dokumentalasa
+      comment vegenek potlasa, ahogy gerpetya felfedezte
+      runtests.*: 20as teszt hozzaadasa
+      compile.* fixelese az uj graphicmainhez, stb
+      ugyanez doc.*ra
+      testall.* torlese, az csak protoban ment
+
